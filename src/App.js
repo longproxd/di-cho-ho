@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
+import { BrowserRouter as Router} from 'react-router-dom';
+import Routing from './pages/Routing';
 
 function App() {
   // eslint-disable-next-line
 
   return (
-    <Home path="/" />
+    <Router>
+      <div>
+        <Routing />
+      </div>
+    </Router>
   );
 }
 
