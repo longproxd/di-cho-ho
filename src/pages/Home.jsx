@@ -1,10 +1,34 @@
-import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
-// import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { Helmet } from "react-helmet";
 import '../index.css';
+import logo from '../assets/img/logo.png';
+import hotline from '../assets/img/hotline.svg';
+import fbIcon from '../assets/img/facebook.svg';
+import zaloIcon from '../assets/img/zalo.svg';
 
 function Home() {
+    function loginClick(event) {
+        event.preventDefault()
+
+        document.getElementById("login-form-popup").style.display = "block"
+        document.getElementById("regis-popup").style.display = "none"
+    }
+
+    function RegisClick(event) {
+        event.preventDefault()
+
+        document.getElementById("login-form-popup").style.display = "none"
+        document.getElementById("regis-popup").style.display = "block"
+    }
+
+    function closeClick(event) {
+        event.preventDefault()
+
+        document.getElementById("login-form-popup").style.display = "none"
+        document.getElementById("regis-popup").style.display = "none"
+    }
     // eslint-disable-next-line
     return (
         <div>
@@ -57,8 +81,17 @@ function Home() {
                         <div className="col-md-7">
                             <div className="header-left-content">
                                 <ul>
+                                    <li><a href="/"><img className='logo-img' src={logo} alt="logo" /></a></li>
                                     <li><a href="#"><i className="fa fa-phone" />0123 4567 8913</a></li>
                                     <li><a href="#"><i className="fa fa-envelope" />example@gmail.com</a></li>
+                                    <li>
+                                        <form className="form-search" role="search">
+                                            <input type="text" placeholder="Tìm cửa hàng" />
+                                        </form>
+                                        <button type="submit" className="toggle-pade">
+                                            <i className="fa fa-search" />
+                                        </button>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -71,9 +104,9 @@ function Home() {
                                             <option value="Bd">Bd</option>
                                         </select>
                                     </li>
-                                    <li><a href="#" className="krishok-cart"><i className="fa fa-shopping-cart" /> <span>3</span></a></li>
-                                    <li><a href="#" className="popup-show">Login</a>
-                                        <div className="login-popup login-form contact-form">
+                                    <li><a href="/cart" className="krishok-cart"><i className="fa fa-shopping-cart" /> <span>3</span></a></li>
+                                    <li><a onClick={loginClick} href="#" className="popup-show">Login</a>
+                                        <div id="login-form-popup" className="login-popup login-form contact-form">
                                             <h4>Login</h4>
                                             <form action="#">
                                                 <div className="row">
@@ -111,13 +144,13 @@ function Home() {
                                                         <a href="#" className="login-with"><i className="fa fa-twitter" /></a>
                                                     </div>
                                                     <div className="col-sm-12 mt-30">
-                                                        <p>Don’t Have an Account ? <a href="#" className="registration-form-show">Create Now</a></p>
+                                                        <p>Don’t Have an Account ? <a onClick={RegisClick} href="#" className="registration-form-show">Create Now</a></p>
                                                     </div>
                                                 </div>
                                             </form>
-                                            <div className="popup-close"><i className="fa fa-close" /></div>
+                                            <div onClick={closeClick} className="popup-close"><i className="fa fa-close" /></div>
                                         </div>
-                                        <div className="login-popup registration-form contact-form">
+                                        <div id="regis-popup" className="login-popup registration-form contact-form">
                                             <h4>Create Account</h4>
                                             <form action="#">
                                                 <div className="row">
@@ -150,11 +183,11 @@ function Home() {
                                                         <button className="krishok-btn">Create Account</button>
                                                     </div>
                                                     <div className="col-sm-12">
-                                                        <p>Already Have an Account ?  <a href="#" className="login-form-show">Login Now</a></p>
+                                                        <p>Already Have an Account ?  <a onClick={loginClick} href="#" className="login-form-show">Login Now</a></p>
                                                     </div>
                                                 </div>
                                             </form>
-                                            <div className="popup-close"><i className="fa fa-close" /></div>
+                                            <div onClick={closeClick} className="popup-close"><i className="fa fa-close" /></div>
                                         </div>
                                     </li>
                                 </ul>
@@ -168,36 +201,10 @@ function Home() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-2 col-sm-6">
-                            <div className="logo">
-                                <a href="index.html"><img src="assets/img/logo.png" alt="logo" /></a>
-                            </div>
                         </div>
                         <div className="col-md-10 col-sm-6">
                             <div className="responsive-menu" />
                             <div className="mainmenu">
-                                <ul id="primary-menu">
-                                    <li className="active"><a href="index.html">Home</a></li>
-                                    <li><a href="about-us.html">About Us</a></li>
-                                    <li><a href="products.html">Products</a></li>
-                                    <li><a href="#">Pages <i className="fa fa-angle-down" /></a>
-                                        <ul>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="contact-us.html">Contact</a></li>
-                                    <li>
-                                        <button type="submit" className="toggle-pade">
-                                            <i className="fa fa-search" />
-                                        </button>
-                                        <form className="navbar-form form-box" role="search">
-                                            <input type="text" placeholder="Search" />
-                                        </form>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -238,11 +245,8 @@ function Home() {
                         <div className="col-lg-10 offset-lg-1">
                             <div className="shopping-product-menu max-width-360">
                                 <ul>
-                                    <li data-filter="*" className="active">All</li>
-                                    <li data-filter=".new">New</li>
-                                    <li data-filter=".best">Best Sells</li>
-                                    <li data-filter=".seasonal">Seasonal</li>
-                                    <li data-filter=".other">Others</li>
+                                    <li data-filter="*" className="active">Gần tôi</li>
+                                    <li data-filter=".new">Được mua nhiều</li>
                                 </ul>
                             </div>
                         </div>
@@ -256,7 +260,7 @@ function Home() {
                                         <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
                                     </div>
                                 </div>
-                                <p><a href="product-details.html">Product Name</a></p>
+                                <p><a href="product-details">Product Name</a></p>
                                 <h5>$50.00</h5>
                             </div>
                         </div>
@@ -268,7 +272,7 @@ function Home() {
                                         <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
                                     </div>
                                 </div>
-                                <p><a href="product-details.html">Product Name</a></p>
+                                <p><a href="product-details">Product Name</a></p>
                                 <h5>$50.00</h5>
                             </div>
                         </div>
@@ -280,7 +284,7 @@ function Home() {
                                         <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
                                     </div>
                                 </div>
-                                <p><a href="product-details.html">Product Name</a></p>
+                                <p><a href="product-details">Product Name</a></p>
                                 <h5>$50.00</h5>
                             </div>
                         </div>
@@ -292,7 +296,7 @@ function Home() {
                                         <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
                                     </div>
                                 </div>
-                                <p><a href="product-details.html">Product Name</a></p>
+                                <p><a href="product-details">Product Name</a></p>
                                 <h5>$50.00</h5>
                             </div>
                         </div>
@@ -304,7 +308,7 @@ function Home() {
                                         <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
                                     </div>
                                 </div>
-                                <p><a href="product-details.html">Product Name</a></p>
+                                <p><a href="product-details">Product Name</a></p>
                                 <h5>$50.00</h5>
                             </div>
                         </div>
@@ -316,7 +320,7 @@ function Home() {
                                         <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
                                     </div>
                                 </div>
-                                <p><a href="product-details.html">Product Name</a></p>
+                                <p><a href="product-details">Product Name</a></p>
                                 <h5>$50.00</h5>
                             </div>
                         </div>
@@ -328,7 +332,7 @@ function Home() {
                                         <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
                                     </div>
                                 </div>
-                                <p><a href="product-details.html">Product Name</a></p>
+                                <p><a href="product-details">Product Name</a></p>
                                 <h5>$50.00</h5>
                             </div>
                         </div>
@@ -611,51 +615,45 @@ function Home() {
             <footer className="site-footer pt-75">
                 <div className="container">
                     <div className="row">
+                        <div className="col-lg-5 col-sm-6">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Giới thiệu về công ty</a></h5>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-sm-6">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Quy chế hoạt động</a></h5>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-sm-6">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Yêu cầu hỗ trợ</a></h5>
+                            </div>
+                        </div>
                         <div className="col-lg-5">
                             <div className="widget">
-                                <h5 className="widget-title"><a href="#">About Us</a></h5>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of tand scrambled it to make a type specimen wonder full book. </p>
-                                <div className="widget-icon">
-                                    <a href="#"><i className="fa fa-facebook" /></a>
-                                    <a href="#"><i className="fa fa-twitter" /></a>
-                                    <a href="#"><i className="fa fa-pinterest" /></a>
-                                    <a href="#"><i className="fa fa-linkedin" /></a>
+                                <h5 className="widget-title"><a href="#">Giới thiệu về hệ thống</a></h5>
+                                <div className="footer-icon">
+                                    <a href="/">
+                                        <img className="footer-linkIcon hotline" src={hotline} alt="hotline" />
+                                    </a>
+                                    <a href="/">
+                                        <img className="footer-linkIcon zalo" src={zaloIcon} alt="zalo" />
+                                    </a>
+                                    <a href="/">
+                                        <img className="footer-linkIcon facebook" src={fbIcon} alt="facebook" />
+                                    </a>
                                 </div>
                             </div>
                         </div>
                         <div className="col-lg-4 col-sm-6">
                             <div className="widget">
-                                <h5 className="widget-title"><a href="#">Keep in touch</a></h5>
-                                <ul>
-                                    <li>Address : 97 New Design Street, Dhaka BD</li>
-                                    <li>Phone : 1234 5678 9123</li>
-                                    <li>Email : Stevan@Example.com</li>
-                                </ul>
+                                <h5 className="widget-title"><a href="#">Chính sách, điều khoản</a></h5>
                             </div>
                         </div>
                         <div className="col-lg-3 col-sm-6">
                             <div className="widget">
-                                <h5 className="widget-title"><a href="#">Instagram Feed</a></h5>
-                                <div className="img-gallery">
-                                    <div className="single-img-gallery">
-                                        <a href="#"><img src="assets/img/widget/widget1.jpg" alt="" /></a>
-                                    </div>
-                                    <div className="single-img-gallery">
-                                        <a href="#"><img src="assets/img/widget/widget2.jpg" alt="" /></a>
-                                    </div>
-                                    <div className="single-img-gallery">
-                                        <a href="#"><img src="assets/img/widget/widget3.jpg" alt="" /></a>
-                                    </div>
-                                    <div className="single-img-gallery">
-                                        <a href="#"><img src="assets/img/widget/widget4.jpg" alt="" /></a>
-                                    </div>
-                                    <div className="single-img-gallery">
-                                        <a href="#"><img src="assets/img/widget/widget5.jpg" alt="" /></a>
-                                    </div>
-                                    <div className="single-img-gallery">
-                                        <a href="#"><img src="assets/img/widget/widget6.jpg" alt="" /></a>
-                                    </div>
-                                </div>
+                                <h5 className="widget-title"><a href="#">Liên hệ</a></h5>
                             </div>
                         </div>
                     </div>
@@ -665,7 +663,7 @@ function Home() {
                         <div className="row">
                             <div className="col-12">
                                 <div className="footer-bottom">
-                                    <p>Copyright © 2017 - All Right Reserved</p>
+                                    <p>Hệ thống đi chợ thuê - bản quyền thuộc nhóm phát triển R7</p>
                                 </div>
                             </div>
                         </div>

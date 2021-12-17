@@ -1,4 +1,7 @@
 import logo from '../assets/img/logo.png'
+import hotline from '../assets/img/hotline.svg';
+import fbIcon from '../assets/img/facebook.svg';
+import zaloIcon from '../assets/img/zalo.svg';
 import productimg5 from '../assets/img/main-product/5.jpg'
 import productimg6 from '../assets/img/main-product/6.jpg'
 import productimg7 from '../assets/img/main-product/7.jpg'
@@ -51,7 +54,7 @@ function StoreDetail() {
                         <div className="col-md-5">
                             <div className="header-right-content">
                                 <ul>
-                                    <li><a href="#" className="krishok-cart"><i className="fa fa-shopping-cart" /> <span>3</span></a></li>
+                                    <li><a href="/cart" className="krishok-cart"><i className="fa fa-shopping-cart" /> <span>3</span></a></li>
                                     <li><a href="#" className="popup-show">Login</a>
                                         <div className="login-popup login-form contact-form">
                                             <h4>Login</h4>
@@ -342,12 +345,57 @@ function StoreDetail() {
             
             {/* footer area start */}
             <footer className="site-footer pt-75">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-5 col-sm-6">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Giới thiệu về công ty</a></h5>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-sm-6">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Quy chế hoạt động</a></h5>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-sm-6">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Yêu cầu hỗ trợ</a></h5>
+                            </div>
+                        </div>
+                        <div className="col-lg-5">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Giới thiệu về hệ thống</a></h5>
+                                <div className="footer-icon">
+                                    <a href="/">
+                                        <img className="footer-linkIcon hotline" src={hotline} alt="hotline" />
+                                    </a>
+                                    <a href="/">
+                                        <img className="footer-linkIcon zalo" src={zaloIcon} alt="zalo" />
+                                    </a>
+                                    <a href="/">
+                                        <img className="footer-linkIcon facebook" src={fbIcon} alt="facebook" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-sm-6">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Chính sách, điều khoản</a></h5>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-sm-6">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Liên hệ</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div className="footer-bottom-bg ptb-20">
                     <div className="container">
                         <div className="row">
                             <div className="col-12">
                                 <div className="footer-bottom">
-                                    <p>Copyright © 2017 - All Right Reserved</p>
+                                    <p>Hệ thống đi chợ thuê - bản quyền thuộc nhóm phát triển R7</p>
                                 </div>
                             </div>
                         </div>
