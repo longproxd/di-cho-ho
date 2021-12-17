@@ -1,4 +1,19 @@
+import { useNavigate } from "react-router-dom";
+
+import logo from '../assets/img/logo.png'
+import hotline from '../assets/img/hotline.svg';
+import fbIcon from '../assets/img/facebook.svg';
+import zaloIcon from '../assets/img/zalo.svg';
+
 function CustomerCheckOut() {
+    let navigate = useNavigate();
+
+    function payClick(event)
+    {
+        event.preventDefault()
+
+        navigate('/payment')
+    }
     return (
         <div>
             {/* Page loader */}
@@ -10,15 +25,30 @@ function CustomerCheckOut() {
                         <div className="col-md-7">
                             <div className="header-left-content">
                                 <ul>
+                                    <li><a href="/"><img className='logo-img' src={logo} alt="logo" /></a></li>
                                     <li><a href="#"><i className="fa fa-phone" />0123 4567 8913</a></li>
-                                    <li><a href="#"><i className="fa fa-envelope" />R7@hcmus.edu.vn</a></li>
+                                    <li><a href="#"><i className="fa fa-envelope" />example@gmail.com</a></li>
+                                    <li>
+                                        <form className="form-search" role="search">
+                                            <input type="text" placeholder="Tìm cửa hàng" />
+                                        </form>
+                                        <button type="submit" className="toggle-pade">
+                                            <i className="fa fa-search" />
+                                        </button>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                         <div className="col-md-5">
                             <div className="header-right-content">
                                 <ul>
-                                    <li><a href="#" className="krishok-cart"><i className="fa fa-shopping-cart" /> <span>3</span></a></li>
+                                    <li>
+                                        <select>
+                                            <option value="En">En</option>
+                                            <option value="Bd">Bd</option>
+                                        </select>
+                                    </li>
+                                    <li><a href="/cart" className="krishok-cart"><i className="fa fa-shopping-cart" /> <span>3</span></a></li>
                                     <li><a href="#" className="popup-show">Login</a>
                                         <div className="login-popup login-form contact-form">
                                             <h4>Login</h4>
@@ -122,29 +152,6 @@ function CustomerCheckOut() {
                         <div className="col-md-10 col-sm-6">
                             <div className="responsive-menu" />
                             <div className="mainmenu">
-                                <ul id="primary-menu">
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="about-us.html">About Us</a></li>
-                                    <li><a href="products.html">Products</a></li>
-                                    <li className="active"><a href="#">Pages <i className="fa fa-angle-down" /></a>
-                                        <ul>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
-                                            <li className="active"><a href="checkout.html">Checkout</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="contact-us.html">Contact</a></li>
-                                    <li>
-                                        <button type="submit" className="toggle-pade">
-                                            <i className="fa fa-search" />
-                                        </button>
-                                        <form className="navbar-form form-box" role="search">
-                                            <input type="text" placeholder="Search" />
-                                        </form>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -219,7 +226,7 @@ function CustomerCheckOut() {
                                             <textarea placeholder="Additional Instruction" defaultValue={""} />
                                         </div>
                                         <div className="col-lg-3 offset-lg-9 col-md-6 offset-md-6 mt-30">
-                                            <button className="krishok-btn">Payment Now <i className="fa fa-angle-right" /></button>
+                                            <button onClick={payClick} className="krishok-btn">Payment Now <i className="fa fa-angle-right" /></button>
                                         </div>
                                     </div>
                                 </form>
@@ -246,51 +253,45 @@ function CustomerCheckOut() {
             <footer className="site-footer pt-75">
                 <div className="container">
                     <div className="row">
+                        <div className="col-lg-5 col-sm-6">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Giới thiệu về công ty</a></h5>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-sm-6">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Quy chế hoạt động</a></h5>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-sm-6">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Yêu cầu hỗ trợ</a></h5>
+                            </div>
+                        </div>
                         <div className="col-lg-5">
                             <div className="widget">
-                                <h5 className="widget-title"><a href="#">About Us</a></h5>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of tand scrambled it to make a type specimen wonder full book. </p>
-                                <div className="widget-icon">
-                                    <a href="#"><i className="fa fa-facebook" /></a>
-                                    <a href="#"><i className="fa fa-twitter" /></a>
-                                    <a href="#"><i className="fa fa-pinterest" /></a>
-                                    <a href="#"><i className="fa fa-linkedin" /></a>
+                                <h5 className="widget-title"><a href="#">Giới thiệu về hệ thống</a></h5>
+                                <div className="footer-icon">
+                                    <a href="/">
+                                        <img className="footer-linkIcon hotline" src={hotline} alt="hotline" />
+                                    </a>
+                                    <a href="/">
+                                        <img className="footer-linkIcon zalo" src={zaloIcon} alt="zalo" />
+                                    </a>
+                                    <a href="/">
+                                        <img className="footer-linkIcon facebook" src={fbIcon} alt="facebook" />
+                                    </a>
                                 </div>
                             </div>
                         </div>
                         <div className="col-lg-4 col-sm-6">
                             <div className="widget">
-                                <h5 className="widget-title"><a href="#">Keep in touch</a></h5>
-                                <ul>
-                                    <li>Address : 97 New Design Street, Dhaka BD</li>
-                                    <li>Phone : 1234 5678 9123</li>
-                                    <li>Email : Stevan@Example.com</li>
-                                </ul>
+                                <h5 className="widget-title"><a href="#">Chính sách, điều khoản</a></h5>
                             </div>
                         </div>
                         <div className="col-lg-3 col-sm-6">
                             <div className="widget">
-                                <h5 className="widget-title"><a href="#">Instagram Feed</a></h5>
-                                <div className="img-gallery">
-                                    <div className="single-img-gallery">
-                                        <a href="#"><img src="assets/img/widget/widget1.jpg" alt="" /></a>
-                                    </div>
-                                    <div className="single-img-gallery">
-                                        <a href="#"><img src="assets/img/widget/widget2.jpg" alt="" /></a>
-                                    </div>
-                                    <div className="single-img-gallery">
-                                        <a href="#"><img src="assets/img/widget/widget3.jpg" alt="" /></a>
-                                    </div>
-                                    <div className="single-img-gallery">
-                                        <a href="#"><img src="assets/img/widget/widget4.jpg" alt="" /></a>
-                                    </div>
-                                    <div className="single-img-gallery">
-                                        <a href="#"><img src="assets/img/widget/widget5.jpg" alt="" /></a>
-                                    </div>
-                                    <div className="single-img-gallery">
-                                        <a href="#"><img src="assets/img/widget/widget6.jpg" alt="" /></a>
-                                    </div>
-                                </div>
+                                <h5 className="widget-title"><a href="#">Liên hệ</a></h5>
                             </div>
                         </div>
                     </div>
@@ -300,7 +301,7 @@ function CustomerCheckOut() {
                         <div className="row">
                             <div className="col-12">
                                 <div className="footer-bottom">
-                                    <p>Copyright © 2017 - All Right Reserved</p>
+                                    <p>Hệ thống đi chợ thuê - bản quyền thuộc nhóm phát triển R7</p>
                                 </div>
                             </div>
                         </div>

@@ -258,6 +258,9 @@ header.header-area a {
 header.header-area li {
     display: inline-block;
 }
+header.header-area .header-left-content ul {
+    width: 800px;
+}
 header.header-area .header-left-content li:last-child {
     border: 0;
 }
@@ -268,6 +271,16 @@ header.header-area .header-left-content li {
     padding-right: 15px;
     border-right: 1px solid #ddd;
     margin-right: 15px;
+}
+header.header-area .header-left-content .form-search input {
+    width: 300px;
+    height: 30px;
+    background: white;
+}
+header.header-area .header-left-content li button {
+    position: absolute;
+    top: 5px;
+    left: 105vh;
 }
 header.header-area .header-right-content li {
     padding-left: 15px;
@@ -339,6 +352,10 @@ a.krishok-cart span {
 ---------------------------------------*/
 .menubar .logo {
     padding: 30px 0;
+}
+.logo-img {
+    width: 50px;
+    height: 35px;
 }
 .mainmenu {
     float: right;
@@ -929,6 +946,54 @@ h5.widget-title:hover::before,
     color: #fff;
     text-align: center;
     font-size: 12px;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.footer-container {
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #CBFCFF;
+}
+
+.footer-link {
+    background: #CBFCFF;
+}
+
+.footer-linkText {
+    padding-top: 3px;
+    display: block;
+}
+
+.footer-linkText a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.footer-linkIcon {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    padding-right: 10px;
+}
+
+.footer-linkIcon.hotline,
+.footer-linkIcon.zalo,
+.footer-linkIcon.facebook {
+    position: relative;
+    width: 35px;
+    height: 35px;
 }
 /*--------------------------------------
 --------- FOOTER AREA CSS END ---------

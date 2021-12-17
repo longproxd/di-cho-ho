@@ -1,3 +1,9 @@
+
+import logo from '../assets/img/logo.png';
+import hotline from '../assets/img/hotline.svg';
+import fbIcon from '../assets/img/facebook.svg';
+import zaloIcon from '../assets/img/zalo.svg';
+
 function ProductDetails() {
     return (
         <div>
@@ -10,15 +16,30 @@ function ProductDetails() {
                         <div className="col-md-7">
                             <div className="header-left-content">
                                 <ul>
+                                    <li><a href="/"><img className='logo-img' src={logo} alt="logo" /></a></li>
                                     <li><a href="#"><i className="fa fa-phone" />0123 4567 8913</a></li>
-                                    <li><a href="#"><i className="fa fa-envelope" />R7@hcmus.edu.vn</a></li>
+                                    <li><a href="#"><i className="fa fa-envelope" />example@gmail.com</a></li>
+                                    <li>
+                                        <form className="form-search" role="search">
+                                            <input type="text" placeholder="Tìm cửa hàng" />
+                                        </form>
+                                        <button type="submit" className="toggle-pade">
+                                            <i className="fa fa-search" />
+                                        </button>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                         <div className="col-md-5">
                             <div className="header-right-content">
                                 <ul>
-                                    <li><a href="#" className="krishok-cart"><i className="fa fa-shopping-cart" /> <span>3</span></a></li>
+                                    <li>
+                                        <select>
+                                            <option value="En">En</option>
+                                            <option value="Bd">Bd</option>
+                                        </select>
+                                    </li>
+                                    <li><a href="/cart" className="krishok-cart"><i className="fa fa-shopping-cart" /> <span>3</span></a></li>
                                     <li><a href="#" className="popup-show">Login</a>
                                         <div className="login-popup login-form contact-form">
                                             <h4>Login</h4>
@@ -122,29 +143,6 @@ function ProductDetails() {
                         <div className="col-md-10 col-sm-6">
                             <div className="responsive-menu" />
                             <div className="mainmenu">
-                                <ul id="primary-menu">
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="about-us.html">About Us</a></li>
-                                    <li className="active"><a href="products.html">Products</a></li>
-                                    <li><a href="#">Pages <i className="fa fa-angle-down" /></a>
-                                        <ul>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="contact-us.html">Contact</a></li>
-                                    <li>
-                                        <button type="submit" className="toggle-pade">
-                                            <i className="fa fa-search" />
-                                        </button>
-                                        <form className="navbar-form form-box" role="search">
-                                            <input type="text" placeholder="Search" />
-                                        </form>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -219,7 +217,7 @@ function ProductDetails() {
                                     <a href="#"><i className="fa fa-share-alt" /></a>
                                 </div>
                                 <div className="product-details-btn">
-                                    <a href="#" className="krishok-btn">Buy Now <i className="fa fa-shopping-cart" /></a>
+                                    <a href="/cart" className="krishok-btn">Buy Now <i className="fa fa-shopping-cart" /></a>
                                     <a href="#" className="krishok-btn krishok-btn-transparent">Add to List <i className="fa fa-heart-o" /></a>
                                 </div>
                                 <div className="product-details-descrip">
@@ -248,12 +246,57 @@ function ProductDetails() {
             
             {/* footer area start */}
             <footer className="site-footer pt-75">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-5 col-sm-6">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Giới thiệu về công ty</a></h5>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-sm-6">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Quy chế hoạt động</a></h5>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-sm-6">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Yêu cầu hỗ trợ</a></h5>
+                            </div>
+                        </div>
+                        <div className="col-lg-5">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Giới thiệu về hệ thống</a></h5>
+                                <div className="footer-icon">
+                                    <a href="/">
+                                        <img className="footer-linkIcon hotline" src={hotline} alt="hotline" />
+                                    </a>
+                                    <a href="/">
+                                        <img className="footer-linkIcon zalo" src={zaloIcon} alt="zalo" />
+                                    </a>
+                                    <a href="/">
+                                        <img className="footer-linkIcon facebook" src={fbIcon} alt="facebook" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-sm-6">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Chính sách, điều khoản</a></h5>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-sm-6">
+                            <div className="widget">
+                                <h5 className="widget-title"><a href="#">Liên hệ</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div className="footer-bottom-bg ptb-20">
                     <div className="container">
                         <div className="row">
                             <div className="col-12">
                                 <div className="footer-bottom">
-                                    <p>Copyright © 2017 - All Right Reserved</p>
+                                    <p>Hệ thống đi chợ thuê - bản quyền thuộc nhóm phát triển R7</p>
                                 </div>
                             </div>
                         </div>
