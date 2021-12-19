@@ -1,7 +1,4 @@
-import logo from '../assets/img/logo.png'
-import hotline from '../assets/img/hotline.svg';
-import fbIcon from '../assets/img/facebook.svg';
-import zaloIcon from '../assets/img/zalo.svg';
+import logo from '../assets/img/logo.png';
 import productimg5 from '../assets/img/main-product/5.jpg'
 import productimg6 from '../assets/img/main-product/6.jpg'
 import productimg7 from '../assets/img/main-product/7.jpg'
@@ -11,14 +8,55 @@ import productimg10 from '../assets/img/main-product/10.jpg'
 import productimg11 from '../assets/img/main-product/11.jpg'
 import productimg12 from '../assets/img/main-product/12.jpg'
 import { Helmet } from "react-helmet";
-import {useState} from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function StoreDetail() {
+    // const [cates, setCates] = useState()
+    // const [pop, setPop] = useState(false)
+
+    // axios.get("http://localhost:8080/api/loaihang")
+    //         .then(res => {
+    //             setCates(res.data)
+    //         })
+    
+    // function MenuClick() {
+    //     if(pop == true) {
+    //         document.getElementById("menubar-popup").style.display = "block"
+    //         setPop(false)
+    //     }
+    //     else {
+    //         document.getElementById("menubar-popup").style.display = "none"
+    //         setPop(true)
+    //     }
+    // }
+
+    // console.log(cates)
+
     // eslint-disable-next-line
-   
+    function loginClick(event) {
+        event.preventDefault()
+
+        document.getElementById("login-form-popup").style.display = "block"
+        document.getElementById("regis-popup").style.display = "none"
+    }
+
+    function RegisClick(event) {
+        event.preventDefault()
+
+        document.getElementById("login-form-popup").style.display = "none"
+        document.getElementById("regis-popup").style.display = "block"
+    }
+
+    function closeClick(event) {
+        event.preventDefault()
+
+        document.getElementById("login-form-popup").style.display = "none"
+        document.getElementById("regis-popup").style.display = "none"
+    }
     return (
         <div>
-           
+
             {/* Font Awesome CSS */}
             <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" media="all" />
             {/* Bootstrap CSS */}
@@ -46,8 +84,17 @@ function StoreDetail() {
                         <div className="col-md-7">
                             <div className="header-left-content">
                                 <ul>
+                                    <li><a href="/"><img className='logo-img' src={logo} alt="logo" /></a></li>
                                     <li><a href="#"><i className="fa fa-phone" />0123 4567 8913</a></li>
-                                    <li><a href="#"><i className="fa fa-envelope" />R7@hcmus.edu.vn</a></li>
+                                    <li><a href="#"><i className="fa fa-envelope" />example@gmail.com</a></li>
+                                    <li>
+                                        <form className="form-search" role="search">
+                                            <input type="text" placeholder="Tìm cửa hàng" />
+                                        </form>
+                                        <button type="submit" className="toggle-pade">
+                                            <i className="fa fa-search" />
+                                        </button>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -55,8 +102,8 @@ function StoreDetail() {
                             <div className="header-right-content">
                                 <ul>
                                     <li><a href="/cart" className="krishok-cart"><i className="fa fa-shopping-cart" /> <span>3</span></a></li>
-                                    <li><a href="#" className="popup-show">Login</a>
-                                        <div className="login-popup login-form contact-form">
+                                    <li><a onClick={loginClick} href="#" className="popup-show">Login</a>
+                                        <div id="login-form-popup" className="login-popup login-form contact-form">
                                             <h4>Login</h4>
                                             <form action="#">
                                                 <div className="row">
@@ -94,13 +141,13 @@ function StoreDetail() {
                                                         <a href="#" className="login-with"><i className="fa fa-twitter" /></a>
                                                     </div>
                                                     <div className="col-sm-12 mt-30">
-                                                        <p>Don’t Have an Account ? <a href="#" className="registration-form-show">Create Now</a></p>
+                                                        <p>Don’t Have an Account ? <a onClick={RegisClick} href="#" className="registration-form-show">Create Now</a></p>
                                                     </div>
                                                 </div>
                                             </form>
-                                            <div className="popup-close"><i className="fa fa-close" /></div>
+                                            <div onClick={closeClick} className="popup-close"><i className="fa fa-close" /></div>
                                         </div>
-                                        <div className="login-popup registration-form contact-form">
+                                        <div id="regis-popup" className="login-popup registration-form contact-form">
                                             <h4>Create Account</h4>
                                             <form action="#">
                                                 <div className="row">
@@ -133,11 +180,11 @@ function StoreDetail() {
                                                         <button className="krishok-btn">Create Account</button>
                                                     </div>
                                                     <div className="col-sm-12">
-                                                        <p>Already Have an Account ?  <a href="#" className="login-form-show">Login Now</a></p>
+                                                        <p>Already Have an Account ?  <a onClick={loginClick} href="#" className="login-form-show">Login Now</a></p>
                                                     </div>
                                                 </div>
                                             </form>
-                                            <div className="popup-close"><i className="fa fa-close" /></div>
+                                            <div onClick={closeClick} className="popup-close"><i className="fa fa-close" /></div>
                                         </div>
                                     </li>
                                 </ul>
@@ -147,85 +194,29 @@ function StoreDetail() {
                 </div>
             </header>{/* header area end */}
             {/* menu area start */}
-            <div className="menubar">
+            <div className="menubar2">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-md-2 col-sm-6">
-                            <div className="logo">
-                                <a href="/"><img src={logo} alt="logo" /></a>
-                            </div>
-                        </div>
-                        <div className="col-md-10 col-sm-6">
-                            <div className="responsive-menu" />
-                            <div className="mainmenu">
-                                <ul id="primary-menu">
-                                    <li className="active"><a href="/">Home</a></li>
-                                    <li><a href="/">About Us</a></li>
-                                    <li><a href="/products.html">Products</a></li>
-                                    <li><a href="#">Pages <i className="fa fa-angle-down" /></a>
-                                        <ul>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="contact-us.html">Contact</a></li>
-                                    <li>
-                                        <button type="submit" className="toggle-pade">
-                                            <i className="fa fa-search" />
-                                        </button>
-                                        <form className="navbar-form form-box" role="search">
-                                            <input type="text" placeholder="Search" />
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                    <button onClick={MenuClick}>Danh mục sản phẩm</button>
+                    <div id="menubar-popup" className='menubar-popup'>
+                        <ul>
+                            {/* {cates && cates.map((cate) => 
+                                <li key={cate.tenloai}><a href='#'>{cate.tenloai}</a></li>
+                            )} */}
+                        </ul>
                     </div>
                 </div>
             </div>{/* menu area end */}
             {/* hero area start */}
-            <section className="hero-area ptb-80">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-7 col-md-8 col-sm-10">
-                            <div className="hero-area-content ptb-80">
-                                <h1>A Place of All Organic Products</h1>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-                                <a href="$" className="krishok-btn">Shop Now <i className="fa fa-shopping-cart" /></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="image-slider">
-                    <div className="item-content">
-                        <div className="item-slider item-slider1" />
-                        <div className="item-slider item-slider2" />
-                    </div>
-                </div>
-                <div className="item-thumbnail">
-                    <a href="#" data-slide-index={0}>
-                        <div className="list-thumb list-thumb1" />
-                    </a>
-                    <a href="#" data-slide-index={1}>
-                        <div className="list-thumb list-thumb2" />
-                    </a>
-                </div>{/*/Slider thumbnail*/}
-            </section>{/* hero area end */}
+            {/* hero area end */}
             {/* shopping product area start */}
             <section className="shopping-product ptb-80">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-10 offset-lg-1">
-                            <div className="shopping-product-menu max-width-360">
+                        <div className="col-lg-5 offset-lg-1">
+                            <div className="shopping-product-menu min-width-360">
                                 <ul>
-                                    <li data-filter="*" className="active">All</li>
-                                    <li data-filter=".new">New</li>
-                                    <li data-filter=".best">Best Sells</li>
-                                    <li data-filter=".seasonal">Seasonal</li>
-                                    <li data-filter=".other">Others</li>
+                                    <li data-filter="*" className="active">Tất cả</li>
+                                    <li data-filter=".new">Combo</li>
                                 </ul>
                             </div>
                         </div>
@@ -342,54 +333,9 @@ function StoreDetail() {
                     </div>
                 </div>
             </section>{/* shopping product area end */}
-            
+
             {/* footer area start */}
             <footer className="site-footer pt-75">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-5 col-sm-6">
-                            <div className="widget">
-                                <h5 className="widget-title"><a href="#">Giới thiệu về công ty</a></h5>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-sm-6">
-                            <div className="widget">
-                                <h5 className="widget-title"><a href="#">Quy chế hoạt động</a></h5>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-sm-6">
-                            <div className="widget">
-                                <h5 className="widget-title"><a href="#">Yêu cầu hỗ trợ</a></h5>
-                            </div>
-                        </div>
-                        <div className="col-lg-5">
-                            <div className="widget">
-                                <h5 className="widget-title"><a href="#">Giới thiệu về hệ thống</a></h5>
-                                <div className="footer-icon">
-                                    <a href="/">
-                                        <img className="footer-linkIcon hotline" src={hotline} alt="hotline" />
-                                    </a>
-                                    <a href="/">
-                                        <img className="footer-linkIcon zalo" src={zaloIcon} alt="zalo" />
-                                    </a>
-                                    <a href="/">
-                                        <img className="footer-linkIcon facebook" src={fbIcon} alt="facebook" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-sm-6">
-                            <div className="widget">
-                                <h5 className="widget-title"><a href="#">Chính sách, điều khoản</a></h5>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-sm-6">
-                            <div className="widget">
-                                <h5 className="widget-title"><a href="#">Liên hệ</a></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div className="footer-bottom-bg ptb-20">
                     <div className="container">
                         <div className="row">

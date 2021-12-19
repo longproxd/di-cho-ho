@@ -104,8 +104,7 @@ iframe {
 a,
 a:hover,
 a:focus,
-a:active,
-button:focus {
+a:active {
     text-decoration: none;
     border: none;
     outline: 0;
@@ -439,6 +438,9 @@ a.krishok-cart span {
 }
 .menubar ul li ul li:hover a::before , .menubar ul li ul li.active a::before {
     width: 100% !important;
+}
+.menubar2 .menubar-popup {
+    display: none;
 }
 .mainmenu li:hover ul {
     opacity: 1;
