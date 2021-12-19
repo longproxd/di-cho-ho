@@ -2020,6 +2020,10 @@ blockquote:before {
     overflow: visible;
     background: #fff url('../img/loader.gif') no-repeat center center;
 }
+
+.img-270x235{
+    height: 220px;
+}
 /*--------------------------------------
 ------- PRE LOADER STYING CSS END ------
 ---------------------------------------*/
