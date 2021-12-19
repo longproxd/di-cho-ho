@@ -173,51 +173,6 @@ function Payment(){
                 </div>
             </header>
             <footer className="site-footer pt-75">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-5 col-sm-6">
-                            <div className="widget">
-                                <h5 className="widget-title"><a href="#">Giới thiệu về công ty</a></h5>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-sm-6">
-                            <div className="widget">
-                                <h5 className="widget-title"><a href="#">Quy chế hoạt động</a></h5>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-sm-6">
-                            <div className="widget">
-                                <h5 className="widget-title"><a href="#">Yêu cầu hỗ trợ</a></h5>
-                            </div>
-                        </div>
-                        <div className="col-lg-5">
-                            <div className="widget">
-                                <h5 className="widget-title"><a href="#">Giới thiệu về hệ thống</a></h5>
-                                <div className="footer-icon">
-                                    <a href="/">
-                                        <img className="footer-linkIcon hotline" src={hotline} alt="hotline" />
-                                    </a>
-                                    <a href="/">
-                                        <img className="footer-linkIcon zalo" src={zaloIcon} alt="zalo" />
-                                    </a>
-                                    <a href="/">
-                                        <img className="footer-linkIcon facebook" src={fbIcon} alt="facebook" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-sm-6">
-                            <div className="widget">
-                                <h5 className="widget-title"><a href="#">Chính sách, điều khoản</a></h5>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-sm-6">
-                            <div className="widget">
-                                <h5 className="widget-title"><a href="#">Liên hệ</a></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div className="footer-bottom-bg ptb-20">
                     <div className="container">
                         <div className="row">
