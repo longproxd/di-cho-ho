@@ -1,74 +1,6 @@
-import React from 'react';
-import { Helmet } from "react-helmet";
-import logo from '../assets/img/logo.png';
-import hotline from '../assets/img/hotline.svg';
-import fbIcon from '../assets/img/facebook.svg';
-import zaloIcon from '../assets/img/zalo.svg';
-
-function Payment() {
-    function loginClick(event) {
-        event.preventDefault()
-
-        document.getElementById("login-form-popup").style.display = "block"
-        document.getElementById("regis-popup").style.display = "none"
-    }
-
-    function RegisClick(event) {
-        event.preventDefault()
-
-        document.getElementById("login-form-popup").style.display = "none"
-        document.getElementById("regis-popup").style.display = "block"
-    }
-
-    function closeClick(event) {
-        event.preventDefault()
-
-        document.getElementById("login-form-popup").style.display = "none"
-        document.getElementById("regis-popup").style.display = "none"
-    }
-
+function ShipperHome() {
     return (
         <div>
-            <meta charSet="UTF-8" />
-            <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            {/* Favicon */}
-            <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png" />
-            <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png" />
-            <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png" />
-            <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png" />
-            <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png" />
-            <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png" />
-            <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png" />
-            <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png" />
-            <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png" />
-            <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png" />
-            <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
-            <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png" />
-            <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
-            <link rel="manifest" href="favicon/manifest.json" />
-            <meta name="msapplication-TileColor" content="#ffffff" />
-            <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png" />
-            <meta name="theme-color" content="#ffffff" />
-            <title>Welcome | Krishok</title>
-            {/* Font Awesome CSS */}
-            <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" media="all" />
-            {/* Bootstrap CSS */}
-            <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" media="all" />
-            {/* slicknav CSS */}
-            <link rel="stylesheet" href="assets/css/slicknav.min.css" />
-            {/* Owl carousel CSS */}
-            <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
-            {/* Lightbox CSS */}
-            <link rel="stylesheet" href="assets/css/lightbox.min.css" />
-            {/* Bx slider CSS */}
-            <link rel="stylesheet" href="assets/css/jquery.bxslider.css" />
-            {/* Animate CSS */}
-            <link rel="stylesheet" href="assets/css/animate.min.css" />
-            {/* Main style CSS */}
-            <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
-            {/* Responsive CSS */}
-            <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
             {/* Page loader */}
             <div id="preloader" />
             {/* header area start */}
@@ -78,28 +10,23 @@ function Payment() {
                         <div className="col-md-7">
                             <div className="header-left-content">
                                 <ul>
-                                    <li><a href="/"><img className='logo-img' src={logo} alt="logo" /></a></li>
                                     <li><a href="#"><i className="fa fa-phone" />0123 4567 8913</a></li>
                                     <li><a href="#"><i className="fa fa-envelope" />example@gmail.com</a></li>
-                                    <li id="li-nearlast">
-                                        <form className="form-search" role="search">
-                                            <input type="text" placeholder="Tìm cửa hàng" />
-                                        </form>
-                                    </li>
-                                    <li>
-                                        <button type="submit" className="toggle-pade">
-                                            <i className="fa fa-search" />
-                                        </button>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
                         <div className="col-md-5">
                             <div className="header-right-content">
                                 <ul>
-                                    <li><a href="/cart" className="krishok-cart"><i className="fa fa-shopping-cart" /> <span>3</span></a></li>
-                                    <li><a onClick={loginClick} href="#" className="popup-show">Login</a>
-                                        <div id="login-form-popup" className="login-popup login-form contact-form">
+                                    <li>
+                                        <select>
+                                            <option value="En">En</option>
+                                            <option value="Bd">Bd</option>
+                                        </select>
+                                    </li>
+                                    <li><a href="#" className="krishok-cart"><i className="fa fa-shopping-cart" /> <span>3</span></a></li>
+                                    <li><a href="#" className="popup-show">Login</a>
+                                        <div className="login-popup login-form contact-form">
                                             <h4>Login</h4>
                                             <form action="#">
                                                 <div className="row">
@@ -137,13 +64,13 @@ function Payment() {
                                                         <a href="#" className="login-with"><i className="fa fa-twitter" /></a>
                                                     </div>
                                                     <div className="col-sm-12 mt-30">
-                                                        <p>Don’t Have an Account ? <a onClick={RegisClick} href="#" className="registration-form-show">Create Now</a></p>
+                                                        <p>Don’t Have an Account ? <a href="#" className="registration-form-show">Create Now</a></p>
                                                     </div>
                                                 </div>
                                             </form>
-                                            <div onClick={closeClick} className="popup-close"><i className="fa fa-close" /></div>
+                                            <div className="popup-close"><i className="fa fa-close" /></div>
                                         </div>
-                                        <div id="regis-popup" className="login-popup registration-form contact-form">
+                                        <div className="login-popup registration-form contact-form">
                                             <h4>Create Account</h4>
                                             <form action="#">
                                                 <div className="row">
@@ -176,11 +103,11 @@ function Payment() {
                                                         <button className="krishok-btn">Create Account</button>
                                                     </div>
                                                     <div className="col-sm-12">
-                                                        <p>Already Have an Account ?  <a onClick={loginClick} href="#" className="login-form-show">Login Now</a></p>
+                                                        <p>Already Have an Account ?  <a href="#" className="login-form-show">Login Now</a></p>
                                                     </div>
                                                 </div>
                                             </form>
-                                            <div onClick={closeClick} className="popup-close"><i className="fa fa-close" /></div>
+                                            <div className="popup-close"><i className="fa fa-close" /></div>
                                         </div>
                                     </li>
                                 </ul>
@@ -188,39 +115,62 @@ function Payment() {
                         </div>
                     </div>
                 </div>
-            </header > {/* header area end */}
+            </header>{/* header area end */}
+            {/* menu area start */}
+            <div className="menubar">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-2 col-sm-6">
+                            <div className="logo">
+                                <a href="index.html"><img src="assets/img/logo.png" alt="logo" /></a>
+                            </div>
+                        </div>
+                        <div className="col-md-10 col-sm-6">
+                            <div className="responsive-menu" />
+                            <div className="mainmenu">
+                                <ul id="primary-menu">
+                                    <li className="active"><a href="index.html">Home</a></li>
+                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="products.html">Products</a></li>
+                                    <li><a href="#">Pages <i className="fa fa-angle-down" /></a>
+                                        <ul>
+                                            <li><a href="faq.html">FAQ</a></li>
+                                            <li><a href="gallery.html">Gallery</a></li>
+                                            <li><a href="cart.html">Cart</a></li>
+                                            <li><a href="checkout.html">Checkout</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="contact-us.html">Contact</a></li>
+                                    <li>
+                                        <button type="submit" className="toggle-pade">
+                                            <i className="fa fa-search" />
+                                        </button>
+                                        <form className="navbar-form form-box" role="search">
+                                            <input type="text" placeholder="Search" />
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>{/* menu area end */}
+
+            <section>
+                <div>
+
+                </div>
+            </section>
+
+            {/* footer area start */}
             <div class="system-footer">
                 <p>Hệ thống đi chợ thuê - bản quyền thuộc nhóm phát triển R7</p>
             </div>
             {/* footer area end */}
-            {/* jquery main JS */}
-            {/* Poppers JS */}
-            {/* Bootstrap JS */}
-            {/* slicknav JS */}
-            {/* owl carousel JS */}
-            {/* Isotope JS */}
-            {/* Bx slider JS */}
-            {/* lightbox JS */}
-            {/* Wow JS */}
-            {/* Google map api */}
-            {/* Imagezoom JS */}
-            {/* main JS */}
-            <Helmet>
-                <script src="assets/js/jquery.min.js"></script>
-                <script src="assets/js/popper.min.js"></script>
-                <script src="assets/js/bootstrap.min.js"></script>
-                <script src="assets/js/jquery.slicknav.min.js"></script>
-                <script src="assets/js/owl.carousel.min.js"></script>
-                <script src="assets/js/isotope-3.0.4.min.js"></script>
-                <script src="assets/js/jquery.bxslider.min.js"></script>
-                <script src="assets/js/lightbox.min.js"></script>
-                <script src="assets/js/wow-1.3.0.min.js"></script>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXNQbOV3ZGoxAQ_H2FtRAS_i9yOdZFfBo&region=GB"></script>
-                <script src="assets/js/jquery.imagezoom.js"></script>
-                <script src="assets/js/main.js"></script>
-            </Helmet>
         </div>
+
     );
 }
 
-export default Payment;
+export default ShipperHome

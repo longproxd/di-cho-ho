@@ -84,10 +84,12 @@ function Home() {
                                     <li><a href="/"><img className='logo-img' src={logo} alt="logo" /></a></li>
                                     <li><a href="#"><i className="fa fa-phone" />0123 4567 8913</a></li>
                                     <li><a href="#"><i className="fa fa-envelope" />example@gmail.com</a></li>
-                                    <li>
+                                    <li id="li-nearlast">
                                         <form className="form-search" role="search">
                                             <input type="text" placeholder="Tìm cửa hàng" />
                                         </form>
+                                    </li>
+                                    <li>
                                         <button type="submit" className="toggle-pade">
                                             <i className="fa fa-search" />
                                         </button>
@@ -189,7 +191,7 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </header>{/* header area end */}
+            </header > {/* header area end */}
             {/* menu area start */}
             <div className="menubar">
                 <div className="container">
@@ -212,7 +214,6 @@ function Home() {
                             <div className="hero-area-content ptb-80">
                                 <h1>A Place of All Organic Products</h1>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-                                <a href="$" className="krishok-btn">Shop Now <i className="fa fa-shopping-cart" /></a>
                             </div>
                         </div>
                     </div>
@@ -248,98 +249,50 @@ function Home() {
                     <div className="row product-item">
                         <div className="col-lg-3 col-sm-6 new other">
                             <div className="sell-item max-width-360">
-                                <div className="product-img">
-                                    <img src="assets/img/main-product/5.jpg" alt="" />
-                                    <div className="product-img-overlay">
-                                        <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
-                                    </div>
-                                </div>
-                                <p><a href="product-details">Product Name</a></p>
-                                <h5>$50.00</h5>
+                                <p><a href="store-details">Tên Cửa Hàng</a></p>
+                                <h5>Địa Chỉ</h5>
                             </div>
                         </div>
                         <div className="col-lg-3 col-sm-6 best seasonal">
                             <div className="sell-item max-width-360">
-                                <div className="product-img">
-                                    <img src="assets/img/main-product/6.jpg" alt="" />
-                                    <div className="product-img-overlay">
-                                        <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
-                                    </div>
-                                </div>
-                                <p><a href="product-details">Product Name</a></p>
-                                <h5>$50.00</h5>
+                            <p><a href="store-details">Tên Cửa Hàng</a></p>
+                                <h5>Địa Chỉ</h5>
                             </div>
                         </div>
-                        <div className="col-lg-3 col-sm-6 other">
+                        <div className="col-lg-3 col-sm-6 new other">
                             <div className="sell-item max-width-360">
-                                <div className="product-img">
-                                    <img src="assets/img/main-product/7.jpg" alt="" />
-                                    <div className="product-img-overlay">
-                                        <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
-                                    </div>
-                                </div>
-                                <p><a href="product-details">Product Name</a></p>
-                                <h5>$50.00</h5>
+                                <p><a href="store-details">Tên Cửa Hàng</a></p>
+                                <h5>Địa Chỉ</h5>
                             </div>
                         </div>
-                        <div className="col-lg-3 col-sm-6 new best">
+                        <div className="col-lg-3 col-sm-6 new other">
                             <div className="sell-item max-width-360">
-                                <div className="product-img">
-                                    <img src="assets/img/main-product/8.jpg" alt="" />
-                                    <div className="product-img-overlay">
-                                        <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
-                                    </div>
-                                </div>
-                                <p><a href="product-details">Product Name</a></p>
-                                <h5>$50.00</h5>
+                                <p><a href="store-details">Tên Cửa Hàng</a></p>
+                                <h5>Địa Chỉ</h5>
                             </div>
                         </div>
-                        <div className="col-lg-3 col-sm-6 other seasonal">
+                        <div className="col-lg-3 col-sm-6 new other">
                             <div className="sell-item max-width-360">
-                                <div className="product-img">
-                                    <img src="assets/img/main-product/9.jpg" alt="" />
-                                    <div className="product-img-overlay">
-                                        <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
-                                    </div>
-                                </div>
-                                <p><a href="product-details">Product Name</a></p>
-                                <h5>$50.00</h5>
+                                <p><a href="store-details">Tên Cửa Hàng</a></p>
+                                <h5>Địa Chỉ</h5>
                             </div>
                         </div>
-                        <div className="col-lg-3 col-sm-6 new best">
+                        <div className="col-lg-3 col-sm-6 new other">
                             <div className="sell-item max-width-360">
-                                <div className="product-img">
-                                    <img src="assets/img/main-product/10.jpg" alt="" />
-                                    <div className="product-img-overlay">
-                                        <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
-                                    </div>
-                                </div>
-                                <p><a href="product-details">Product Name</a></p>
-                                <h5>$50.00</h5>
+                                <p><a href="store-details">Tên Cửa Hàng</a></p>
+                                <h5>Địa Chỉ</h5>
                             </div>
                         </div>
-                        <div className="col-lg-3 col-sm-6 seasonal">
+                        <div className="col-lg-3 col-sm-6 new other">
                             <div className="sell-item max-width-360">
-                                <div className="product-img">
-                                    <img src="assets/img/main-product/11.jpg" alt="" />
-                                    <div className="product-img-overlay">
-                                        <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
-                                    </div>
-                                </div>
-                                <p><a href="product-details">Product Name</a></p>
-                                <h5>$50.00</h5>
+                                <p><a href="store-details">Tên Cửa Hàng</a></p>
+                                <h5>Địa Chỉ</h5>
                             </div>
                         </div>
-                        <div className="col-lg-3 col-sm-6 best">
+                        <div className="col-lg-3 col-sm-6 new other">
                             <div className="sell-item max-width-360">
-                                <div className="product-img">
-                                    <img src="assets/img/main-product/12.jpg" alt="" />
-                                    <div className="product-img-overlay">
-                                        <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
-                                    </div>
-                                </div>
-                                <p><a href="product-details.html">Product Name</a></p>
-                                <h5>$50.00</h5>
+                                <p><a href="store-details">Tên Cửa Hàng</a></p>
+                                <h5>Địa Chỉ</h5>
                             </div>
                         </div>
                     </div>
@@ -357,26 +310,10 @@ function Home() {
                     </div>
                 </div>
             </section>{/* shopping product area end */}
-            {/* product area start */}
-            {/* product area end */}
-            {/* sell area start */}
-            {/* sell area end */}
-            {/* get quote area start */}
-            {/* get quote area end */}
             {/* footer area start */}
-            <footer className="site-footer pt-75">
-                <div className="footer-bottom-bg ptb-20">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="footer-bottom">
-                                    <p>Hệ thống đi chợ thuê - bản quyền thuộc nhóm phát triển R7</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <div class="system-footer">
+                <p>Hệ thống đi chợ thuê - bản quyền thuộc nhóm phát triển R7</p>
+            </div>
             {/* footer area end */}
             {/* jquery main JS */}
             {/* Poppers JS */}
@@ -405,7 +342,7 @@ function Home() {
                 <script src="assets/js/main.js"></script>
             </Helmet>
 
-        </div>
+        </div >
     );
 }
 

@@ -263,6 +263,13 @@ header.header-area .header-left-content ul {
 header.header-area .header-left-content li:last-child {
     border: 0;
 }
+header.header-area .header-left-content li:last-child button {
+    border: 0;
+}
+#li-nearlast {
+    border: 0;
+    margin-right: -40px;
+}
 header.header-area .header-left-content li i {
     margin-right: 6px;
 }
@@ -276,11 +283,7 @@ header.header-area .header-left-content .form-search input {
     height: 30px;
     background: white;
 }
-header.header-area .header-left-content li button {
-    position: absolute;
-    top: 5px;
-    left: 105vh;
-}
+
 header.header-area .header-right-content li {
     padding-left: 15px;
     border-left: 1px solid #ddd;
@@ -890,6 +893,7 @@ a.slicknav_item.slicknav_row {
     display: inline-block;
     width: 100%;
 }
+
 h5.widget-title {
     margin-bottom: 30px;
     display: inline-block;
@@ -940,22 +944,6 @@ h5.widget-title:hover::before,
     width: 31%;
     margin: 0 1% 2%;
     float: left;
-}
-.footer-bottom-bg {
-    background: #3f7d20;
-}
-.footer-bottom {
-    color: #fff;
-    text-align: center;
-    font-size: 12px;
-
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 .footer-container {
@@ -2027,3 +2015,26 @@ blockquote:before {
 /*--------------------------------------
 ------- PRE LOADER STYING CSS END ------
 ---------------------------------------*/
+
+.system-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #3f7d20;
+    color: white;
+    text-align: center;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
+}

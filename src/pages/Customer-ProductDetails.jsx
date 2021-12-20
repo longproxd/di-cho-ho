@@ -5,6 +5,27 @@ import fbIcon from '../assets/img/facebook.svg';
 import zaloIcon from '../assets/img/zalo.svg';
 
 function ProductDetails() {
+    function loginClick(event) {
+        event.preventDefault()
+
+        document.getElementById("login-form-popup").style.display = "block"
+        document.getElementById("regis-popup").style.display = "none"
+    }
+
+    function RegisClick(event) {
+        event.preventDefault()
+
+        document.getElementById("login-form-popup").style.display = "none"
+        document.getElementById("regis-popup").style.display = "block"
+    }
+
+    function closeClick(event) {
+        event.preventDefault()
+
+        document.getElementById("login-form-popup").style.display = "none"
+        document.getElementById("regis-popup").style.display = "none"
+    }
+
     return (
         <div>
             {/* Page loader */}
@@ -19,10 +40,12 @@ function ProductDetails() {
                                     <li><a href="/"><img className='logo-img' src={logo} alt="logo" /></a></li>
                                     <li><a href="#"><i className="fa fa-phone" />0123 4567 8913</a></li>
                                     <li><a href="#"><i className="fa fa-envelope" />example@gmail.com</a></li>
-                                    <li>
+                                    <li id="li-nearlast">
                                         <form className="form-search" role="search">
-                                            <input type="text" placeholder="Tìm cửa hàng" />
+                                            <input type="text" placeholder="Tìm sản phẩm" />
                                         </form>
+                                    </li>
+                                    <li>
                                         <button type="submit" className="toggle-pade">
                                             <i className="fa fa-search" />
                                         </button>
@@ -33,15 +56,9 @@ function ProductDetails() {
                         <div className="col-md-5">
                             <div className="header-right-content">
                                 <ul>
-                                    <li>
-                                        <select>
-                                            <option value="En">En</option>
-                                            <option value="Bd">Bd</option>
-                                        </select>
-                                    </li>
                                     <li><a href="/cart" className="krishok-cart"><i className="fa fa-shopping-cart" /> <span>3</span></a></li>
-                                    <li><a href="#" className="popup-show">Login</a>
-                                        <div className="login-popup login-form contact-form">
+                                    <li><a onClick={loginClick} href="#" className="popup-show">Login</a>
+                                        <div id="login-form-popup" className="login-popup login-form contact-form">
                                             <h4>Login</h4>
                                             <form action="#">
                                                 <div className="row">
@@ -79,13 +96,13 @@ function ProductDetails() {
                                                         <a href="#" className="login-with"><i className="fa fa-twitter" /></a>
                                                     </div>
                                                     <div className="col-sm-12 mt-30">
-                                                        <p>Don’t Have an Account ? <a href="#" className="registration-form-show">Create Now</a></p>
+                                                        <p>Don’t Have an Account ? <a onClick={RegisClick} href="#" className="registration-form-show">Create Now</a></p>
                                                     </div>
                                                 </div>
                                             </form>
-                                            <div className="popup-close"><i className="fa fa-close" /></div>
+                                            <div onClick={closeClick} className="popup-close"><i className="fa fa-close" /></div>
                                         </div>
-                                        <div className="login-popup registration-form contact-form">
+                                        <div id="regis-popup" className="login-popup registration-form contact-form">
                                             <h4>Create Account</h4>
                                             <form action="#">
                                                 <div className="row">
@@ -118,11 +135,11 @@ function ProductDetails() {
                                                         <button className="krishok-btn">Create Account</button>
                                                     </div>
                                                     <div className="col-sm-12">
-                                                        <p>Already Have an Account ?  <a href="#" className="login-form-show">Login Now</a></p>
+                                                        <p>Already Have an Account ?  <a onClick={loginClick} href="#" className="login-form-show">Login Now</a></p>
                                                     </div>
                                                 </div>
                                             </form>
-                                            <div className="popup-close"><i className="fa fa-close" /></div>
+                                            <div onClick={closeClick} className="popup-close"><i className="fa fa-close" /></div>
                                         </div>
                                     </li>
                                 </ul>
@@ -130,7 +147,7 @@ function ProductDetails() {
                         </div>
                     </div>
                 </div>
-            </header>{/* header area end */}
+            </header > {/* header area end */}
             {/* menu area start */}
             <div className="menubar">
                 <div className="container">
@@ -243,21 +260,10 @@ function ProductDetails() {
                     </div>
                 </div>
             </section>{/* product detail area end */}
-            
-            {/* footer area start */}
-            <footer className="site-footer pt-75">
-                <div className="footer-bottom-bg ptb-20">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="footer-bottom">
-                                    <p>Hệ thống đi chợ thuê - bản quyền thuộc nhóm phát triển R7</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>{/* footer area end */}
+
+            <div class="system-footer">
+                <p>Hệ thống đi chợ thuê - bản quyền thuộc nhóm phát triển R7</p>
+            </div>
         </div>
     );
 }

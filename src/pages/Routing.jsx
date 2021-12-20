@@ -7,6 +7,7 @@ import Cart from './Customer-Cart';
 import CustomerCheckOut from './Customer-CheckOut';
 import Payment from './Customer-Payment';
 // import CustomerCheckOut from './pages/Customer-CheckOut';
+import ShipperHome from './Shipper-Home'
 
 function Routing() {
     return (
@@ -18,6 +19,8 @@ function Routing() {
             <Route path="/payment" element={<Payment /> } />
             <Route path="/products" element={<Products />} />
             <Route path="/product-details" element={<ProductDetails />} />
+
+            <Route path="/shipper-home" exact element={<ShipperHome />} />
         </Routes>
 
     )

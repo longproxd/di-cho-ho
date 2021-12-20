@@ -86,10 +86,12 @@ export default class StoreDetail extends Component {
                                         <li><a href="/"><img className='logo-img' src={logo} alt="logo" /></a></li>
                                         <li><a href="#"><i className="fa fa-phone" />0123 4567 8913</a></li>
                                         <li><a href="#"><i className="fa fa-envelope" />example@gmail.com</a></li>
-                                        <li>
+                                        <li id="li-nearlast">
                                             <form className="form-search" role="search">
-                                                <input type="text" placeholder="Tìm cửa hàng" />
+                                                <input type="text" placeholder="Tìm sản phẩm" />
                                             </form>
+                                        </li>
+                                        <li>
                                             <button type="submit" className="toggle-pade">
                                                 <i className="fa fa-search" />
                                             </button>
@@ -191,7 +193,7 @@ export default class StoreDetail extends Component {
                             </div>
                         </div>
                     </div>
-                </header>{/* header area end */}
+                </header > {/* header area end */}
                 {/* menu area start */}
                 <div className="menubar2">
                     <div className="container">
@@ -207,6 +209,132 @@ export default class StoreDetail extends Component {
                 </div>{/* menu area end */}
                 {/* hero area start */}
                 {/* hero area end */}
+                {/* shopping product area start */}
+                <section className="shopping-product ptb-80">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-10 offset-lg-1">
+                                <div className="shopping-product-menu max-width-360">
+                                    <ul>
+                                        <li data-filter="*" className="active">All</li>
+                                        <li data-filter=".new">Combo</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row product-item">
+                            <div className="col-lg-3 col-sm-6 new other">
+                                <div className="sell-item max-width-360">
+                                    <div className="product-img">
+                                        <img src="assets/img/main-product/5.jpg" alt="" />
+                                        <div className="product-img-overlay">
+                                            <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
+                                        </div>
+                                    </div>
+                                    <p><a href="product-details">Product Name</a></p>
+                                    <h5>$50.00</h5>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-sm-6 best seasonal">
+                                <div className="sell-item max-width-360">
+                                    <div className="product-img">
+                                        <img src="assets/img/main-product/6.jpg" alt="" />
+                                        <div className="product-img-overlay">
+                                            <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
+                                        </div>
+                                    </div>
+                                    <p><a href="product-details">Product Name</a></p>
+                                    <h5>$50.00</h5>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-sm-6 other">
+                                <div className="sell-item max-width-360">
+                                    <div className="product-img">
+                                        <img src="assets/img/main-product/7.jpg" alt="" />
+                                        <div className="product-img-overlay">
+                                            <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
+                                        </div>
+                                    </div>
+                                    <p><a href="product-details">Product Name</a></p>
+                                    <h5>$50.00</h5>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-sm-6 new best">
+                                <div className="sell-item max-width-360">
+                                    <div className="product-img">
+                                        <img src="assets/img/main-product/8.jpg" alt="" />
+                                        <div className="product-img-overlay">
+                                            <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
+                                        </div>
+                                    </div>
+                                    <p><a href="product-details">Product Name</a></p>
+                                    <h5>$50.00</h5>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-sm-6 other seasonal">
+                                <div className="sell-item max-width-360">
+                                    <div className="product-img">
+                                        <img src="assets/img/main-product/9.jpg" alt="" />
+                                        <div className="product-img-overlay">
+                                            <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
+                                        </div>
+                                    </div>
+                                    <p><a href="product-details">Product Name</a></p>
+                                    <h5>$50.00</h5>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-sm-6 new best">
+                                <div className="sell-item max-width-360">
+                                    <div className="product-img">
+                                        <img src="assets/img/main-product/10.jpg" alt="" />
+                                        <div className="product-img-overlay">
+                                            <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
+                                        </div>
+                                    </div>
+                                    <p><a href="product-details">Product Name</a></p>
+                                    <h5>$50.00</h5>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-sm-6 seasonal">
+                                <div className="sell-item max-width-360">
+                                    <div className="product-img">
+                                        <img src="assets/img/main-product/11.jpg" alt="" />
+                                        <div className="product-img-overlay">
+                                            <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
+                                        </div>
+                                    </div>
+                                    <p><a href="product-details">Product Name</a></p>
+                                    <h5>$50.00</h5>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-sm-6 best">
+                                <div className="sell-item max-width-360">
+                                    <div className="product-img">
+                                        <img src="assets/img/main-product/12.jpg" alt="" />
+                                        <div className="product-img-overlay">
+                                            <a href="#" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
+                                        </div>
+                                    </div>
+                                    <p><a href="product-details.html">Product Name</a></p>
+                                    <h5>$50.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-12">
+                                <ul className="pagination">
+                                    <li><a href="#"><i className="fa fa-angle-left" /></a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li className="active"><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#"><i className="fa fa-angle-right" /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>{/* shopping product area end */}
+{/************************************************************************************************************************************************* ****/}
                 {/* shopping product area start */}
                 <section className="shopping-product ptb-80">
                     <div className="container">
@@ -339,19 +467,9 @@ export default class StoreDetail extends Component {
                 </section>{/* shopping product area end */}
 
                 {/* footer area start */}
-                <footer className="site-footer pt-75">
-                    <div className="footer-bottom-bg ptb-20">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-12">
-                                    <div className="footer-bottom">
-                                        <p>Hệ thống đi chợ thuê - bản quyền thuộc nhóm phát triển R7</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+                <div class="system-footer">
+                    <p>Hệ thống đi chợ thuê - bản quyền thuộc nhóm phát triển R7</p>
+                </div>
                 {/* footer area end */}
                 {/* jquery main JS */}
                 {/* Poppers JS */}
