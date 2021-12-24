@@ -18,7 +18,7 @@ export default class Product extends Component {
 
     render() {
         return (
-            <div>
+            <body>
                 <header className="header-area ptb-15">
                     <div className="container">
                         <div className="row">
@@ -59,7 +59,7 @@ export default class Product extends Component {
                             <div className="col-lg-8 offset-lg-2">
                                 <div className="hero-area-content">
                                     <h1>Nơi Mua Sắm Đáng Tin Cậy</h1>
-                                    <p>DiChoHo được xây dựng trong bối cảnh đại dịch COVID-19 nhằm tối ưu hoá quy trình đăng ký mua hàng, giao nhận hàng hoá, tạo sự tiện lợi và đơn giản hơn cho người dân trong thời điểm dịch bệnh. Hệ thống hỗ trợ tối đa sự liên kết giữa người dân và các cửa hàng, siêu thị, để đảm bảo thực phẩm được cung cấp đầy đủ, giá cả hợp lí.
+                                    <p>Đi Chợ Hộ được xây dựng trong bối cảnh đại dịch COVID-19 nhằm tối ưu hoá quy trình đăng ký mua hàng, giao nhận hàng hoá, tạo sự tiện lợi và đơn giản hơn cho người dân trong thời điểm dịch bệnh. Hệ thống hỗ trợ tối đa sự liên kết giữa người dân và các cửa hàng, siêu thị, để đảm bảo thực phẩm luôn được cung cấp đầy đủ, giá cả hợp lí.
                                     </p>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@ export default class Product extends Component {
                         </div>
                     </div>
                 </section>
-            </div >
+            </body>
         );
     }
 }
