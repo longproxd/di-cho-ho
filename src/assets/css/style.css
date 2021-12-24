@@ -67,7 +67,7 @@ a:hover {
 }
 img {
     max-width: 100%;
-    height: 90%;
+    height: 100%;
 }
 iframe {
     width: 100%;
@@ -302,7 +302,7 @@ header.header-area .header-right-content li:first-child {
 .header-right-content {
     float: right;
     position: relative;
-    height: 90%;
+    height: 100%;
 }
 .header-right-content option {
     background: #000000;
@@ -499,7 +499,7 @@ a.slicknav_item.slicknav_row {
     box-shadow: none;
     border: 0;
     left: 0;
-    height: 90% !important;
+    height: 100% !important;
 }
 .item-thumbnail
  .list-thumb {
@@ -507,17 +507,17 @@ a.slicknav_item.slicknav_row {
 }
 .item-thumbnail
  .list-thumb img {
-    height: 90%;
+    height: 100%;
 }
 .item-thumbnail a.active .list-thumb {
     border: 2px solid #77bb17;
     box-shadow: 0 0 5px #77bb17;
 }
 .image-slider img {
-    height: 90%;
+    height: 100%;
 }
 .item-slider {
-    height: 90%;
+    height: 100%;
 }
 .item-content {
     height: inherit;
@@ -652,7 +652,7 @@ a.slicknav_item.slicknav_row {
     width: 80%;
     float: left;
     display: table;
-    height: 90%;
+    height: 100%;
     transition: 0.3s;
 }
 .product-list-info-table {
@@ -743,7 +743,7 @@ a.slicknav_item.slicknav_row {
     margin: auto;
     text-align: center;
     width: 100%;
-    height: 90%;
+    height: 100%;
     background: rgba(20,20,20,0.7);
 	transform: scaleY(0);
 	transition: 0.3s;
@@ -796,7 +796,7 @@ a.slicknav_item.slicknav_row {
     top: 0;
     left: 0;
     width: 100%;
-    height: 90%;
+    height: 100%;
     position: absolute;
     z-index: -1;
     opacity: 0.7;
@@ -823,7 +823,7 @@ a.slicknav_item.slicknav_row {
     content: "";
     position: absolute;
     width: 100%;
-    height: 90%;
+    height: 100%;
     left: 0;
     top: 0;
     z-index: -1;
@@ -973,7 +973,7 @@ h5.widget-title:hover::before,
 }
 .theme2.hero-area::before {
     width: 100%;
-    height: 90%;
+    height: 100%;
     top: 0;
 }
 .all-product {
@@ -994,7 +994,7 @@ h5.widget-title:hover::before,
     cursor: pointer;
 }
 .all-product .dropdowns-select select {
-    height: 90%;
+    height: 100%;
     border-radius: 30px;
     padding: 15px 40px 15px 15px;
 	border: 0;
@@ -1105,7 +1105,7 @@ h5.widget-title:hover::before,
     left: 0;
     opacity: 0.9;
     width: 100%;
-    height: 90%;
+    height: 100%;
     background: #497c28;
     z-index: -1;
 }
@@ -1241,7 +1241,7 @@ h5.widget-title:hover::before,
 .hero-area.theme-3::before {
     width: 70%;
     top: 0;
-    height: 90%;
+    height: 100%;
 }
 .hero-area-theme-3 {
     position: absolute;
@@ -1253,7 +1253,7 @@ h5.widget-title:hover::before,
 .hero-area-theme-3.theme-3_1 {
     background-image: url(../img/slide-bg-5.jpg);
     width: 70%;
-    height: 90%;
+    height: 100%;
     top: 0;
     left: 0;
 }
@@ -1389,7 +1389,7 @@ h5.widget-title:hover::before,
     top: 0;
     left: 0;
     width: 100%;
-    height: 90%;
+    height: 100%;
     text-align: center;
     padding-top: 45%;
     background: rgba(20,20,20,0.7);
@@ -1537,7 +1537,7 @@ h5.widget-title:hover::before,
     left: 0;
     top: 0;
     width: 3px;
-    height: 90%;
+    height: 100%;
     background: #77bb17;
     content: "";
 }
@@ -1980,7 +1980,7 @@ blockquote:before {
     top: 0;
     z-index: 988899;
     width: 100%;
-    height: 90%;
+    height: 100%;
     overflow: visible;
     background: #fff url('../img/loader.gif') no-repeat center center;
 }
