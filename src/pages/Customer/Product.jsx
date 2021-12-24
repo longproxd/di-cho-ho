@@ -89,7 +89,7 @@ export default class Product extends Component {
                                         <div className="product-img">
                                             <img src={MatHang.hinh_anh} alt="" />
                                             <div className="product-img-overlay">
-                                                <a href="/cart" className="krishok-btn">Add to cart <i className="fa fa-shopping-cart" /></a>
+                                                <a href="/cart" className="krishok-btn">THÊM VÀO GIỎ HÀNG<i className="fa fa-shopping-cart" /></a>
                                             </div>
                                         </div>
                                         <p><a href="/">{MatHang.ten_mat_hang}</a></p>

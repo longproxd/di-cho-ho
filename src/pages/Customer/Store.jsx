@@ -2,9 +2,10 @@ import logo from '../../assets/img/logo.png';
 import axios from 'axios';
 import { Component } from 'react';
 
-export default class Product extends Component {
+export default class Store extends Component {
     state = {
-        MatHang: []
+        MatHang: [],
+        CuaHang: []
     }
 
     componentDidMount() {
@@ -12,6 +13,13 @@ export default class Product extends Component {
             .then(res => {
                 const MatHang = res.data;
                 this.setState({ MatHang });
+            })
+            .catch(error => console.log(error));
+
+        axios.get('https://localhost:8001/api/CuaHang')
+            .then(res => {
+                const CuaHang = res.data;
+                this.setState({ CuaHang });
             })
             .catch(error => console.log(error));
     }
@@ -53,63 +61,40 @@ export default class Product extends Component {
                     </div >
                 </header >
 
-                <section class="product pt-75" style={{ background: "#fff" }}>
-                    <div class="container">
-                        {this.state.MatHang.slice(0, 1).map(MatHang =>
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="carousel slide" data-ride="carousel" id="quote-carousel">
-                                        <div class="carousel-inner">
-                                            <div class="item active carousel-item">
-                                                <div class="item-carousel-wrap zoom">
-                                                    <img src={MatHang.hinh_anh} alt="product-details" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-7">
-                                    <div class="product-details-content pb-75">
-                                        <div class="product-details-left">
-                                            <div class="product-details-title">
-                                                <h3>{MatHang.ten_mat_hang}</h3>
-                                            </div>
-                                            <div class="product-details-price">
-                                                <p>Giá bán: {MatHang.gia_ban} vnd</p>
-                                            </div>
-                                            <div class="review-star">
-                                                <p>Mã cửa hàng: {MatHang.ma_cua_hang}</p>
-                                            </div>
-                                            <div class="product-details-category">
-                                                <p>Khối lượng: {MatHang.khoi_luong} kg</p>
-                                                <p>Số lượng tồn: {MatHang.so_luong_ton}</p>
-                                            </div>
-                                        </div>
-                                        <div class="product-details-btn">
-                                            <a href="/cart" class="krishok-btn">THÊM VÀO GIỎ HÀNG<i class="fa fa-shopping-cart"></i></a>
-                                        </div>
+                {this.state.CuaHang.slice(0, 1).map(CuaHang =>
+                    <section className="theme2 hero-area ptb-80" style={{ background: "transparent", padding: "0" }}>
+                        <img src={CuaHang.hinh_anh} alt="" style={{ width: "100%", height: "330px" }} />
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-lg-8 offset-lg-2">
+                                    <div className="hero-area-content">
+                                        <h1>{CuaHang.ten_cua_hang}</h1>
                                     </div>
                                 </div>
                             </div>
-                        )}
-                    </div>
-                </section>
+                        </div>
+                    </section >
+                )}
 
-                <section class="ptb-80" style={{ background: "#f9f9f9" }}>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="sec-title mb-30">
-                                    <h2>Những sản phẩm tương tự</h2>
+                <section className="shopping-product ptb-80">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-10 offset-lg-1">
+                                <div className="shopping-product-menu max-width-360">
+                                    <ul>
+                                        <li data-filter="*" className="active">Tất Cả Mặt Hàng</li>
+                                        &nbsp;
+                                        <li data-filter=".combo">Combo Mặt Hàng</li>
+                                        &nbsp;
+                                    </ul>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row">
-                            {this.state.MatHang.slice(0, 4).map(MatHang =>
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="sell-item max-width-360 mt-30">
+                        <div className="row product-item">
+                            {this.state.MatHang.slice(0, 7).map(MatHang =>
+                                <div className="col-lg-3 col-sm-6 MatHang">
+                                    <div className="sell-item max-width-360">
                                         <div className="product-img">
                                             <img src={MatHang.hinh_anh} alt="" />
                                             <div className="product-img-overlay">
