@@ -67,7 +67,7 @@ a:hover {
 }
 img {
     max-width: 100%;
-    height: 100%;
+    height: 90%;
 }
 iframe {
     width: 100%;
@@ -281,7 +281,7 @@ header.header-area .header-right-content-cart li i{
 
 header.header-area .header-right-content-cart{
     /* width: 100%;
-    height: 100%; */
+    height: 90%; */
     padding-top:10px;
 }
 
@@ -302,7 +302,7 @@ header.header-area .header-right-content li:first-child {
 .header-right-content {
     float: right;
     position: relative;
-    height: 100%;
+    height: 90%;
 }
 .header-right-content option {
     background: #000000;
@@ -499,7 +499,7 @@ a.slicknav_item.slicknav_row {
     box-shadow: none;
     border: 0;
     left: 0;
-    height: 100% !important;
+    height: 90% !important;
 }
 .item-thumbnail
  .list-thumb {
@@ -507,17 +507,17 @@ a.slicknav_item.slicknav_row {
 }
 .item-thumbnail
  .list-thumb img {
-    height: 100%;
+    height: 90%;
 }
 .item-thumbnail a.active .list-thumb {
     border: 2px solid #77bb17;
     box-shadow: 0 0 5px #77bb17;
 }
 .image-slider img {
-    height: 100%;
+    height: 90%;
 }
 .item-slider {
-    height: 100%;
+    height: 90%;
 }
 .item-content {
     height: inherit;
@@ -652,7 +652,7 @@ a.slicknav_item.slicknav_row {
     width: 80%;
     float: left;
     display: table;
-    height: 100%;
+    height: 90%;
     transition: 0.3s;
 }
 .product-list-info-table {
@@ -743,7 +743,7 @@ a.slicknav_item.slicknav_row {
     margin: auto;
     text-align: center;
     width: 100%;
-    height: 100%;
+    height: 90%;
     background: rgba(20,20,20,0.7);
 	transform: scaleY(0);
 	transition: 0.3s;
@@ -796,7 +796,7 @@ a.slicknav_item.slicknav_row {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 90%;
     position: absolute;
     z-index: -1;
     opacity: 0.7;
@@ -823,7 +823,7 @@ a.slicknav_item.slicknav_row {
     content: "";
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 90%;
     left: 0;
     top: 0;
     z-index: -1;
@@ -973,7 +973,7 @@ h5.widget-title:hover::before,
 }
 .theme2.hero-area::before {
     width: 100%;
-    height: 100%;
+    height: 90%;
     top: 0;
 }
 .all-product {
@@ -994,7 +994,7 @@ h5.widget-title:hover::before,
     cursor: pointer;
 }
 .all-product .dropdowns-select select {
-    height: 100%;
+    height: 90%;
     border-radius: 30px;
     padding: 15px 40px 15px 15px;
 	border: 0;
@@ -1105,7 +1105,7 @@ h5.widget-title:hover::before,
     left: 0;
     opacity: 0.9;
     width: 100%;
-    height: 100%;
+    height: 90%;
     background: #497c28;
     z-index: -1;
 }
@@ -1241,7 +1241,7 @@ h5.widget-title:hover::before,
 .hero-area.theme-3::before {
     width: 70%;
     top: 0;
-    height: 100%;
+    height: 90%;
 }
 .hero-area-theme-3 {
     position: absolute;
@@ -1253,7 +1253,7 @@ h5.widget-title:hover::before,
 .hero-area-theme-3.theme-3_1 {
     background-image: url(../img/slide-bg-5.jpg);
     width: 70%;
-    height: 100%;
+    height: 90%;
     top: 0;
     left: 0;
 }
@@ -1389,7 +1389,7 @@ h5.widget-title:hover::before,
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 90%;
     text-align: center;
     padding-top: 45%;
     background: rgba(20,20,20,0.7);
@@ -1537,7 +1537,7 @@ h5.widget-title:hover::before,
     left: 0;
     top: 0;
     width: 3px;
-    height: 100%;
+    height: 90%;
     background: #77bb17;
     content: "";
 }
@@ -1980,7 +1980,7 @@ blockquote:before {
     top: 0;
     z-index: 988899;
     width: 100%;
-    height: 100%;
+    height: 90%;
     overflow: visible;
     background: #fff url('../img/loader.gif') no-repeat center center;
 }
@@ -2000,6 +2000,7 @@ blockquote:before {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .col-md-7{
@@ -2038,4 +2039,151 @@ blockquote:before {
     overflow: hidden;
     overflow-y: auto;
     width: 100%;
+}
+
+/********************************************************SHIPPER***************************************************************************/
+.shipper-sidenav {
+    height: 90vh; /* Full-height: remove this if you want "auto" height */
+    width: 220px; /* Set the width of the sidebar */
+    
+    background-color: #e7e7e7b2;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    z-index: 1
+  }
+
+  /* The navigation menu links */
+.shipper-sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .shipper-sidenav a:hover {
+    color: blue;
+  }
+
+  @media screen and (max-height: 450px) {
+    .shipper-sidenav {padding-top: 15px;}
+    .shipper-sidenav a {font-size: 18px;}
+  }
+
+  /* Split the screen in half */
+.shipper-split {
+    height: 90vh;
+    width: 50%;
+    position: fixed;
+    z-index:1;
+    top: 85px;
+    left: 220px;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+#col-1 {
+    width: 37.5%;
+    height: 90vh;
+    background-color: #fbfaa7;
+    z-index: 1;
+
+  }
+  
+#col-2 {
+    width: 50%;
+    height: 90vh;
+    z-index: 1;
+
+    background-color: #88eed5;
+  }
+
+  .order-info{
+    height:80px;
+    width:620px;
+    background-color: white;
+    border:2px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+.orderdetail-link{
+    position: relative;
+    left: 480px;
+    top: -20px;
+}
+
+.orderdetail-content h2{
+    color: red;
+    position: relative;
+    left: 850px;
+    top: 30px;
+}
+
+#button-accept-order{
+    position: relative;
+    left: 700px;
+    top: 400px;
+    width: 450px;
+}
+
+.menu-item{
+    margin: 10px 10px;
+
+    border: solid 2px black;
+    border-radius: 5px;
+
+    background-color: white;
+}
+
+.menu-item__container{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(4,auto);
+    grid-template-areas: 
+    "hinh_thuc_thanh_toan tong_tien"
+    "ma_shipper dia_chi"
+    "tinh_trang ma_khach_hang"
+    "ma_cua_hang .";
+}
+
+.menu-item__container--item-1{
+    grid-area: hinh_thuc_thanh_toan;
+}
+.menu-item__container--item-2{
+    grid-area: tong_tien;
+}
+.menu-item__container--item-3{
+    grid-area: ma_shipper;
+}
+.menu-item__container--item-4{
+    grid-area: dia_chi;
+}
+.menu-item__container--item-5{
+    grid-area: tinh_trang;
+}
+.menu-item__container--item-6{
+    grid-area: ma_khach_hang;
+}
+.menu-item__container--item-7{
+    grid-area: ma_cua_hang;
+}
+
+.overflown--hiden {
+    overflow: hidden;
+}
+
+.shipper-home{
+    display: flex;
+    flex-direction: row;
+}
+.order-detail{
+    display: flex;
+    flex-direction: row;
+}
+.order-confirmation{
+    display: flex;
+    flex-direction: row;
 }

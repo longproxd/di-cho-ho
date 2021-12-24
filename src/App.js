@@ -7,6 +7,9 @@ import Footer from './components/Footer';
 import Product from './pages/Customer/Product';
 import ProductDetail from './pages/Customer/ProductDetail';
 import Store from './pages/Customer/Store';
+import ShipperHome from './pages/Shipper/Home';
+import OrderDetail from './pages/Shipper/OrderDetail';
+import OrderConfirmation from './pages/Shipper/OrderConfirmation'
 
 export default class App extends Component {
   render() {
@@ -37,6 +40,13 @@ export default class App extends Component {
             </Fragment>
           } />
 
+          <Route path='/shipper-home'  element={
+            
+              <ShipperHome />
+            
+          }  />
+          <Route path="/shipper-home/orderdetail" exact element={<OrderDetail />} />.
+          <Route path="/shipper-home/orderconfirmation" exact element={<OrderConfirmation />} />
         </Routes>
       </Router>
     );

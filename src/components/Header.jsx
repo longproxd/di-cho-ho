@@ -41,7 +41,7 @@ export default class Header extends Component {
     // }
 
     componentDidMount() {
-        axios.get('https://localhost:8001/api/KhachHang')
+        axios.get('http://localhost:8080/api/khachhang')
             .then(res => {
                 const KhachHang = res.data;
                 this.setState({ KhachHang });
@@ -59,7 +59,7 @@ export default class Header extends Component {
                                 <div className="header-left-content">
                                     <ul>
                                         <li><a href="/merchant">Kênh Người Bán</a></li>
-                                        <li><a href="/shipper">Kênh Shipper</a></li>
+                                        <li><a href="/shipper-home">Kênh Shipper</a></li>
                                     </ul>
                                 </div>
                             </div>
