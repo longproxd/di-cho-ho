@@ -7,43 +7,15 @@ Description: Krishok – Organic Food, Fruit and Vegetables Products PSD Templat
 Version: 1.0
 */
 
-/* 
-CSS Indexing
--> THEME DEFAULT CSS
-=> RESET CSS
-=> HEADER AREA CSS
-=> MENU AREA CSS
-=> HERO AREA CSS
-=> SHOPPING PRODUCT AREA CSS
-=> PRODUCT AREA CSS
-=> SELL AREA CSS
-=> CALL TO ACTION CSS
-=> FOOTER AREA CSS
-=> HOME VERSION 2 PAGE CSS
-=> PRODUCT DETAIL PAGE CSS
-=> ABOUT PAGE CSS
-=> GALLERY PAGE CSS
-=> CONTACT PAGE CSS
-=> FAQ PAGE CSS
-=> CHECKOUT PAGE CSS
-=> CARD PAGE CSS
-=> BLOG PAGE CSS
-=> BLOG DETAIL PAGE CSS
-=> LOGIN AND REGISTRATION FORM CSS
-=> PRE LOADER STYING CSS
-*/
-
 /*----------------------------
 ---------- THEME DEFAULT CSS ---------
 ----------------------------*/
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900');
-@import url('https://fonts.googleapis.com/css?family=Lora:400,700');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 body {
     line-height: 24px;
     font-size: 14px;
     color: #303030;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
 
@@ -95,7 +67,7 @@ a:hover {
 }
 img {
     max-width: 100%;
-    height: auto;
+    height: 100%;
 }
 iframe {
     width: 100%;
@@ -159,6 +131,9 @@ textarea:focus {
 }
 .ptb-15 {
     padding: 15px 0;
+}
+.ptb-15 {
+    padding: 10px 0;
 }
 .ptb-80 {
     padding: 80px 0;
@@ -258,7 +233,7 @@ header.header-area li {
     display: inline-block;
 }
 header.header-area .header-left-content ul {
-    width: 800px;
+    width: 100%;
 }
 header.header-area .header-left-content li:last-child {
     border: 0;
@@ -268,7 +243,7 @@ header.header-area .header-left-content li:last-child button {
 }
 #li-nearlast {
     border: 0;
-    margin-right: -40px;
+    width: 60%;
 }
 header.header-area .header-left-content li i {
     margin-right: 6px;
@@ -278,8 +253,9 @@ header.header-area .header-left-content li {
     border-right: 1px solid #ddd;
     margin-right: 15px;
 }
-header.header-area .header-left-content .form-search input {
-    width: 300px;
+
+.form-search input {
+    width: 100%;
     height: 30px;
     background: white;
 }
@@ -291,16 +267,24 @@ header.header-area .header-right-content li {
     position: relative;
 }
 .header-right-content li:first-child::after {
-    content: "\f107";
+    /* content: "\f107"; */
     position: absolute;
     top: 0px;
     right: 6px;
     opacity: 0.9;
     font-family: 'fontawesome';
 }
-header.header-area .header-right-content li i {
-    margin-left: 6px;
+
+header.header-area .header-right-content-cart li i{
+    font-size: 30px;
 }
+
+header.header-area .header-right-content-cart{
+    /* width: 100%;
+    height: 100%; */
+    padding-top:10px;
+}
+
 header.header-area .header-right-content li:first-child {
     border: 0;
 }
@@ -318,6 +302,7 @@ header.header-area .header-right-content li:first-child {
 .header-right-content {
     float: right;
     position: relative;
+    height: 100%;
 }
 .header-right-content option {
     background: #000000;
@@ -329,21 +314,8 @@ header.header-area .header-right-content li:first-child {
     box-shadow: 0 0 15px #bbb;
 }
 a.krishok-cart {
-    padding-right: 18px;
-    font-size: 16px;
-}
-a.krishok-cart span {
-    position: absolute;
-    text-align: center;
-    top: -5px;
-    right: 0;
-    height: 20px;
-    width: 20px;
-    line-height: 20px;
-    color: #3f7d20;
-    font-size: 13px;
-    border-radius: 50%;
-    background: #fff;
+    /* padding-right: 18px; */
+    font-size: 30px;
 }
 /*--------------------------------------
 --------- HEADER AREA CSS END ---------
@@ -356,8 +328,7 @@ a.krishok-cart span {
     padding: 30px 0;
 }
 .logo-img {
-    width: 50px;
-    height: 35px;
+    height: 50px;
 }
 .mainmenu {
     float: right;
@@ -738,7 +709,9 @@ a.slicknav_item.slicknav_row {
     font-weight: 600;
     font-size: 16px;
     color: #303030;
-    margin: 20px 0 10px;
+    margin: 20px 20px 10px 20px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .sell-item p a:hover {
 	color: #77bb17;
@@ -760,6 +733,7 @@ a.slicknav_item.slicknav_row {
 }
 .product-img {
     position: relative;
+    height: 220px;
 }
 .product-img-overlay {
     position: absolute;
@@ -994,7 +968,7 @@ h5.widget-title:hover::before,
 ---------------------------------------*/
 .theme2.hero-area {
     background: none;
-    background: url(../img/slide-bg-4.jpg) no-repeat 0 0 / cover;
+    background: url(../img/green.jpg) no-repeat 0 0 / cover;
     text-align: center;
 }
 .theme2.hero-area::before {
@@ -1061,7 +1035,7 @@ h5.widget-title:hover::before,
 }
 .product-details h4 {
     font-size: 14px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .product-details .price {
     font-weight: 300;
@@ -1122,7 +1096,7 @@ h5.widget-title:hover::before,
 }
 .product-tab h4 {
     margin-top: 18px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .product-tab::before {
     position: absolute;
@@ -1337,7 +1311,7 @@ h5.widget-title:hover::before,
     max-height: inherit;
 }
 .single-testimonial-box h5 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin-bottom: 15px;
 }
 .single-testimonial-box .review-star {
@@ -1619,9 +1593,10 @@ h5.widget-title:hover::before,
 }
 .contact-form p span {
     color: #77bb17;
+    font-weight: 600;
 }
 .contact-form-2 h4 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .select-container,
 .contact-container {
@@ -1819,7 +1794,7 @@ a.read-more i {
 .comments-area a {
 	color: #fff;
 	font-size: 12px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 700;
 }
 .blog-details .social-icon a:hover {
@@ -1900,7 +1875,7 @@ blockquote:before {
     top: 100%;
     position: absolute;
     right: 0;
-    margin-top: 15px;
+    margin-top: 10px;
     background: #fff;
     z-index: 9;
     max-width: 380px;
@@ -1909,7 +1884,6 @@ blockquote:before {
     color: #303030;
     text-align: center;
     font-size: 13px;
-    box-shadow: 0 0 7px #eee;
 }
 .login-popup .contact-container i {
     font-size: 12px;
@@ -1929,11 +1903,11 @@ blockquote:before {
     border-radius: 5px;
 }
 .login-popup.contact-form p a {
-    font-weight: 400;
+    font-weight: 600;
     color: #77bb17;
 }
 .login-popup.contact-form h4 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin-bottom: 25px;
 }
 .sign-with {
@@ -1948,7 +1922,7 @@ blockquote:before {
     vertical-align: middle;
     bottom: 0;
     margin: auto;
-    width: 30%;
+    width: 25%;
     height: 1px;
     background: #ddd;
 }
@@ -1961,6 +1935,8 @@ blockquote:before {
     display: inline-block;
     margin-left: -6px;
     margin-top: 10px;
+    pointer-events: none;
+    cursor: default;
 }
 .login-with i {
     width: 100%;
@@ -2008,16 +1984,12 @@ blockquote:before {
     overflow: visible;
     background: #fff url('../img/loader.gif') no-repeat center center;
 }
-
-.img-270x235{
-    height: 220px;
-}
 /*--------------------------------------
 ------- PRE LOADER STYING CSS END ------
 ---------------------------------------*/
 
 .system-footer {
-    position: fixed;
+    /* position: absolute; */
     left: 0;
     bottom: 0;
     width: 100%;
@@ -2028,13 +2000,42 @@ blockquote:before {
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+.col-md-7{
+    flex: 0 0 60%;
+    max-width: 60%;
+}
 
+.col-md-5{
+    flex: 0 0 40%;
+    max-width: 40%;
+}
+
+.col-md-7.two{
+    flex: 0 0 90%;
+    max-width: 90%;
+}
+
+.col-md-5.two{
+    flex: 0 0 10%;
+    max-width: 10%;
+}
+
+#birth {
+    height: 48px;
+    border: solid 1px rgb(209, 209, 209);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#birth::-webkit-calendar-picker-indicator {
+    margin-right: -5px;
+}
+
+.signup-tabs {
+    height: 270px;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 100%;
 }

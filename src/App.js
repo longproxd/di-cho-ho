@@ -1,17 +1,26 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router} from 'react-router-dom';
-import Routing from './pages/Routing';
+import { React, Component, Fragment } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
-  // eslint-disable-next-line
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-  return (
-    <Router>
-      <div>
-        <Routing />
-      </div>
-    </Router>
-  );
+import Product from './pages/Customer/Product';
+
+export default class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Routes>
+          <Route path='/' element={
+            <Fragment>
+              <Header />
+              <Product />
+              <Footer />
+            </Fragment>
+          } />
+
+        </Routes>
+      </Router>
+    );
+  }
 }
-
-export default App;
