@@ -2187,3 +2187,115 @@ blockquote:before {
     display: flex;
     flex-direction: row;
 }
+
+
+
+
+/***********************************************************************ADMIN*******************************************************/
+.admin-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #0E0D57;
+    color: white;
+    text-align: center;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.admin-header-container{
+    background-color: #0E0D57;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+}
+
+.admin-header-container h2{
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+ }
+
+.admin-header-container h4{
+    color: white;
+    text-align: center;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.logo-header-img {
+    height: 50px;
+    margin-top: 5px;
+}
+
+.logo-header {
+    margin-left: 40px;
+}
+
+.admin-sidenav {
+    height: 90vh; /* Full-height: remove this if you want "auto" height */
+    width: 200px; /* Set the width of the sidebar */
+    
+    background-color: #e7e7e7b2;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    z-index: 1
+  }
+
+  .admin-sidenav a, .admin-dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+    border: none;
+    background: none;
+    width:100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .admin-sidenav a:hover, .admin-dropdown-btn:hover {
+    color: blue;
+  }
+
+  @media screen and (max-height: 450px) {
+    .admin-sidenav {padding-top: 15px;}
+    .admin-sidenav a {font-size: 18px;}
+  }
+
+  .fa-caret-down, .fa-caret-up {
+    float: right;
+    padding-right: 15px;
+  }
+
+th, td {
+    border: black 2px solid;
+    height: 25px;
+  }
+
+.table{
+    width: 80%;
+}
+
+.useraccount-content{
+    display: flex;
+    flex-direction: row;
+}
+
+.useraccount-table{
+   width: 80vw;
+   height: 80vh;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: scroll;
+}
