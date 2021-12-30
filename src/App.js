@@ -40,11 +40,9 @@ export default class App extends Component {
             </Fragment>
           } />
 
-          <Route path='/shipper-home'  element={
-            
-              <ShipperHome />
-            
-          }  />
+          <Route path='/shipper-home' element={
+            <ShipperHome />
+          } />
           <Route path="/shipper-home/orderdetail" exact element={<OrderDetail />} />.
           <Route path="/shipper-home/orderconfirmation" exact element={<OrderConfirmation />} />
         </Routes>

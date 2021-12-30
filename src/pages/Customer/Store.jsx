@@ -9,14 +9,14 @@ export default class Store extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8080/api/mathang')
+        axios.get('https://localhost:8001/api/mathang')
             .then(res => {
                 const MatHang = res.data;
                 this.setState({ MatHang });
             })
             .catch(error => console.log(error));
 
-        axios.get('http://localhost:8080/api/cuahang')
+        axios.get('https://localhost:8001/api/cuahang')
             .then(res => {
                 const CuaHang = res.data;
                 this.setState({ CuaHang });

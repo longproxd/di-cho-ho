@@ -41,7 +41,7 @@ export default class Header extends Component {
     // }
 
     componentDidMount() {
-        axios.get('http://localhost:8080/api/khachhang')
+        axios.get('https://localhost:8001/api/khachhang')
             .then(res => {
                 const KhachHang = res.data;
                 this.setState({ KhachHang });

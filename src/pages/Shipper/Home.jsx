@@ -24,11 +24,11 @@ function ShipperHome() {
     //     "ma_cua_hang":"61b374f88dda3d67ad7c80a6"}])
     const [accountarray, Setarray] = useState([])
     useEffect(() => {
-        fetch('http://localhost:8080/api/donhang')
+        fetch('https://localhost:8001/api/donhang')
             .then(response => {
                 return response.json();
             })
-            .then(data => Setarray(data)).catch(error=>console.log(error))
+            .then(data => Setarray(data)).catch(error => console.log(error))
     }, [])
 
     // accountarray && accountarray.map((account) => {
@@ -65,11 +65,11 @@ function ShipperHome() {
             <Header />
             <div className='shipper-home'>
 
-            
-            {/* Page loader */}
-            <div id="preloader" />
-            {/* header area start */}
-            {/* <header className="header-area ptb-15">
+
+                {/* Page loader */}
+                <div id="preloader" />
+                {/* header area start */}
+                {/* <header className="header-area ptb-15">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-7">
@@ -166,43 +166,44 @@ function ShipperHome() {
                     </div>
                 </div>
             </header >  */}
-            {/* header area end */}
+                {/* header area end */}
 
-            {/*side bar start*/}
-            <div class="shipper-sidenav">
-                <a href="#trangchushipper"><i class="fa fa-fw fa-home"></i> Trang Chủ</a>
-                <a href="#lichsugiaohang"><i class="fa fa-fw fa-calendar-o"></i> Lịch Sử Giao Hàng</a>
-                <a href="#taikhoanshipper"><i class="fa fa-fw fa-user"></i> Tài Khoản</a>
-            </div>
-            {/*side bar end*/}
+                {/*side bar start*/}
+                <div class="shipper-sidenav">
+                    <a href="#trangchushipper"><i class="fa fa-fw fa-home"></i> Trang Chủ</a>
+                    <a href="#lichsugiaohang"><i class="fa fa-fw fa-calendar-o"></i> Lịch Sử Giao Hàng</a>
+                    <a href="#taikhoanshipper"><i class="fa fa-fw fa-user"></i> Tài Khoản</a>
+                </div>
+                {/*side bar end*/}
 
-            <div id="col-1">
-                <h3>Đơn hàng mới</h3>
-                {/* <div className="order-info">
+                <div id="col-1">
+                    <h3>Đơn hàng mới</h3>
+                    {/* <div className="order-info">
                     <h4> Mã Đơn</h4>
                     <h4> Địa chỉ</h4>
                     <h4> Tổng Tiền</h4>
                     <a className='orderdetail-link'> Chi Tiết Đơn Hàng</a>
                 </div> */}
-                {accountarray.length !== 0 ? accountarray.map((item)=>{
-                    return <MenuItem id={item.madh} hinh_thuc_thanh_toan={item.hinhthucthanhtoan} 
-                    tong_tien={item.tongtien} 
-                    ma_shipper={item.mashipper} 
-                    dia_chi={item.dia_chi} 
-                    tinh_trang={item.tinhtrang} 
-                    ma_khach_hang={item.makhg} 
-                    ma_cua_hang={item.mach} />}) : <div>No item available</div>
-                }
-                {/* <div className="order-info">
+                    {accountarray.length !== 0 ? accountarray.map((item) => {
+                        return <MenuItem id={item.madh} hinh_thuc_thanh_toan={item.hinhthucthanhtoan}
+                            tong_tien={item.tongtien}
+                            ma_shipper={item.mashipper}
+                            dia_chi={item.dia_chi}
+                            tinh_trang={item.tinhtrang}
+                            ma_khach_hang={item.makhg}
+                            ma_cua_hang={item.mach} />
+                    }) : <div>No item available</div>
+                    }
+                    {/* <div className="order-info">
                     <h4> Mã Đơn</h4>
                     <h4> Địa chỉ</h4>
                     <h4> Tổng Tiền</h4>
                     <a className='orderdetail-link'> Chi Tiết Đơn Hàng</a>
                 </div> */}
-            </div>
-            <div id="col-2">
-                <h3>Bản đồ khi click vào một đơn hàng</h3>
-            </div>
+                </div>
+                <div id="col-2">
+                    <h3>Bản đồ khi click vào một đơn hàng</h3>
+                </div>
             </div>
             {/* footer area start */}
             {/* <div class="system-footer">
