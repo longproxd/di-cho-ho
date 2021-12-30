@@ -9,49 +9,6 @@ import ProductDetail from './pages/Customer/ProductDetail';
 import Store from './pages/Customer/Store';
 import ShipperHome from './pages/Shipper/Home';
 import OrderDetail from './pages/Shipper/OrderDetail';
-<<<<<<< HEAD
-import OrderConfirmation from './pages/Shipper/OrderConfirmation'
-
-export default class App extends Component {
-  render() {
-    return (
-      <Router>
-        <Routes>
-          <Route path='/' element={
-            <Fragment>
-              <Header />
-              <Product />
-              <Footer />
-            </Fragment>
-          } />
-
-          <Route path='/detail' element={
-            <Fragment>
-              <Header />
-              <ProductDetail />
-              <Footer />
-            </Fragment>
-          } />
-
-          <Route path='/store' element={
-            <Fragment>
-              <Header />
-              <Store />
-              <Footer />
-            </Fragment>
-          } />
-
-          <Route path='/shipper-home' element={
-            <ShipperHome />
-          } />
-          <Route path="/shipper-home/orderdetail" exact element={<OrderDetail />} />.
-          <Route path="/shipper-home/orderconfirmation" exact element={<OrderConfirmation />} />
-        </Routes>
-      </Router>
-    );
-  }
-}
-=======
 import OrderConfirmation from './pages/Shipper/OrderConfirmation';
 
 import AdminHome from './pages/Admin/Home';
@@ -71,6 +28,7 @@ import EssentialProducts from './pages/Admin/EssentialProducts';
 import Demand from './pages/Admin/Demand';
 import RegistrationApproval from './pages/Admin/RegistrationApproval';
 import Commitment from './pages/Admin/Commitment';
+import LoginForm from './pages/Admin/LoginForm';
 
 function App() {
   return (
@@ -120,10 +78,10 @@ function App() {
         <Route path="/admin/statistic/citizendemand" exact element={<Demand />} />
         <Route path="/admin/registration_approval" exact element={<RegistrationApproval />} />
         <Route path="/admin/commitment" exact element={<Commitment />} />
+        <Route path="/admin/login" exact element={<LoginForm />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
->>>>>>> 2d746ff204d783982643c0731d9a22dfaf0022e8

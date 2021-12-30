@@ -8,7 +8,7 @@ export default class Product extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://localhost:8001/api/mathang')
+        axios.get('http://localhost:8080/api/mathang')
             .then(res => {
                 const MatHang = res.data;
                 this.setState({ MatHang });
@@ -107,7 +107,7 @@ export default class Product extends Component {
                         </div>
 
                         <div class="row">
-                            {this.state.MatHang.slice(1, 5).map(MatHang =>
+                            {this.state.MatHang.slice(0, 4).map(MatHang =>
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="sell-item max-width-360 mt-30">
                                         <div className="product-img">

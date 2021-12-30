@@ -8,7 +8,7 @@ export default class Product extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://localhost:8001/api/mathang')
+        axios.get('http://localhost:8080/api/mathang')
             .then(res => {
                 const MatHang = res.data;
                 this.setState({ MatHang });

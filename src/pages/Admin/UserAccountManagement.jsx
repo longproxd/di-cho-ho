@@ -11,23 +11,17 @@ function UserAccountManagement() {
 
                 <Sidebar />
                 <div className='useraccount-table'>
-                    <table className='table'>
-                        <tr>
-                            <th>Company</th>
-                            <th>Contact</th>
-                            <th>Country</th>
-                        </tr>
-                        <tr>
-                            <td>Alfreds Futterkiste</td>
-                            <td>Maria Anders</td>
-                            <td>Germany</td>
-                        </tr>
-                        <tr>
-                            <td>Centro comercial Moctezuma</td>
-                            <td>Francisco Chang</td>
-                            <td>Mexico</td> 
-                        </tr>
-                        
+                    <table id="table" class="table">
+                        <thead>
+                            <tr>
+                                <th> ID </th>
+                                <th> Username </th>
+                                <th> Loại Tài Khoản </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+
+                        </tbody>
                     </table>
                 </div>
             </div>

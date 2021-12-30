@@ -2299,3 +2299,62 @@ th, td {
    align-items: center;
    overflow: scroll;
 }
+
+.admin-login-container {
+    box-sizing: border-box;
+    border: 3px solid rgb(204, 204, 204);
+    max-width: 600px;
+    height: 250px;
+    border-radius: 5px;
+    margin-top: 200px;
+    margin-left: 550px;
+}
+
+.admin-login-form{
+    max-width: 500px;
+    margin: auto;
+}
+
+.admin-login-form h2{
+    margin-bottom: 10px;
+}
+
+.adminlogin-textbox {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .adminlogin-textbox .icon {
+    padding: 15px;
+    background: #0E0D57;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+  }
+  
+  .admin-textfield {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid rgb(54, 54, 54);
+  }
+  
+  .admin-textfield:focus {
+    border: 2px solid #0E0D57;
+  }
+  
+  /* Set a style for the submit button */
+  .btn {
+    background-color: #0E0D57;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .btn:hover {
+    opacity: 1;
+  }
