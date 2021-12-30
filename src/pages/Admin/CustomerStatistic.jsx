@@ -5,9 +5,7 @@ import Sidebar from '../../components/Admin-Sidebar';
 function CustomerStatistic() {
     return (
         <div>
-            <Header />
-            <Sidebar />
-            <Footer />
+            Statistic
         </div>
     );
 }
