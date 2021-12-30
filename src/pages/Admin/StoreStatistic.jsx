@@ -5,9 +5,7 @@ import Sidebar from '../../components/Admin-Sidebar';
 function StoreStatistic() {
     return (
         <div>
-            <Header />
-            <Sidebar />
-            <Footer />
+            Thống Kê Cửa Hàng
         </div>
     );
 }

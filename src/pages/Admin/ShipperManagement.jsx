@@ -5,7 +5,7 @@ import Sidebar from '../../components/Admin-Sidebar';
 function ShipperManagement() {
     return (
         <div>
-            Shipper
+            Quản Lý Danh Sách Shipper
         </div>
     );
 }

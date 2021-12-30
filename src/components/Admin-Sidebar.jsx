@@ -48,8 +48,8 @@ function Sidebar(){
                     <a href="/admin/statistic/customer">Khách Hàng</a>
                     <a href="/admin/statistic/shipper">Shipper</a>
                     <a href="/admin/statistic/store">Cửa Hàng</a>
-                    <a href="/admin/statistic">Mặt Hàng Thiết Yếu</a>
-                    <a href="/admin/statistic">Nhu Cầu Thực Phẩm</a>
+                    <a href="/admin/statistic/essentialproducts">Mặt Hàng Thiết Yếu</a>
+                    <a href="/admin/statistic/citizendemand">Nhu Cầu Thực Phẩm</a>
                 </div>
                 <a href="/admin/registration_approval"><i class="fa fa-fw fa-check-square"></i> Xét Duyệt Đăng Ký Bán Hàng</a>
                 <a href="/admin/commitment"><i class="fa fa-fw fa-money"></i> Tiền Hoa Hồng</a>

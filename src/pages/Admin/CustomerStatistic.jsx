@@ -5,7 +5,7 @@ import Sidebar from '../../components/Admin-Sidebar';
 function CustomerStatistic() {
     return (
         <div>
-            Statistic
+            Thống Kê Khách Hàng
         </div>
     );
 }

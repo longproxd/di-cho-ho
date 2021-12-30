@@ -5,7 +5,7 @@ import Sidebar from '../../components/Admin-Sidebar';
 function StoreManagement() {
     return (
         <div>
-            Cửa hàng
+            Quản Lý Danh Sách Cửa hàng
         </div>
     );
 }

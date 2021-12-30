@@ -5,9 +5,7 @@ import Sidebar from '../../components/Admin-Sidebar';
 function ShipperStatistic() {
     return (
         <div>
-            <Header />
-            <Sidebar />
-            <Footer />
+            Thống Kê Shipper
         </div>
     );
 }
