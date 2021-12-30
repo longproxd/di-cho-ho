@@ -5,9 +5,7 @@ import Sidebar from '../../components/Admin-Sidebar';
 function CustomerManagement() {
     return (
         <div>
-            <Header />
-            <Sidebar />
-            <Footer />
+           Khách hàng
         </div>
     );
 }

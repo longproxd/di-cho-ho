@@ -1,7 +1,7 @@
 import Header from '../../components/Admin-Header';
 import Footer from '../../components/Admin-Footer';
 import Sidebar from '../../components/Admin-Sidebar';
-function Admin_header() {
+function AdminHome() {
     return (
         <div>
             <Header />
@@ -11,4 +11,4 @@ function Admin_header() {
     );
 }
 
-export default Admin_header;
+export default AdminHome;

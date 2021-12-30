@@ -5,9 +5,7 @@ import Sidebar from '../../components/Admin-Sidebar';
 function ShipperManagement() {
     return (
         <div>
-            <Header />
-            <Sidebar />
-            <Footer />
+            Shipper
         </div>
     );
 }
