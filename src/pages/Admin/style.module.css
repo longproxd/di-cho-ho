@@ -33,3 +33,55 @@
   background-color: gray;
   cursor: auto;
 }
+
+.tabs_container{  
+  width: 1000px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.tabs__btns_container{
+  width: 7rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.store_statistic__container{
+  display: flex;  
+  flex-direction: row;
+
+  height: 100%;
+
+}
+.store_statistic__container > div{
+  flex: 50%;
+  height: 100%
+}
+
+.store_statistic__screen_1{
+  border-right: 1px solid #000;
+}
+
+
+.store_management__container{
+  display: flex;  
+  flex-direction: row;
+
+  height: 100%;
+
+}
+
+.store_management__container > div{
+  flex: 50%;
+  height: 100%
+}
+
+.store_management__screen_1{
+  border-right: 1px solid #000;
+}
+

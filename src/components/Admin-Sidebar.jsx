@@ -4,6 +4,7 @@ function Sidebar(){
 
     
     const [iconClassName1, setIconClassName1] = useState('fa fa-caret-down')
+    const [iconClassName2, setIconClassName2] = useState('fa fa-caret-down')
 
     function ManageButtonClicked() {
         var content = document.getElementById("manage-content")
@@ -31,6 +32,8 @@ function Sidebar(){
         {
             content.style.display = "block"
         }
+
+        iconClassName2 ===  "fa fa-caret-down" ? setIconClassName2("fa fa-caret-up") : setIconClassName2("fa fa-caret-down")
     }
 
     return (
@@ -43,7 +46,7 @@ function Sidebar(){
                     <a href="/admin/management/client">Quản Lý Đối Tác</a>
                     <a href="/admin/management/order">Quản Lý Đơn Hàng</a>
                 </div>
-                <button onClick={StatisticButtonClicked} class="admin-dropdown-btn"><i class="fa fa-fw fa-line-chart"></i> Thống Kê <i class="fa fa-caret-down"></i></button>
+                <button onClick={StatisticButtonClicked} class="admin-dropdown-btn"><i class="fa fa-fw fa-line-chart"></i> Thống Kê <i class={iconClassName2}></i></button>
                 <div id="statistic-content">
                     <a href="/admin/statistic/customer">Khách Hàng</a>
                     <a href="/admin/statistic/shipper">Shipper</a>

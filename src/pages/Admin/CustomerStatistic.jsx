@@ -1,11 +1,11 @@
-import Header from '../../components/Admin-Header';
-import Footer from '../../components/Admin-Footer';
-import Sidebar from '../../components/Admin-Sidebar';
+import React from 'react'
+import style from './style.module.css'
 
 function CustomerStatistic() {
     return (
-        <div>
-            Thống Kê Khách Hàng
+        <div className={style.store_statistic__container}>
+            <div className={style.store_statistic__screen_1}>Screen 1</div>
+            <div className={style.store_statistic__screen_2}>Screen 2</div>
         </div>
     );
 }

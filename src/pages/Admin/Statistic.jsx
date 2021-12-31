@@ -5,40 +5,48 @@ import CustomerStatistic from './CustomerStatistic';
 import CustomerManagement from './CustomerManagement';
 
 function CusStatistic() {
-    const [currentTab, setCurrentTab] = useState('manage');
+  const [currentTab, setCurrentTab] = useState('manage');
 
-    const handleSwitchTab = (tab) => {
-        if (tab === 'stat') return setCurrentTab('stat');
-        if (tab === 'manage') return setCurrentTab('manage');
-    };
+  const handleSwitchTab = (tab) => {
+    if (tab === 'stat') return setCurrentTab('stat');
+    if (tab === 'manage') return setCurrentTab('manage');
+  };
 
-    return (
-        <Layout >
-            <div className={style.content}>
-                <div className={style.tabs}>
-                    <div
-                        className={`${style.tab} ${currentTab === 'manage' ? style.active : null
-                            }`}
-                        onClick={() => handleSwitchTab('manage')}
-                    >
-                        Quản lý
-                    </div>
-                    <div
-                        className={`${style.tab} ${currentTab === 'stat' ? style.active : null
-                            }`}
-                        onClick={() => handleSwitchTab('stat')}
-                    >
-                        Thống kê
-                    </div>
-                </div>
-                <div className={style.tab_panel}>
-                    {
-                    currentTab === 'stat' ? <CustomerStatistic /> : <CustomerManagement />
-                    }
-                </div>
+  return (
+    <Layout>
+      <div className={style.content}>
+        <div className={style.tabs_container}>
+          <div className={style.tabs}>
+            <div
+              className={`${style.tab} ${
+                currentTab === 'manage' ? style.active : null
+              }`}
+              onClick={() => handleSwitchTab('manage')}
+            >
+              Quản lý
             </div>
-        </Layout>
-    );
+            <div
+              className={`${style.tab} ${
+                currentTab === 'stat' ? style.active : null
+              }`}
+              onClick={() => handleSwitchTab('stat')}
+            >
+              Thống kê
+            </div>
+          </div>
+          {currentTab === 'manage' ? (
+            <div className={style.tabs__btns_container}>
+              <button>Thêm</button>
+              <button>Xoá</button>
+            </div>
+          ) : null}
+        </div>
+        <div className={style.tab_panel}>
+          {currentTab === 'stat' ? <CustomerStatistic /> : <CustomerManagement />}
+        </div>
+      </div>
+    </Layout>
+  );
 }
 
 export default CusStatistic;
