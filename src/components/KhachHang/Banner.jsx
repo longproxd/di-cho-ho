@@ -27,9 +27,7 @@ export default function Banner() {
                             <div className="header-right-content">
                                 <div className="header-right-content-cart">
                                     <ul>
-                                        <li>
-                                            <a href="/cart" className="krishok-cart"><i className="fa fa-shopping-cart" /></a>
-                                        </li>
+                                        <li><a href="/cart" className="krishok-cart"><i className="fa fa-shopping-cart" /></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -44,8 +42,7 @@ export default function Banner() {
                         <div className="col-lg-8 offset-lg-2">
                             <div className="hero-area-content">
                                 <h1>Nơi Mua Sắm Đáng Tin Cậy</h1>
-                                <p>Đi Chợ Hộ được xây dựng trong bối cảnh đại dịch COVID-19 nhằm tối ưu hoá quy trình đăng ký mua hàng, giao nhận hàng hoá, tạo sự tiện lợi và đơn giản hơn cho người dân trong thời điểm dịch bệnh. Hệ thống hỗ trợ tối đa sự liên kết giữa người dân và các cửa hàng, siêu thị, để đảm bảo thực phẩm luôn được cung cấp đầy đủ, giá cả hợp lí.
-                                </p>
+                                <p>Đi Chợ Hộ được xây dựng trong bối cảnh đại dịch COVID-19 nhằm tối ưu hoá quy trình đăng ký mua hàng, giao nhận hàng hoá, tạo sự tiện lợi và đơn giản hơn cho người dân trong thời điểm dịch bệnh. Hệ thống hỗ trợ tối đa sự liên kết giữa người dân và các cửa hàng, siêu thị, để đảm bảo thực phẩm luôn được cung cấp đầy đủ, giá cả hợp lí.</p>
                             </div>
                         </div>
                     </div>

@@ -41,10 +41,10 @@ export default function ComboMatHang() {
 
                     <div className="row product-item">
                         {ComboMatHang.map(ComboMatHang =>
-                            <div className="col-lg-3 col-sm-6 ComboMatHang">
-                                <div className="sell-item max-width-360" key={ComboMatHang.Id}>
+                            <div className="col-lg-3 col-sm-6 ComboMatHang" key={ComboMatHang.Id}>
+                                <div className="sell-item max-width-360">
                                     <div className="product-img">
-                                        <img src={ComboMatHang.hinh_anh} alt="" />
+                                        <img src={ComboMatHang.hinh_anh} />
                                         <div className="product-img-overlay">
                                             <a href="/cart" className="krishok-btn">THÊM VÀO GIỎ HÀNG<i className="fa fa-shopping-cart" /></a>
                                         </div>

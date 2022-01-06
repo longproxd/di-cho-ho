@@ -157,7 +157,7 @@ function ClientManagement() {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

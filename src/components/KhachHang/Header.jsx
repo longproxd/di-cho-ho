@@ -111,8 +111,7 @@ export default function Header() {
                                                             <div className="contact-container">
                                                                 <input name="username"
                                                                     autoComplete='off'
-                                                                    type="text" placeholder="Tên đăng nhập"
-                                                                />
+                                                                    type="text" placeholder="Tên đăng nhập" />
                                                                 <i className="fa fa-user" />
                                                             </div>
                                                         </div>
@@ -125,8 +124,7 @@ export default function Header() {
                                                         <div className="col-sm-12">
                                                             <div className="contact-container">
                                                                 <input name="password"
-                                                                    type="password" placeholder="Mật khẩu"
-                                                                />
+                                                                    type="password" placeholder="Mật khẩu" />
                                                                 <i className="fa fa-eye" />
                                                             </div>
                                                         </div>
@@ -136,8 +134,7 @@ export default function Header() {
                                                         <div className="col-sm-12">
                                                             <div className="contact-container">
                                                                 <input name="password"
-                                                                    type="text" placeholder="Họ và tên"
-                                                                />
+                                                                    type="text" placeholder="Họ và tên" />
                                                                 <i className="fa fa-file-text-o" />
                                                             </div>
                                                         </div>
@@ -164,24 +161,21 @@ export default function Header() {
                                                         <div className="col-sm-12">
                                                             <div className="contact-container">
                                                                 <input name="password"
-                                                                    type="text" placeholder="Số điện thoại"
-                                                                />
+                                                                    type="text" placeholder="Số điện thoại" />
                                                                 <i className="fa fa-phone" />
                                                             </div>
                                                         </div>
                                                         <div className="col-sm-12">
                                                             <div className="contact-container">
                                                                 <input name="password"
-                                                                    type="text" placeholder="Địa chỉ"
-                                                                />
+                                                                    type="text" placeholder="Địa chỉ" />
                                                                 <i className="fa fa-home" />
                                                             </div>
                                                         </div>
                                                         <div className="col-sm-12">
                                                             <div className="contact-container">
                                                                 <input name="password"
-                                                                    type="text" placeholder="Số CMND/CCCD"
-                                                                />
+                                                                    type="text" placeholder="Số CMND/CCCD" />
                                                                 <i className="fa fa-address-card-o" />
                                                             </div>
                                                         </div>

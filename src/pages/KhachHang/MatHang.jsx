@@ -41,10 +41,10 @@ export default function MatHang() {
 
                     <div className="row product-item">
                         {MatHang.map(MatHang =>
-                            <div className="col-lg-3 col-sm-6 MatHang">
-                                <div className="sell-item max-width-360" key={MatHang.Id}>
+                            <div className="col-lg-3 col-sm-6 MatHang" key={MatHang.Id}>
+                                <div className="sell-item max-width-360">
                                     <div className="product-img">
-                                        <img src={MatHang.hinh_anh} alt="" />
+                                        <img src={MatHang.hinh_anh} />
                                         <div className="product-img-overlay">
                                             <a href="/cart" className="krishok-btn">THÊM VÀO GIỎ HÀNG<i className="fa fa-shopping-cart" /></a>
                                         </div>
