@@ -85,3 +85,8 @@
   border-right: 1px solid #000;
 }
 
+
+
+.is-selected {
+  background: gray;
+}
