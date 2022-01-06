@@ -2298,9 +2298,26 @@ td {
 
 }
 
+.table-interact {
+  position: relative;
+  top: 30px;
+  left: 90px;
+}
+
+.table-interact button {
+  margin-left: 50px;
+  width: 80px;
+}
+
+.table-interact label,
+.table-interact select {
+  position: inherit;
+  left: 520px;
+}
+
 /* Table start*/
 .table-container {
-  margin: 100px auto;
+  margin: 30px auto;
   width: 1000px;
   height: 500px;
   border-spacing: 0;
@@ -2308,6 +2325,14 @@ td {
 
   overflow: auto;
 
+}
+
+.stat {
+  margin: auto;
+}
+
+.commitment {
+  height: 300px;
 }
 
 .table-uam{

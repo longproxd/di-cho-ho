@@ -9,13 +9,22 @@ function UserAccountManagement() {
       <div className='useraccount-content'>
         <Sidebar />
         <div className='useraccount-table'>
+          <div className='table-interact'>
+            <button>Xóa</button>
+            <label for="user-type">Loại người dùng</label>
+            <select id="user-type">
+              <option>Option A</option>
+              <option>Option B</option>
+              <option>Option C</option>
+            </select>
+          </div>
           <div className='table-container'>
             <table id='table' className='table-uam'>
               <thead>
                 <tr>
                   <th> ID </th>
                   <th> Username </th>
-                  <th> Loại Tài Khoản </th>                 
+                  <th> Loại Tài Khoản </th>
                 </tr>
               </thead>
               <tbody id='tbody'>
