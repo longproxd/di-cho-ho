@@ -1,12 +1,14 @@
 import { React, useState, Fragment } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/KhachHang/Header';
+import Banner from './components/KhachHang/Banner';
+import Footer from './components/KhachHang/Footer';
+import MatHang from './pages/KhachHang/MatHang';
+import ComboMatHang from './pages/KhachHang/ComboMatHang';
 
-import Product from './pages/Customer/Product';
-import ProductDetail from './pages/Customer/ProductDetail';
-import Store from './pages/Customer/Store';
+import ProductDetail from './pages/KhachHang/ProductDetail';
+import Store from './pages/KhachHang/Store';
 import ShipperHome from './pages/Shipper/Home';
 import OrderDetail from './pages/Shipper/OrderDetail';
 import OrderConfirmation from './pages/Shipper/OrderConfirmation';
@@ -30,14 +32,24 @@ import RegistrationApproval from './pages/Admin/RegistrationApproval';
 import Commitment from './pages/Admin/Commitment';
 import LoginForm from './pages/Admin/LoginForm';
 
-function App() {
+export default function App() {
   return (
     <Router>
       <Routes>
         <Route path='/' element={
           <Fragment>
             <Header />
-            <Product />
+            <Banner />
+            <MatHang />
+            <Footer />
+          </Fragment>
+        } />
+
+        <Route path='/combo' element={
+          <Fragment>
+            <Header />
+            <Banner />
+            <ComboMatHang />
             <Footer />
           </Fragment>
         } />
@@ -45,7 +57,7 @@ function App() {
         <Route path='/detail' element={
           <Fragment>
             <Header />
-            <ProductDetail />
+            {/* <ProductDetail /> */}
             <Footer />
           </Fragment>
         } />
@@ -53,7 +65,7 @@ function App() {
         <Route path='/store' element={
           <Fragment>
             <Header />
-            <Store />
+            {/* <Store /> */}
             <Footer />
           </Fragment>
         } />
@@ -83,5 +95,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;

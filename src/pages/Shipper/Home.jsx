@@ -1,8 +1,8 @@
 import logo from '../../assets/img/logo.png';
 import { useState, useEffect } from 'react'
 import MenuItem from '../../components/MenuItem'
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Header from '../../components/KhachHang/Header';
+// import Footer from '../../components/Footer';
 
 function ShipperHome() {
     // const [accountarray, Setarray] = useState([
@@ -24,7 +24,7 @@ function ShipperHome() {
     //     "ma_cua_hang":"61b374f88dda3d67ad7c80a6"}])
     const [accountarray, Setarray] = useState([])
     useEffect(() => {
-        fetch('http://localhost:8080/api/donhang')
+        fetch('https://localhost:8001/api/donhang')
             .then(response => {
                 return response.json();
             })
@@ -209,7 +209,7 @@ function ShipperHome() {
                 <p>Hệ thống đi chợ thuê - bản quyền thuộc nhóm phát triển R7</p>
             </div> */}
             {/* footer area end */}
-            <Footer />
+            {/* <Footer /> */}
         </div>
 
     );
