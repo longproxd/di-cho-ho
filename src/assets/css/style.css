@@ -2293,48 +2293,62 @@ td {
 }
 
 .useraccount-table {
-  width: 80vw;
-  height: 80vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100vw;
+  height: 100%;
 
 }
 
-.table {
-    /* 250px per column => 250 * 4 = 1000px, +17px for scrollbar  */
-  width: calc(750px + 17px);
-  
+/* Table start*/
+.table-container {
+  margin: 100px auto;
+  width: 1000px;
+  height: 500px;
   border-spacing: 0;
-/* border: black 2px solid */
+  /* border: black 2px solid */
+
+  overflow: auto;
+
 }
 
-.table > tbody,
-.table > thead tr {
-  display: block;
+.table-uam{
+  width: 1400px;
+
 }
 
+.table-uam th{
+    position: sticky;
+    top:0;
+    height: 60px;
+    padding: 5px 10px 5px 10px;  
+    font-size: 20px; 
 
-.table > tbody {
-  height: 300px;
-  /*Scrollbar x, y*/
-  overflow-y: auto;
-  overflow-x: scroll;
+    background: #0e0d57;
+    color:white
 }
 
-.table > tbody td,
-.table > thead th {
-    /* 250px per column */
-  width: 250px;
+.table-uam td{
+  padding: 5px 10px 5px 10px;
+  height: 40px;
+  font-size: 17px;
+  background: white;
+
 }
 
-.table > thead th:last-child {
-    /* 250px per column +17px for scrollbar*/
-  width: calc(250px + 17px);
+.table-uam th, .table-uam td{
+  min-width: 100px;
 }
 
+.table-uam td:nth-child(1){
+  position: sticky;
+    left:0;
+}
 
+.table-uam th:nth-child(1){
+  position: sticky;
+    left:0;
+    z-index: 1;
+}
+/* Table end*/
 
 .admin-login-container {
   box-sizing: border-box;
