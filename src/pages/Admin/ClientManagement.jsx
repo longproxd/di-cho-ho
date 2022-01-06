@@ -9,6 +9,16 @@ function ClientManagement() {
       <div className='useraccount-content'>
         <Sidebar />
         <div className='useraccount-table'>
+        <div className='table-interact'>
+            <button>Thêm</button>
+            <button>Xóa</button>
+            <label for="user-type">Loại đối tác</label>
+            <select id="user-type">
+              <option>Option A</option>
+              <option>Option B</option>
+              <option>Option C</option>
+            </select>
+          </div>
           <div className='table-container'>
             <table id='table' className='table-uam'>
               <thead>

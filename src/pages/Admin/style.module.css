@@ -22,8 +22,8 @@
 .tab_panel {
   border: 2px solid black;
 
-  width: 1000px;
-  height: 600px;
+  width: fit-content;
+  height: fit-content;
 
   margin: 0 auto;
   margin-top: 20px;

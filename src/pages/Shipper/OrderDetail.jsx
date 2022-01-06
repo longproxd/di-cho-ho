@@ -1,6 +1,6 @@
 import logo from '../../assets/img/logo.png';
 import Header from '../../components/KhachHang/Header';
-// import Footer from '../../components/Footer';
+import Footer from '../../components/KhachHang/Footer';
 
 function OrderDetail() {
     function loginClick(event) {
