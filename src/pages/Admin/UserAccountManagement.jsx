@@ -16,19 +16,10 @@ function UserAccountManagement() {
                   <th> ID </th>
                   <th> Username </th>
                   <th> Loại Tài Khoản </th>                 
-                  <th> Loại Tài Khoản </th>      
-                  <th> Loại Tài Khoản </th>                  
-                  <th> Loại Tài Khoản </th>
-                  
-                  
-
                 </tr>
               </thead>
               <tbody id='tbody'>
                 <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
                   <td>Item 1</td>
                   <td>Item 2</td>
                   <td>Item 3</td>
