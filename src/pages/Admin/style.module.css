@@ -5,6 +5,10 @@
   /* background-color: #008f7a; */
 }
 
+.content h3 {
+  text-align: center;
+}
+
 .tabs {
   display: flex;
   flex-direction: row;
@@ -65,6 +69,46 @@
 
 .store_statistic__screen_1{
   border-right: 1px solid #000;
+}
+
+.demand_panel {
+  border: 2px solid black;
+
+  width: 500px;
+  height: 200px;
+
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.demand_statistic__container {
+  display: flex;  
+  flex-direction: row;
+
+  height: 100%;
+}
+
+.demand_statistic__container > div{
+  flex: 50%;
+  height: 100%
+}
+
+.demand_statistic__screen_1{
+  border-right: 1px solid #000;
+}
+
+.demand_statistic__container ul{
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-evenly;
+}
+
+.demand_statistic__container li{
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 30px;
 }
 
 
