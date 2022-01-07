@@ -32,6 +32,7 @@ import RegistrationApproval from './pages/Admin/RegistrationApproval';
 import Commitment from './pages/Admin/Commitment';
 import LoginForm from './pages/Admin/LoginForm';
 import TaiKhoan from './pages/KhachHang/TaiKhoan';
+import Test from './pages/KhachHang/Test';
 
 export default function App() {
   const [accountInfo, setAccountInfo] = useState()
@@ -77,6 +78,14 @@ export default function App() {
             <Header />
             <TaiKhoan accountInfo={accountInfo} />
             <Footer />
+          </Fragment>
+        } />
+
+        <Route path='/test' element={
+          <Fragment>
+            {/* <Header /> */}
+            <Test />
+            {/* <Footer /> */}
           </Fragment>
         } />
 
