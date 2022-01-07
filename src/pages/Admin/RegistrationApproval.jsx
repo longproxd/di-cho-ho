@@ -44,6 +44,8 @@ function RegistrationApproval() {
   return (
     <Layout>
       <div className='table-container stat'>
+      <button id="green">Phê duyệt</button>
+      <button id="red">Từ chối</button>
         <table id='table' className='table-uam'>
           <thead>
             <tr>

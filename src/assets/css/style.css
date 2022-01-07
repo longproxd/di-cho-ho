@@ -2246,8 +2246,10 @@ blockquote:before {
   position: relative;
 }
 .admin-header-icon-menu{
-  background-color: rgb(195, 195, 195);
-  
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
   height: 50px;
   width: 100px;
 
@@ -2257,6 +2259,10 @@ blockquote:before {
 
   top:50px;
 
+}
+
+.admin-header-icon-menu a {
+  color: red;
 }
 
 .logo-header-img {
@@ -2364,8 +2370,21 @@ td {
   margin: auto;
 }
 
-.commitment {
-  height: 300px;
+.stat button {
+  margin-left: 100px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 90px;
+  font-weight: 500;
+  color: white;
+}
+
+.stat #green {
+  background: rgb(0, 199, 0);
+}
+
+.stat #red {
+  background: red;
 }
 
 .table-uam{
@@ -2405,6 +2424,107 @@ td {
   position: sticky;
     left:0;
     z-index: 1;
+}
+
+.commitment-interact {
+  width: 1000px;
+  height: 180px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.commitment-search,
+.commitment-calculate {
+  width: 500px;
+  height: 100%;
+}
+
+.commitment-search h3,
+.commitment-calculate h3 {
+  text-align: center;
+}
+
+.commitment-search-content,
+.commitment-calculate-content {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.commitment-search-content {
+  border-right: none;
+}
+
+.commitment-search li .commitment-search-ul-child,
+.commitment-calculate li .commitment-calculate-ul-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+
+.commitment-search-ul-child li,
+.commitment-calculate-ul-child li {
+  display: flex;
+  flex-direction: column;
+}
+
+.commitment-calculate-ul-child li select {
+  width: 200px;
+  height: 30px;
+}
+
+.commitment-search-ul-child li label,
+.commitment-calculate-content li:last-child label {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.commitment-search-ul-child li #shop-id,
+.commitment-search-ul-child li #commitment-value {
+  width: 200px;
+  height: 30px;
+  border: 1px solid black;
+  padding: 0;
+}
+
+.commitment-search-ul-child li #month,
+.commitment-search-ul-child li button,
+.commitment-calculate-content .second-li button {
+  width: 150px;
+  height: 30px;
+}
+
+.commitment-search-ul-child li #month:focus {
+  border: 1px solid black;
+}
+
+.commitment-search-ul-child li button,
+.commitment-calculate-content .second-li button {
+  margin-top: 33px;
+  border-radius: 5px;
+  background: #004cf1;
+  font-weight: 600;
+  color: white;
+}
+
+.commitment-calculate-content .second-li button {
+  margin: 22px 175px;
+}
+
+.commitment-calculate-content .last-li {
+  margin-left: 25px;
+}
+
+.commitment-calculate-content .last-li input {
+  margin-left: 25px;
+  width: 380px;
+  border: 1px solid black;
+}
+
+.space {
+  height: 50px;
 }
 /* Table end*/
 
