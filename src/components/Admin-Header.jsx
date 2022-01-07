@@ -17,7 +17,10 @@ function Admin_header() {
         <h4> Trang web người dùng</h4>
       </div>
       <div className='admin-header-icon-container' onClick={()=>setShowMenu(!showMenu)}><i className='fa fa-shopping-cart admin-header-icon' />
-      {showMenu? <div className='admin-header-icon-menu'>Dang xuat</div>:null}
+      {showMenu? <div className='admin-header-icon-menu'>
+                  <a href='#'>Đăng xuất</a>
+                </div>
+        :null}
       </div>
     </div>
   );
