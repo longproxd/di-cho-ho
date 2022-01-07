@@ -31,6 +31,7 @@ import Demand from './pages/Admin/Demand';
 import RegistrationApproval from './pages/Admin/RegistrationApproval';
 import Commitment from './pages/Admin/Commitment';
 import LoginForm from './pages/Admin/LoginForm';
+import Test from './pages/KhachHang/Test';
 
 export default function App() {
   return (
@@ -67,6 +68,14 @@ export default function App() {
             <Header />
             {/* <Store /> */}
             <Footer />
+          </Fragment>
+        } />
+
+        <Route path='/test' element={
+          <Fragment>
+            {/* <Header /> */}
+            <Test />
+            {/* <Footer /> */}
           </Fragment>
         } />
 
