@@ -31,14 +31,16 @@ import Demand from './pages/Admin/Demand';
 import RegistrationApproval from './pages/Admin/RegistrationApproval';
 import Commitment from './pages/Admin/Commitment';
 import LoginForm from './pages/Admin/LoginForm';
+import TaiKhoan from './pages/KhachHang/TaiKhoan';
 
 export default function App() {
+  const [accountInfo, setAccountInfo] = useState()
   return (
     <Router>
       <Routes>
         <Route path='/' element={
           <Fragment>
-            <Header />
+            <Header setAccountInfo={setAccountInfo} />
             <Banner />
             <MatHang />
             <Footer />
@@ -66,6 +68,14 @@ export default function App() {
           <Fragment>
             <Header />
             {/* <Store /> */}
+            <Footer />
+          </Fragment>
+        } />
+
+        <Route path='/account' element={
+          <Fragment>
+            <Header />
+            <TaiKhoan accountInfo={accountInfo} />
             <Footer />
           </Fragment>
         } />
