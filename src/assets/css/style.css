@@ -2332,7 +2332,7 @@ td {
 }
 
 .useraccount-table {
-  width: 100vw;
+  width: 77vw;
   height: 100%;
 
 }
@@ -2356,7 +2356,7 @@ td {
 
 /* Table start*/
 .table-container {
-  margin: 30px auto;
+  margin: 30px auto auto 30px;
   width: 1000px;
   height: 500px;
   border-spacing: 0;
@@ -2388,7 +2388,7 @@ td {
 }
 
 .table-uam{
-  width: 1400px;
+  width: 1200px;
 
 }
 
