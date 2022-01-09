@@ -34,6 +34,8 @@ import LoginForm from './pages/Admin/LoginForm';
 import TaiKhoan from './pages/KhachHang/TaiKhoan';
 import Test from './pages/KhachHang/Test';
 
+import StoreHome from './pages/StoreOwner/Home'
+
 export default function App() {
   const [accountInfo, setAccountInfo] = useState()
   return (
@@ -110,6 +112,7 @@ export default function App() {
         <Route path="/admin/registration_approval" exact element={<RegistrationApproval />} />
         <Route path="/admin/commitment" exact element={<Commitment />} />
         <Route path="/admin/login" exact element={<LoginForm />} />
+        <Route path="/storeowner-home" exact element={<StoreHome />} />
       </Routes>
     </Router>
   );
