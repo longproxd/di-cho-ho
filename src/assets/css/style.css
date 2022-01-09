@@ -2244,6 +2244,7 @@ blockquote:before {
 }
 .admin-header-icon-container{
   position: relative;
+  top: 10px;
 }
 .admin-header-icon-menu{
   background-color: white;
@@ -2604,4 +2605,142 @@ td {
 .edit-form {
   max-width: 300px;
   margin: auto;
+}
+
+.paginationBtn{
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationBtn a{
+  padding: 5px 10px 5px 10px;
+  margin: 5px;
+  border: 1px solid #77bb17;
+  cursor: pointer;
+}
+
+.paginationBtn a:hover{
+  background: #77bb17;
+  color: #fff;
+}
+
+.paginationActive a{
+  background: #77bb17;
+  color: #fff;
+}
+
+/***************************************************************STORE OWNER*******************************************************/
+.storeowner-header-wrapper {
+  background-color: #3F7D20;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.storeowner-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #3F7D20;
+  color: white;
+  text-align: center;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.storeowner-header-container {
+  
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.storeowner-header-container  h2 {
+  color: white;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.storeowner-header-container  h4 {
+  color: white;
+  text-align: center;
+  width: 100px;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.storeowner-header-icon{
+  font-size: 40px;
+  margin-right: 50px;
+  color: white;
+
+  cursor: pointer;
+}
+.storeowner-header-icon-container{
+  position: relative;
+  top: 10px;
+}
+.storeowner-header-icon-menu{
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  height: 50px;
+  width: 100px;
+  position: absolute;
+  left: -60px;
+  top:50px;
+}
+
+.storeowner-header-icon-menu a {
+  color: red;
+}
+
+.storeowner-sidenav {
+  height: 90vh; /* Full-height: remove this if you want "auto" height */
+  width: 240px; /* Set the width of the sidebar */
+
+  background-color: #d2f6bf;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  z-index: 1;
+}
+
+.storeowner-sidenav a,
+.storeowner-dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* When you mouse over the navigation links, change their color */
+.storeowner-sidenav a:hover,
+.storeowner-dropdown-btn:hover {
+  color: blue;
+}
+
+@media screen and (max-height: 450px) {
+  .storeowner-sidenav {
+    padding-top: 15px;
+  }
+  .storeowner-sidenav a {
+    font-size: 18px;
+  }
 }
