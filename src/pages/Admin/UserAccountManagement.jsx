@@ -2,7 +2,54 @@ import Header from '../../components/Admin-Header';
 import Footer from '../../components/Admin-Footer';
 import Sidebar from '../../components/Admin-Sidebar';
 
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+
 function UserAccountManagement() {
+  const [total, setTotal] = useState({})
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/api/quanlytaikhoan")
+      .then(res => {
+        setTotal(res.data)
+
+        console.log(total)
+      })
+  }, [])
+
+  Object.keys(total).map((accounts) => {
+    if (accounts === "CuaHang") {
+      total[accounts] && total[accounts].map((account) => {
+        var row = document.getElementById("tbody").insertRow(0)
+
+
+        row.insertCell(0).innerHTML = account.mach;
+        row.insertCell(1).innerHTML = account.username;
+        row.insertCell(2).innerHTML = "Chủ cửa hàng";
+      })
+    }
+
+    if (accounts === "KhachHang") {
+      total[accounts] && total[accounts].map((account) => {
+        var row = document.getElementById("tbody").insertRow(0)
+        row.insertCell(0).innerHTML = account.id;
+        row.insertCell(1).innerHTML = account.username;
+        row.insertCell(2).innerHTML = "Khách mua hàng";
+      })
+    }
+
+    if (accounts === "Shipper") {
+      total[accounts] && total[accounts].map((account) => {
+        var row = document.getElementById("tbody").insertRow(0)
+        row.insertCell(0).innerHTML = account.id;
+        row.insertCell(1).innerHTML = account.username;
+        row.insertCell(2).innerHTML = "Shipper";
+      })
+    }
+
+  })
+
+
   return (
     <div>
       <Header />
@@ -28,91 +75,7 @@ function UserAccountManagement() {
                 </tr>
               </thead>
               <tbody id='tbody'>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
+
               </tbody>
             </table>
           </div>

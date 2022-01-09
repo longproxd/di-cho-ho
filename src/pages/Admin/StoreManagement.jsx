@@ -1,6 +1,26 @@
 import style from './style.module.css';
 
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+
 function StoreManagement() {
+  const [stores, setStores] = useState()
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/api/doitac")
+      .then(res => {
+        setStores(res.data)
+      })
+  }, [])
+
+  stores && stores.map((store) => {
+    var row = document.getElementById("tbody").insertRow(0)
+    row.insertCell(0).innerHTML = store.mach;
+    row.insertCell(1).innerHTML = store.tench;
+    row.insertCell(2).innerHTML = store.diachi;
+    row.insertCell(3).innerHTML = store.sdt;
+  })
+
   return (
     <div className={style.store_management__container}>
       {/*<div className={style.store_management__screen_1}>Screen 1</div>
@@ -16,91 +36,7 @@ function StoreManagement() {
                 </tr>
               </thead>
               <tbody id='tbody'>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
+                
               </tbody>
             </table>
           </div>

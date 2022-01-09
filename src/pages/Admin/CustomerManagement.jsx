@@ -1,4 +1,27 @@
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+
 function CustomerManagement() {
+    const [customers, setCustomers] = useState()
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/api/khachhanglist")
+      .then(res => {
+        setCustomers(res.data)
+      })
+  }, [])
+
+  customers && customers.map((customer) => {
+    var row = document.getElementById("tbody").insertRow(0)
+    row.insertCell(0).innerHTML = customer.id;
+    row.insertCell(1).innerHTML = customer.cccd;
+    row.insertCell(2).innerHTML = customer.ten;
+    row.insertCell(3).innerHTML = customer.gioitinh;
+    row.insertCell(4).innerHTML = customer.ngaysinh;
+    row.insertCell(5).innerHTML = customer.diachi;
+    row.insertCell(6).innerHTML = customer.sdt;
+  })
+
     return (
         <div className="table-position">
             <div className='table-container stat'>
@@ -15,159 +38,7 @@ function CustomerManagement() {
                         </tr>
                     </thead>
                     <tbody id='tbody'>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                            <td>Item 2</td>
-                            <td>Item 3</td>
-                            <td>Item 1</td>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>
