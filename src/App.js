@@ -35,6 +35,9 @@ import TaiKhoan from './pages/KhachHang/TaiKhoan';
 import Test from './pages/KhachHang/Test';
 
 import StoreHome from './pages/StoreOwner/Home'
+import EditProduct from './pages/StoreOwner/EditProduct'
+import AddProduct from './pages/StoreOwner/AddProduct'
+import DeleteProduct from './pages/StoreOwner/DeleteProduct'
 
 export default function App() {
   const [accountInfo, setAccountInfo] = useState()
@@ -115,6 +118,9 @@ export default function App() {
         <Route path="/admin/commitment" exact element={<Commitment />} />
         <Route path="/admin/login" exact element={<LoginForm />} />
         <Route path="/storeowner-home" exact element={<StoreHome />} />
+        <Route path="/storeowner/productmanagement/addproduct" exact element={<AddProduct />} />
+        <Route path="/storeowner/productmanagement/editproduct" exact element={<EditProduct />} />
+        <Route path="/storeowner/productmanagement/deleteproduct" exact element={<DeleteProduct />} />
       </Routes>
     </Router>
   );

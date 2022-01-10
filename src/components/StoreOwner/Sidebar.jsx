@@ -24,9 +24,9 @@ function Storeowner_Sidebar(){
                 <a href="/admin-home"><i class="fa fa-fw fa-home"></i> Trang Chủ</a>
                 <button onClick={ManageButtonClicked} class="storeowner-dropdown-btn"><i class="fa fa-fw fa-folder"></i> Quản Lý Hàng Hoá<i class={iconClassName1}></i></button>
                 <div id="manage-content">
-                    <a href="#">Thêm Hàng Hoá</a>
-                    <a href="#">Sửa Thông Tin</a>
-                    <a href="#">Xoá Hàng Hoá</a>
+                    <a href="/storeowner/productmanagement/addproduct">Thêm Hàng Hoá</a>
+                    <a href="/storeowner/productmanagement/editproduct">Sửa Thông Tin</a>
+                    <a href="/storeowner/productmanagement/deleteproduct">Xoá Hàng Hoá</a>
                 </div>
                 <a href="#"><i class="fa fa-fw fa-motorcycle"></i> Vận Chuyển</a>
             </div>
