@@ -38,6 +38,8 @@ import StoreHome from './pages/StoreOwner/Home'
 
 export default function App() {
   const [accountInfo, setAccountInfo] = useState()
+  const [storeInfo, setStoreInfo] = useState()
+
   return (
     <Router>
       <Routes>
@@ -45,7 +47,7 @@ export default function App() {
           <Fragment>
             <Header setAccountInfo={setAccountInfo} />
             <Banner />
-            <MatHang />
+            <MatHang setStoreInfo={setStoreInfo} />
             <Footer />
           </Fragment>
         } />
@@ -70,7 +72,7 @@ export default function App() {
         <Route path='/store' element={
           <Fragment>
             <Header />
-            {/* <Store /> */}
+            <Store storeInfo={storeInfo} />
             <Footer />
           </Fragment>
         } />

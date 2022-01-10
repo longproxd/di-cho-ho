@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import React from 'react';
 
-export default function MatHang() {
+export default function MatHang({setStoreInfo}) {
     const url = 'http://localhost:8080/api/hanghoa';
     const [MatHang, setMatHang] = useState([]);
 
@@ -31,7 +31,7 @@ export default function MatHang() {
             if(mathang["CuaHang"].tench === event.target.value)
             {
                 axios.get('http://localhost:8080/api/cuahang/' + mathang["MatHang"].mach)
-                .then(res => setCuaHang(res)) // khai báo state cửa hàng
+                .then(res => setStoreInfo(res.data)) // khai báo state cửa hàng
 
                 navigate('/store')
             }
@@ -65,7 +65,7 @@ export default function MatHang() {
                                             <a href="/cart" className="krishok-btn">THÊM VÀO GIỎ HÀNG<i className="fa fa-shopping-cart" /></a>
                                         </div>
                                     </div>
-                                    <p><a onClick={toStore} href="/">{MatHang["CuaHang"].tench}</a></p>
+                                    <p><a onClick={toStore} href="/store">{MatHang["CuaHang"].tench}</a></p>
                                     <h5>{MatHang["MatHang"].gia.toLocaleString()} vnd | {MatHang["MatHang"].khoiluong} kg</h5>
                                 </div>
                             </div>
