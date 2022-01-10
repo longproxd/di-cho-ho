@@ -22,6 +22,8 @@ function CustomerManagement() {
     row.insertCell(6).innerHTML = customer.sdt;
   })
 
+  
+
     return (
         <div className="table-position">
             <div className='table-container stat'>
