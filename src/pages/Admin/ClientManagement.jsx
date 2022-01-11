@@ -1,5 +1,5 @@
 import Header from '../../components/Admin-Header';
-// import Footer from '../../components/Admin-Footer';
+import Footer from '../../components/Admin-Footer';
 import Sidebar from '../../components/Admin-Sidebar';
 
 import axios from 'axios';
@@ -66,7 +66,7 @@ function ClientManagement() {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
