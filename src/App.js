@@ -33,6 +33,8 @@ import Commitment from './pages/Admin/Commitment';
 import LoginForm from './pages/Admin/LoginForm';
 import TaiKhoan from './pages/KhachHang/TaiKhoan';
 import Test from './pages/KhachHang/Test';
+import Test2 from './pages/KhachHang/Test2';
+// import Test3 from './pages/KhachHang/Test3';
 
 export default function App() {
   const [accountInfo, setAccountInfo] = useState()
@@ -85,6 +87,22 @@ export default function App() {
           <Fragment>
             {/* <Header /> */}
             <Test />
+            {/* <Footer /> */}
+          </Fragment>
+        } />
+
+        <Route path='/test2' element={
+          <Fragment>
+            {/* <Header /> */}
+            <Test2 />
+            {/* <Footer /> */}
+          </Fragment>
+        } />
+
+        <Route path='/test3' element={
+          <Fragment>
+            {/* <Header /> */}
+            {/* <Test3 /> */}
             {/* <Footer /> */}
           </Fragment>
         } />
