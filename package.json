@@ -3,27 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@googlemaps/js-api-loader": "^1.13.1",
-    "@googlemaps/react-wrapper": "^1.1.19",
-    "@material-ui/core": "^4.12.3",
-    "@material-ui/lab": "^4.0.0-alpha.60",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
     "axios": "^0.24.0",
     "google-map-react": "^2.1.10",
-    "google-maps-api-loader": "^1.1.1",
-    "google-maps-react": "^2.0.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0",
-    "react-hook-google-maps": "^0.0.3",
     "react-paginate": "^8.1.0",
-    "react-router-dom": "^6.1.1",
-    "react-safe": "^1.3.0",
-    "react-script-tag": "^1.1.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "react-router-dom": "^6.1.1"
   },
   "scripts": {
     "start": "set PORT=8000 && react-scripts start",

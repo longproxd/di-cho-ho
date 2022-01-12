@@ -117,9 +117,10 @@ function Header({ setAccountInfo }) {
                                                 <form action="/">
                                                     <div className="row">
                                                         <div className="col-sm-12">
-                                                            <div className="contact-container">
+                                                            <div className="contact-container first">
                                                                 <input name="username" value={account.username}
                                                                     type="text" placeholder="Tên đăng nhập"
+                                                                    autoComplete='off'
                                                                     onChange={handleChange} />
                                                                 <i className="fa fa-user" />
                                                             </div>
@@ -167,7 +168,7 @@ function Header({ setAccountInfo }) {
                                                     <div className="row">
                                                         <div className='signup-tabs'>
                                                             <div className="col-sm-12">
-                                                                <div className="contact-container">
+                                                                <div className="contact-container first">
                                                                     <input name="username" value={account.username}
                                                                         autoComplete='off'
                                                                         type="text" placeholder="Tên đăng nhập"
@@ -195,7 +196,7 @@ function Header({ setAccountInfo }) {
                                                                 <input type="password" placeholder="Nhập lại mật khẩu" />
                                                             </div>
                                                             <div className="col-sm-12">
-                                                                <div className="contact-container">
+                                                                <div className="contact-container name">
                                                                     <input name="ten" value={account.ten}
                                                                         type="text" placeholder="Họ và tên"
                                                                         onChange={handleChange}
@@ -247,7 +248,7 @@ function Header({ setAccountInfo }) {
                                                                         type="text" placeholder="Số CMND/CCCD"
                                                                         onChange={handleChange}
                                                                     />
-                                                                    <i className="fa fa-address-card-o" />
+                                                                    <i className="fa fa-id-card-o" />
                                                                 </div>
                                                             </div>
                                                         </div>

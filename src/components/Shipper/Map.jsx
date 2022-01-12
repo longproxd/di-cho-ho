@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import GoogleMapReact from 'google-map-react';
 import start from '../../assets/img/start.png';
 import finish from '../../assets/img/finish.png';
 
-export default function Test2() {
+export default function Map() {
     const url = 'https://maps.googleapis.com/maps/api/geocode/json';
-    const key = 'AIzaSyBwTO9-M_wLVs_koCknFc1GaG2ulnD8ass';
+    const key = 'AIzaSyDPydMFDrZ92XmYQTO-eRULpWwCGIMNgj0';
     const coorHCM = { lat: 10.762622, lng: 106.660172 };
 
     const [location, setLocation] = useState(null);
@@ -80,8 +80,6 @@ export default function Test2() {
 
         const origin = { lat: latitude, lng: longitude };
         const destination = { lat: latitude2, lng: longitude2 };
-        console.log(origin);
-        console.log(destination);
 
         var marker = new google.maps.Marker({
             position: origin,
@@ -111,29 +109,21 @@ export default function Test2() {
         );
     };
 
-    return (
-        <div>
-            <div>
-                {latitude} {longitude}
-                <br />
-                {latitude2} {longitude2}
-                <br />
-                {location}
-                <br />
-                {location2}
-            </div>
+    if (!(latitude && longitude && latitude2 && longitude2)) {
+        return null;
+    }
 
-            <div style={{ height: '400px', width: '60%' }}>
-                <GoogleMapReact
-                    bootstrapURLKeys={{
-                        key: key
-                    }}
-                    defaultZoom={10}
-                    center={coorHCM}
-                    yesIWantToUseGoogleMapApiInternals
-                    onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps)}
-                />
-            </div>
-        </div >
+    return (
+        <div style={{ height: '400px', width: '60%' }}>
+            <GoogleMapReact
+                bootstrapURLKeys={{
+                    key: key
+                }}
+                defaultZoom={10}
+                center={coorHCM}
+                yesIWantToUseGoogleMapApiInternals
+                onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps)}
+            />
+        </div>
     );
 }

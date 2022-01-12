@@ -1,9 +1,3 @@
-@import './assets/css/animate.min.css';
-@import './assets/css/bootstrap.min';
-@import './assets/css/font-awesome.min';
-@import './assets/css/jquery.bxslider';
-@import './assets/css/lightbox.min';
-@import './assets/css/owl.carousel.min';
-@import './assets/css/responsive';
-@import './assets/css/slicknav.min';
-@import './assets/css/style';
+@import './assets/css/bootstrap.min.css';
+@import './assets/css/font-awesome.min.css';
+@import './assets/css/style.css';

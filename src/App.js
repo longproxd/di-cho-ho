@@ -1,4 +1,4 @@
-import { React, useState, Fragment } from 'react';
+import { useState, Fragment } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './components/KhachHang/Header';
@@ -33,7 +33,7 @@ import Commitment from './pages/Admin/Commitment';
 import LoginForm from './pages/Admin/LoginForm';
 import TaiKhoan from './pages/KhachHang/TaiKhoan';
 import Test from './pages/KhachHang/Test';
-import Test2 from './pages/KhachHang/Test2';
+import Map from './components/Shipper/Map';
 // import Test3 from './pages/KhachHang/Test3';
 
 import StoreHome from './pages/StoreOwner/Home'
@@ -94,14 +94,6 @@ export default function App() {
           <Fragment>
             {/* <Header /> */}
             <Test />
-            {/* <Footer /> */}
-          </Fragment>
-        } />
-
-        <Route path='/test2' element={
-          <Fragment>
-            {/* <Header /> */}
-            <Test2 />
             {/* <Footer /> */}
           </Fragment>
         } />
