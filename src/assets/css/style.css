@@ -2916,3 +2916,9 @@ input[type=submit] {
     margin-top: 0;
   }
 }
+
+.buttonAddProduct{
+  position: relative;
+  left: 660px;
+  top: 15px;
+}
