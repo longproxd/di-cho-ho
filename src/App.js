@@ -106,6 +106,14 @@ export default function App() {
           </Fragment>
         } />
 
+        <Route path='/cart' element={
+          <Fragment>
+            <Header setAccountInfo={setAccountInfo} />
+            <GioHang accountInfo={accountInfo} />
+            <Footer />
+          </Fragment>
+        } />
+
         <Route path='/shipper-home' element={<ShipperHome />} />
         <Route path="/shipper-home/orderdetail" exact element={<OrderDetail />} />
         <Route path="/shipper-home/orderconfirmation" exact element={<OrderConfirmation />} />
