@@ -1556,9 +1556,9 @@ h5.widget-title:hover::before,
 /*--------------------------------------
 -------- CHECKOUT PAGE CSS START --------
 ---------------------------------------*/
-.theme2.theme6.hero-area {
-  /* background: url(../img/slide-bg-10.jpg) no-repeat 0 0 / cover; */
-}
+/* .theme2.theme6.hero-area {
+  background: url(../img/slide-bg-10.jpg) no-repeat 0 0 / cover;
+} */
 .checkout-area {
   background: #f9f9f9;
 }
