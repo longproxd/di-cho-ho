@@ -48,7 +48,7 @@ export default function Test2() {
                     console.log(err);
                 })
         }
-    })
+    }, [location])
 
     //destination geometry
     useEffect(() => {
@@ -68,7 +68,7 @@ export default function Test2() {
                     console.log(err);
                 })
         }
-    })
+    }, [location2])
 
     const apiIsLoaded = (map, maps) => {
         const google = window.google;
