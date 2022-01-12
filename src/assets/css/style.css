@@ -2922,3 +2922,11 @@ input[type=submit] {
   left: 660px;
   top: 15px;
 }
+
+/* remove bottom nav map */
+a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"] {
+  display: none !important;
+}
+.gmnoprint a,.gmnoprint span,.gm-style-cc { 
+ display: none;
+}

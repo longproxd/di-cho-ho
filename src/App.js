@@ -98,14 +98,6 @@ export default function App() {
           </Fragment>
         } />
 
-        <Route path='/test2' element={
-          <Fragment>
-            {/* <Header /> */}
-            <Map />
-            {/* <Footer /> */}
-          </Fragment>
-        } />
-
         <Route path='/test3' element={
           <Fragment>
             {/* <Header /> */}

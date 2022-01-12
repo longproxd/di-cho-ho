@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import GoogleMapReact from 'google-map-react';
 import start from '../../assets/img/start.png';
