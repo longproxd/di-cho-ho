@@ -6,6 +6,7 @@ import Banner from './components/KhachHang/Banner';
 import Footer from './components/KhachHang/Footer';
 import MatHang from './pages/KhachHang/MatHang';
 import ComboMatHang from './pages/KhachHang/ComboMatHang';
+import GioHang from './pages/KhachHang/GioHang';
 
 import ProductDetail from './pages/KhachHang/ProductDetail';
 import Store from './pages/KhachHang/Store';
@@ -112,7 +113,6 @@ export default function App() {
         <Route path="/shipper/orderconfirmation" exact element={<OrderConfirmation />} />
         <Route path="/shipper/history" exact element={<LichSuGiaoHang />} />
         <Route path="/admin" exact element={<AdminHome />} />
-=======
         <Route path='/cart' element={
           <Fragment>
             <Header setAccountInfo={setAccountInfo} />

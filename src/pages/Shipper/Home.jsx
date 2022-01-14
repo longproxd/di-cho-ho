@@ -1,7 +1,7 @@
 import logo from '../../assets/img/logo.png';
 import { useState, useEffect } from 'react'
 import MenuItem from '../../components/MenuItem'
-import Header from '../../components/KhachHang/Header';
+import Header from '../../components/Shipper/Header';
 // import Footer from '../../components/Footer';
 import Map from '../../components/Shipper/Map'
 
