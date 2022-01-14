@@ -1,6 +1,3 @@
-import Header from '../../components/Admin-Header';
-import Footer from '../../components/Admin-Footer';
-import Sidebar from '../../components/Admin-Sidebar';
 import Layout from './Layout/Layout';
 import style from './style.module.css';
 
