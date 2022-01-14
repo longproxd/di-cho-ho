@@ -6,7 +6,7 @@ import finish from '../../assets/img/finish.png';
 
 export default function Map() {
     const url = 'https://maps.googleapis.com/maps/api/geocode/json';
-    const key = 'AIzaSyDPydMFDrZ92XmYQTO-eRULpWwCGIMNgj0';
+    const key = 'AIzaSyCdJNhEH92YyCU01Au962smdCqHQG6jmug';
     const coorHCM = { lat: 10.762622, lng: 106.660172 };
 
     const [location, setLocation] = useState(null);
