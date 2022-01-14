@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import React from 'react';
 
 export default function MatHang({setStoreInfo}) {
     const url = 'http://localhost:8080/api/hanghoa';

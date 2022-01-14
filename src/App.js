@@ -40,6 +40,7 @@ import StoreHome from './pages/StoreOwner/Home'
 import EditProduct from './pages/StoreOwner/EditProduct'
 import AddProduct from './pages/StoreOwner/AddProduct'
 import DeleteProduct from './pages/StoreOwner/DeleteProduct'
+import LichSuGiaoHang from './pages/Shipper/LichSuGiaoHang';
 
 export default function App() {
   const [accountInfo, setAccountInfo] = useState()
@@ -106,10 +107,11 @@ export default function App() {
           </Fragment>
         } />
 
-        <Route path='/shipper-home' element={<ShipperHome />} />
-        <Route path="/shipper-home/orderdetail" exact element={<OrderDetail />} />
-        <Route path="/shipper-home/orderconfirmation" exact element={<OrderConfirmation />} />
-        <Route path="/admin-home" exact element={<AdminHome />} />
+        <Route path='/shipper' element={<ShipperHome />} />
+        <Route path="/shipper/orderdetail" exact element={<OrderDetail />} />
+        <Route path="/shipper/orderconfirmation" exact element={<OrderConfirmation />} />
+        <Route path="/shipper/history" exact element={<LichSuGiaoHang />} />
+        <Route path="/admin" exact element={<AdminHome />} />
         <Route path="/admin/statistic/customer" exact element={<CusStatistic />} />
         <Route path="/admin/statistic/shipper" exact element={<ShipStat />} />
         <Route path="/admin/statistic/store" exact element={<StoreStat />} />
@@ -127,7 +129,7 @@ export default function App() {
         <Route path="/admin/registration_approval" exact element={<RegistrationApproval />} />
         <Route path="/admin/commitment" exact element={<Commitment />} />
         <Route path="/admin/login" exact element={<LoginForm />} />
-        <Route path="/storeowner-home" exact element={<StoreHome />} />
+        <Route path="/storeowner" exact element={<StoreHome />} />
         <Route path="/storeowner/productmanagement/addproduct" exact element={<AddProduct />} />
         <Route path="/storeowner/productmanagement/editproduct" exact element={<EditProduct />} />
         <Route path="/storeowner/productmanagement/deleteproduct" exact element={<DeleteProduct />} />
