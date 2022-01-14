@@ -1,12 +1,6 @@
 import Layout from './Layout/Layout';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import style from './style.module.css';
-import { useNavigate } from 'react-router-dom';
-
-const EXAMPLE_DATA = [
-  { item1: 'item1', item2: 'item2', item3: 'item3', selected: false },
-];
 
 function RegistrationApproval() {
   //   const data = [{ item1: 'item1', item2: 'item2', item3: 'item3', selected: false }];
