@@ -10,11 +10,17 @@ function ClientManagement() {
   const [idDel, setIdDel] = useState()
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/doitac")
-      .then(res => {
-        setClients(res.data)
+    axios
+      .get("https://localhost:8001/api/doitac")
+      .then((res) => {
+        console.log(res.data);
+        const doiTacTrangThai = res.data.filter(doiTac => doiTac.trang_thai == "Đã Được Phê Duyệt");
+        setClients(doiTacTrangThai);
       })
-  }, [])
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   function del() {
     axios.delete('http://localhost:8080/api/doitac/xoa/' + idDel)
