@@ -32,7 +32,7 @@ function StoreManagement() {
 
   //row component
   const Row = (props) => {
-    const { key, uid, ten, dia_chi, sdt } = props;
+    const { uid, ten, dia_chi, sdt } = props;
 
     function RowClick(event) {
       if(event.target.style.background === 'white' || event.target.style.background === '')
@@ -46,7 +46,7 @@ function StoreManagement() {
     }
 
     return (
-      <tr key={key} onClick={RowClick}>
+      <tr key={uid} onClick={RowClick}>
         <td>{uid}</td>
         <td>{ten}</td>
         <td>{dia_chi}</td>

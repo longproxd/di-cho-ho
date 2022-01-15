@@ -8,7 +8,7 @@ import Map from '../../components/Shipper/Map'
 function ShipperHome() {
     const [accountarray, Setarray] = useState([])
     useEffect(() => {
-        fetch('https://localhost:8001/api/donhang')
+        fetch('http://localhost:8080/api/shipper/lichsu/61c3d5ff0296576ff58de98f')
             .then(response => {
                 return response.json();
             })
@@ -35,13 +35,13 @@ function ShipperHome() {
                 <div id="col-1">
                     <h3>Đơn hàng mới</h3>
                     {accountarray.length !== 0 ? accountarray.map((item) => {
-                        return <MenuItem id={item.madh} hinh_thuc_thanh_toan={item.hinhthucthanhtoan}
-                            tong_tien={item.tongtien}
-                            ma_shipper={item.mashipper}
-                            dia_chi={item.dia_chi}
-                            tinh_trang={item.tinhtrang}
-                            ma_khach_hang={item.makhg}
-                            ma_cua_hang={item.mach} />
+                        return <MenuItem id={item.DonHang.madh} hinh_thuc_thanh_toan={item.DonHang.hinhthucthanhtoan}
+                            tong_tien={item.DonHang.tongtien}
+                            ma_shipper='abc'
+                            dia_chi={item.DonHang.diachi}
+                            tinh_trang={item.DonHang.tinhtrangdon}
+                            ma_khach_hang={item.KhachHang.ten}
+                            ma_cua_hang={item.CuaHang.tench} />
                     }) : <div>No item available</div>
                     }
                 </div>

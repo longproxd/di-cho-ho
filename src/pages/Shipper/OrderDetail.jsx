@@ -3,26 +3,6 @@ import Header from '../../components/KhachHang/Header';
 import Footer from '../../components/KhachHang/Footer';
 
 function OrderDetail() {
-    function loginClick(event) {
-        event.preventDefault()
-
-        document.getElementById("login-form-popup").style.display = "block"
-        document.getElementById("regis-popup").style.display = "none"
-    }
-
-    function RegisClick(event) {
-        event.preventDefault()
-
-        document.getElementById("login-form-popup").style.display = "none"
-        document.getElementById("regis-popup").style.display = "block"
-    }
-
-    function closeClick(event) {
-        event.preventDefault()
-
-        document.getElementById("login-form-popup").style.display = "none"
-        document.getElementById("regis-popup").style.display = "none"
-    }
 
     return (
         <div>

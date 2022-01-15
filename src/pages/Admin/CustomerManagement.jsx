@@ -31,7 +31,7 @@ function CustomerManagement() {
 
   //row component
   const Row = (props) => {
-    const { key, uid, cccd, ten, gioi_tinh, ngay_sinh, dia_chi, sdt } = props;
+    const { uid, cccd, ten, gioi_tinh, ngay_sinh, dia_chi, sdt } = props;
 
     function RowClick(event) {
       if(event.target.style.background === 'white' || event.target.style.background === '')
@@ -45,7 +45,7 @@ function CustomerManagement() {
     }
 
     return (
-      <tr key={key} onClick={RowClick}>
+      <tr key={uid} onClick={RowClick}>
         <td>{uid}</td>
         <td>{cccd}</td>
         <td>{ten}</td>

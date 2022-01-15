@@ -1,7 +1,22 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import logo from '../../assets/img/logo.png';
 
 export default function Banner() {
+    const [keyword, setKeyword] = useState()
+
+    const handleChange = (event) => {
+        setKeyword(event.target.value)
+    }
+
+    const findClick = (event) => {
+        event.preventDefault()
+
+        axios.get('http://localhost:8080/api/hanghoa/' + keyword)
+    }
+
+
+
     return (
         <div>
             <header className="header-area ptb-15">
@@ -16,7 +31,10 @@ export default function Banner() {
 
                                     <li id="li-nearlast">
                                         <form className="form-search" role="search">
-                                            <input type="text" placeholder="Tìm sản phẩm" />
+                                            <input onChange={handleChange} type="text" placeholder="Tìm sản phẩm" />
+                                            <button className='find-btn' onClick={findClick}>
+                                                <i className='fa fa-search' />
+                                            </button>
                                         </form>
                                     </li>
                                 </ul>

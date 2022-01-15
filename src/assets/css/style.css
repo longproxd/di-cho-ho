@@ -973,6 +973,12 @@ h5.widget-title:hover::before,
 /*--------------------------------------
 -------- HOME VERSION 2 PAGE CSS START --------
 ---------------------------------------*/
+.find-btn {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
 .theme2.hero-area {
   background: none;
   background: url(../img/banner.png) no-repeat 0 0 / cover;
@@ -2230,7 +2236,6 @@ blockquote:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
 }
 
 .admin-header-container {

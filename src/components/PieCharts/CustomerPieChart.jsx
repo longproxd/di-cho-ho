@@ -1,20 +1,26 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import Chart from 'react-google-charts'
 
-const pieData = [
+function PieChart() {
+  const [result, setResult] = useState()
+
+  useEffect(() => {
+    axios.get('http://localhost:8080/api/thongkekhuvuckhachhang')
+    .then(res => setResult(res.data))
+  }, [])
+
+  const pieData = [
   ['Phân Vùng', 'Số lượng khách'],
-  ['Vùng Đỏ', 11],
-  ['Vùng Vàng', 2],
-  ['Vùng Xanh', 2],
+  ['Vùng Xanh', result.Green],
+  ['Vùng Đỏ', result.Red],
+  ['Vùng Vàng', result.Yellow],
 ]
 
 const pieOptions = {
   title: 'Số lượng Khách Hàng theo từng phân vùng',
   pieHole: 0.4,
 }
-
-class PieChart extends Component {
-  render() {
     return (
       <div className="container mt-5">
         <Chart
@@ -28,7 +34,7 @@ class PieChart extends Component {
         />
       </div>
     )
-  }
+  
 }
 
 export default PieChart
