@@ -2415,10 +2415,12 @@ td {
 
 .stat #green {
   background: rgb(0, 199, 0);
+  cursor: pointer;
 }
 
 .stat #red {
   background: red;
+  cursor: pointer;
 }
 
 .table-uam{
