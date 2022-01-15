@@ -179,12 +179,6 @@ function Header({ setAccountInfo }) {
                                                             </div>
                                                             <div className="col-sm-12">
                                                                 <div className="contact-container">
-                                                                    <input type="email" placeholder="Địa chỉ Email" />
-                                                                    <i className="fa fa-envelope" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="col-sm-12">
-                                                                <div className="contact-container">
                                                                     <input name="password" value={account.password}
                                                                         type="password" placeholder="Mật khẩu"
                                                                         onChange={handleChange}
