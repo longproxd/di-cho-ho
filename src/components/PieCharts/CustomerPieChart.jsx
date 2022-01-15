@@ -12,9 +12,9 @@ function PieChart() {
 
   const pieData = [
   ['Phân Vùng', 'Số lượng khách'],
-  ['Vùng Xanh', result.Green],
-  ['Vùng Đỏ', result.Red],
-  ['Vùng Vàng', result.Yellow],
+  ['Vùng Xanh', result && result.Green],
+  ['Vùng Đỏ', result && result.Red],
+  ['Vùng Vàng', result && result.Yellow],
 ]
 
 const pieOptions = {
