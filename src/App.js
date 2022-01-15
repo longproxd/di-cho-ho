@@ -6,6 +6,7 @@ import Banner from './components/KhachHang/Banner';
 import Footer from './components/KhachHang/Footer';
 import MatHang from './pages/KhachHang/MatHang';
 import ComboMatHang from './pages/KhachHang/ComboMatHang';
+import GioHang from './pages/KhachHang/GioHang';
 
 import ProductDetail from './pages/KhachHang/ProductDetail';
 import Store from './pages/KhachHang/Store';
@@ -107,12 +108,6 @@ export default function App() {
           </Fragment>
         } />
 
-        <Route path='/shipper' element={<ShipperHome />} />
-        <Route path="/shipper/orderdetail" exact element={<OrderDetail />} />
-        <Route path="/shipper/orderconfirmation" exact element={<OrderConfirmation />} />
-        <Route path="/shipper/history" exact element={<LichSuGiaoHang />} />
-        <Route path="/admin" exact element={<AdminHome />} />
-=======
         <Route path='/cart' element={
           <Fragment>
             <Header setAccountInfo={setAccountInfo} />
@@ -121,10 +116,11 @@ export default function App() {
           </Fragment>
         } />
 
-        <Route path='/shipper-home' element={<ShipperHome />} />
-        <Route path="/shipper-home/orderdetail" exact element={<OrderDetail />} />
-        <Route path="/shipper-home/orderconfirmation" exact element={<OrderConfirmation />} />
-        <Route path="/admin-home" exact element={<AdminHome />} />
+        <Route path='/shipper' element={<ShipperHome />} />
+        <Route path="/shipper/orderdetail" exact element={<OrderDetail />} />
+        <Route path="/shipper/orderconfirmation" exact element={<OrderConfirmation />} />
+        <Route path="/shipper/history" exact element={<LichSuGiaoHang />} />
+        <Route path="/admin" exact element={<AdminHome />} />
         <Route path="/admin/statistic/customer" exact element={<CusStatistic />} />
         <Route path="/admin/statistic/shipper" exact element={<ShipStat />} />
         <Route path="/admin/statistic/store" exact element={<StoreStat />} />

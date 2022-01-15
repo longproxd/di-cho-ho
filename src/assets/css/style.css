@@ -973,6 +973,12 @@ h5.widget-title:hover::before,
 /*--------------------------------------
 -------- HOME VERSION 2 PAGE CSS START --------
 ---------------------------------------*/
+.find-btn {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
 .theme2.hero-area {
   background: none;
   background: url(../img/banner.png) no-repeat 0 0 / cover;
@@ -2073,6 +2079,25 @@ blockquote:before {
   color: blue;
 }
 
+.shipper-header-icon-menu {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  height: 50px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: -60px;
+  top: 40px;
+  z-index: 2;
+}
+
+.shipper-header-icon-menu a {
+  color: red !important;
+}
+
 @media screen and (max-height: 450px) {
   .shipper-sidenav {
     padding-top: 15px;
@@ -2211,7 +2236,6 @@ blockquote:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
 }
 
 .admin-header-container {
@@ -2851,7 +2875,7 @@ p {
 }
 
 
-input[type=text], select, textarea{
+input[type=text], textarea{
   width: 100%;
   padding: 12px;
   /* border: 1px solid #ccc; */

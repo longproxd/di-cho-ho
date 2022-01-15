@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Header({ setAccountInfo }) {
+    const [showMenu, setShowMenu] = useState(false);
     let navigate = useNavigate()
 
     const [isLogin, setIsLogin] = useState(false)
@@ -10,11 +11,13 @@ function Header({ setAccountInfo }) {
         sdt: "",
         cccd: "",
         diachi: "",
-        ngaysinh: "",
         gioitinh: "",
+        nhiemvu: 'shipper',
+        khuvucgiaohang: '',
+        trangthaitiemchung: '',
         password: "",
         username: "",
-        makhuvuc: "",
+        ngaysinh: "",
         ten: "",
     })
 
@@ -57,13 +60,13 @@ function Header({ setAccountInfo }) {
     function Login(event) {
         event.preventDefault()
 
-        axios.get('http://localhost:8080/api/login/' + account.username + '&' + account.password)
+        axios.get('http://localhost:8080/api/shipper/login/' + account.username + '&' + account.password)
             .then(response => {
                 if (response.status === 204) {
                     alert("Username hoặc password không đúng")
                 }
                 if (response.status === 200) {
-                    setAccountInfo(response.data)
+                    //setAccountInfo(response.data)
                     setIsLogin(true)
 
                     document.getElementById("login-form-popup").style.display = "none"
@@ -76,7 +79,7 @@ function Header({ setAccountInfo }) {
     function Regis(e) {
         e.preventDefault()
 
-        axios.post("http://localhost:8080/api/customer/registeraccount", account)
+        axios.post("http://localhost:8080/api/shipper/registeraccount", account)
             .then((response) => {
                 if (response.status === 201) {
                     console.log(response);
@@ -98,17 +101,28 @@ function Header({ setAccountInfo }) {
                         <div className="col-md-7">
                             <div className="header-left-content">
                                 <ul>
-                                    <li><a href="/merchant">Kênh Người Bán</a></li>
-                                    <li><a href="/shipper-home">Kênh Shipper</a></li>
+                                    <li><a href="/storeowner">Kênh Người Bán</a></li>
+                                    <li><a href="/">Kênh Khách hàng</a></li>
                                 </ul>
                             </div>
                         </div>
 
                         <div className="col-md-5">
                             <div className="header-right-content">
-                                {isLogin ? <a href="/" onClick={goToAccount}>
-                                    {account.username}
-                                </a> :
+                                {isLogin ?
+                                    <div
+                                        className='storeowner-header-icon-container'
+                                        onClick={() => setShowMenu(!showMenu)}
+                                    >
+                                        <i className='fa fa-user-circle-o admin-header-icon' />
+                                        {showMenu ? (
+                                            <div className='shipper-header-icon-menu'>
+                                                <a href='#'>Lịch sử giao hàng</a>
+                                                <a onClick={() => setIsLogin(!isLogin)} href='#'>Đăng xuất</a>
+                                            </div>
+                                        ) : null}
+                                    </div>
+                                    :
                                     <ul>
                                         <li><a href="/" onClick={signupClick}>Đăng Ký</a></li>
                                         <li><a href="/" onClick={loginClick} className="popup-show">Đăng Nhập</a>
@@ -117,10 +131,9 @@ function Header({ setAccountInfo }) {
                                                 <form action="/">
                                                     <div className="row">
                                                         <div className="col-sm-12">
-                                                            <div className="contact-container first">
+                                                            <div className="contact-container">
                                                                 <input name="username" value={account.username}
                                                                     type="text" placeholder="Tên đăng nhập"
-                                                                    autoComplete='off'
                                                                     onChange={handleChange} />
                                                                 <i className="fa fa-user" />
                                                             </div>
@@ -168,7 +181,7 @@ function Header({ setAccountInfo }) {
                                                     <div className="row">
                                                         <div className='signup-tabs'>
                                                             <div className="col-sm-12">
-                                                                <div className="contact-container first">
+                                                                <div className="contact-container">
                                                                     <input name="username" value={account.username}
                                                                         autoComplete='off'
                                                                         type="text" placeholder="Tên đăng nhập"
@@ -190,7 +203,7 @@ function Header({ setAccountInfo }) {
                                                                 <input type="password" placeholder="Nhập lại mật khẩu" />
                                                             </div>
                                                             <div className="col-sm-12">
-                                                                <div className="contact-container name">
+                                                                <div className="contact-container">
                                                                     <input name="ten" value={account.ten}
                                                                         type="text" placeholder="Họ và tên"
                                                                         onChange={handleChange}
@@ -242,7 +255,29 @@ function Header({ setAccountInfo }) {
                                                                         type="text" placeholder="Số CMND/CCCD"
                                                                         onChange={handleChange}
                                                                     />
-                                                                    <i className="fa fa-id-card-o" />
+                                                                    <i className="fa fa-address-card-o" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-sm-12">
+                                                                <div className="contact-container">
+                                                                    <input name="khuvucgiaohang" value={account.khuvucgiaohang}
+                                                                        type="text" placeholder="Khu vực giao hàng"
+                                                                        onChange={handleChange}
+                                                                    />
+                                                                    <i className="fa fa-motorcycle" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-sm-12">
+                                                                <div className="contact-container">
+                                                                    <input name="trangthaitiemchung" value={account.trangthaitiemchung}
+                                                                        placeholder="Trạng thái tiêm chủng" type="text"
+                                                                        list='condition' onChange={handleChange} />
+                                                                    <datalist id="condition">
+                                                                        <option value="Chưa tiêm mũi nào">Chưa tiêm mũi nào</option>
+                                                                        <option value="Đã Tiêm 1 Mũi Vaccine">Đã Tiêm 1 Mũi Vaccine</option>
+                                                                        <option value="Đã Tiêm 2 Mũi Vaccine">Đã Tiêm 2 Mũi Vaccine</option>
+                                                                    </datalist>
+                                                                    <i className="fa fa-medkit" />
                                                                 </div>
                                                             </div>
                                                         </div>

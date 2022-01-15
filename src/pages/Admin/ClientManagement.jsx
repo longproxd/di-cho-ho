@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 
 function ClientManagement() {
   const [clients, setClients] = useState()
+  const [idDel, setIdDel] = useState()
 
   useEffect(() => {
     axios.get("http://localhost:8080/api/doitac")
@@ -15,18 +16,53 @@ function ClientManagement() {
       })
   }, [])
 
-  clients && clients.map((client) => {
-    var row = document.getElementById("tbody").insertRow(0)
-    row.insertCell(0).innerHTML = client.id;
-    row.insertCell(1).innerHTML = client.tendoitac;
-    row.insertCell(2).innerHTML = client.sdt;
-    row.insertCell(3).innerHTML = client.cccd;
-    row.insertCell(4).innerHTML = client.loaidoitac;
-    row.insertCell(5).innerHTML = client.ngaythamgia;
-    row.insertCell(6).innerHTML = client.soluongcuahang;
-    row.insertCell(7).innerHTML = client.diachi;
-    row.insertCell(8).innerHTML = client.trangthai;
-  })
+  function del() {
+    axios.delete('http://localhost:8080/api/doitac/xoa/' + idDel)
+  }
+
+  //table component
+  const TableBody = (props) => {
+
+    return (
+      <tbody>
+        {props.data.map(item =>
+          <Row key={item.id} uid={item.id} ten={item.tendoitac} sdt={item.sdt} cccd={item.cccd}
+                loai={item.loaidoitac} ngay={item.ngaythamgia} so_luong={item.soluongcuahang}
+                dia_chi={item.diachi} trang_thai={item.trangthai} />
+        )}
+      </tbody>
+    )
+  }
+
+  //row component
+  const Row = (props) => {
+    const { uid, ten, sdt, cccd, loai, ngay, so_luong, dia_chi, trang_thai } = props;
+
+    function RowClick(event) {
+      if(event.target.style.background === 'white' || event.target.style.background === '')
+      {
+        event.target.style.background = 'lightblue'
+      }
+      else
+      {
+        event.target.style.background = 'white'
+      }
+    }
+
+    return (
+      <tr key={uid} onClick={RowClick}>
+        <td>{uid}</td>
+        <td>{ten}</td>
+        <td>{sdt}</td>
+        <td>{cccd}</td>
+        <td>{loai}</td>
+        <td>{ngay}</td>
+        <td>{so_luong}</td>
+        <td>{dia_chi}</td>
+        <td>{trang_thai}</td>
+      </tr>
+    )
+  }
 
   return (
     <div>
@@ -37,11 +73,10 @@ function ClientManagement() {
           <div className='table-interact'>
             <button>Thêm</button>
             <button>Xóa</button>
-            <label for="user-type">Loại đối tác</label>
+            <label htmlFor="user-type">Loại đối tác</label>
             <select id="user-type">
-              <option>Option A</option>
-              <option>Option B</option>
-              <option>Option C</option>
+              <option>Doanh nghiệp</option>
+              <option>Tư nhân</option>
             </select>
           </div>
           <div className='table-container'>
@@ -59,9 +94,7 @@ function ClientManagement() {
                   <th> Trạng Thái </th>
                 </tr>
               </thead>
-              <tbody id='tbody'>
-
-              </tbody>
+              {clients && <TableBody data={clients} />}
             </table>
           </div>
         </div>

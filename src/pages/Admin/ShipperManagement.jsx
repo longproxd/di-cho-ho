@@ -1,4 +1,4 @@
-  import Header from '../../components/Admin-Header';
+import Header from '../../components/Admin-Header';
 import Footer from '../../components/Admin-Footer';
 import Sidebar from '../../components/Admin-Sidebar';
 
@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 
 function ShipperManagement() {
   const [shippers, setShippers] = useState()
+  const [idDel, setIdDel] = useState()
 
   useEffect(() => {
     axios.get("http://localhost:8080/api/shipper/list")
@@ -15,18 +16,53 @@ function ShipperManagement() {
       })
   }, [])
 
-  shippers && shippers.map((shipper) => {
-    var row = document.getElementById("tbody").insertRow(0)
-    row.insertCell(0).innerHTML = shipper.id;
-    row.insertCell(1).innerHTML = shipper.cccd;
-    row.insertCell(2).innerHTML = shipper.ten;
-    row.insertCell(3).innerHTML = shipper.gioitinh;
-    row.insertCell(4).innerHTML = shipper.ngaysinh;
-    row.insertCell(5).innerHTML = shipper.diachi;
-    row.insertCell(6).innerHTML = shipper.sdt;
-    row.insertCell(7).innerHTML = shipper.khuvucgiaohang;
-    row.insertCell(8).innerHTML = shipper.trangthaitiemchung;
-  })
+  function del() {
+    axios.delete('http://localhost:8080/api/doitac/xoa/' + idDel)
+  }
+
+  //table component
+  const TableBody = (props) => {
+
+    return (
+      <tbody>
+        {props.data.map(item =>
+          <Row key={item.id} uid={item.id} cccd={item.cccd} ten={item.ten} gioi_tinh={item.gioitinh}
+          ngay_sinh={item.ngaysinh} dia_chi={item.diachi} sdt={item.sdt}
+          khu_vuc_hoat_dong={item.khuvucgiaohang} trang_thai_tiem_chung={item.trangthaitiemchung} />
+        )}
+      </tbody>
+    )
+  }
+
+  //row component
+  const Row = (props) => {
+    const { uid, cccd, ten, gioi_tinh, ngay_sinh, dia_chi, sdt, khu_vuc_hoat_dong, trang_thai_tiem_chung } = props;
+
+    function RowClick(event) {
+      if(event.target.style.background === 'white' || event.target.style.background === '')
+      {
+        event.target.style.background = 'lightblue'
+      }
+      else
+      {
+        event.target.style.background = 'white'
+      }
+    }
+
+    return (
+      <tr key={uid} onClick={RowClick}>
+        <td>{uid}</td>
+        <td>{cccd}</td>
+        <td>{ten}</td>
+        <td>{gioi_tinh}</td>
+        <td>{ngay_sinh}</td>
+        <td>{dia_chi}</td>
+        <td>{sdt}</td>
+        <td>{khu_vuc_hoat_dong}</td>
+        <td>{trang_thai_tiem_chung}</td>
+      </tr>
+    )
+  }
 
     return (
         <div>
@@ -45,9 +81,7 @@ function ShipperManagement() {
                   <th> Trạng thái tiêm chủng </th>
                 </tr>
               </thead>
-              <tbody id='tbody'>
-                
-              </tbody>
+              {shippers && <TableBody data={shippers} />}
             </table>
           </div>
       </div>
