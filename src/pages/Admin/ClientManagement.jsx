@@ -32,9 +32,9 @@ function ClientManagement() {
     return (
       <tbody>
         {props.data.map(item =>
-          <Row key={item.id} uid={item.id} ten={item.tendoitac} sdt={item.sdt} cccd={item.cccd}
-                loai={item.loaidoitac} ngay={item.ngaythamgia} so_luong={item.soluongcuahang}
-                dia_chi={item.diachi} trang_thai={item.trangthai} />
+          <Row key={item.Id} uid={item.Id} ten={item.ten_doi_tac} sdt={item.sdt} cccd={item.cccd}
+                loai={item.loai_doi_tac} ngay={item.ngay_tham_gia} so_luong={item.so_luong_cua_hang}
+                dia_chi={item.dia_chi} trang_thai={item.trang_thai} />
         )}
       </tbody>
     )

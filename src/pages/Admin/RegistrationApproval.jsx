@@ -3,17 +3,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function RegistrationApproval() {
-  //   const data = [{ item1: 'item1', item2: 'item2', item3: 'item3', selected: false }];
-
-  // const [data, setData] = useState(EXAMPLE_DATA)
-
-  // const handleSelectRow = (index) => {
-
-  //     let newArray = [...data];
-  //     newArray[index]['selected'] = !newArray[index]['selected']
-  //   setData(newArray)
-  // };
-  // b1: Tao URL
 
   const url = 'https://localhost:8001/api/doitac';
   const [DoiTac, setDoiTac] = useState([]);
@@ -31,11 +20,6 @@ function RegistrationApproval() {
       });
   }, []);
 
-  // const navigate = useNavigate();
-  // function handleClick() {
-  //   navigate('/combo');
-  // }
-
   return (
     <Layout>
       <div className='table-container stat'>
@@ -44,27 +28,30 @@ function RegistrationApproval() {
         <table id='table' className='table-uam'>
           <thead>
             <tr>
-              <th> Mã DT </th>
-              <th> SDT </th>
+              <th> ID </th>
+              <th> Tên Đối Tác </th>
+              <th> SĐT </th>
               <th> CCCD </th>
-              <th> DiaChi </th>
-              <th> Loai Doi Tac </th>
-              <th> Ngay Tham Gia </th>
-              <th> So Luong Cua Hang </th>
-              <th> Trang Thai </th>
+              <th> Loại Đối Tác </th>
+              <th> Ngày Tham Gia </th>
+              <th> Số Lượng Cửa Hàng </th>
+              <th> Địa Chỉ </th>
+              <th> Trạng Thái </th>
             </tr>
           </thead>
 
           {DoiTac.map((DoiTac) => (
             <tbody id='tbody'>
               <tr>
-                <td>{DoiTac.mach}</td>
-                <td>{DoiTac.tench}</td>
+                <td>{DoiTac.Id}</td>
+                <td>{DoiTac.ten_doi_tac}</td>
                 <td>{DoiTac.sdt}</td>
-                <td>{DoiTac.diachi}</td>
-                <td>{DoiTac.hinhanh}</td>
-                <td>{DoiTac.makv}</td>
-                <td>{DoiTac.madt}</td>
+                <td>{DoiTac.cccd}</td>
+                <td>{DoiTac.loai_doi_tac}</td>
+                <td>{DoiTac.ngay_tham_gia}</td>
+                <td>{DoiTac.so_luong_cua_hang}</td>
+                <td>{DoiTac.dia_chi}</td>
+                <td>{DoiTac.trang_thai}</td>
               </tr>
             </tbody>
           ))}

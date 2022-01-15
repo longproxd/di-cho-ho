@@ -3,7 +3,7 @@ import Footer from '../../components/Admin-Footer';
 import Sidebar from '../../components/Admin-Sidebar';
 
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function UserAccountManagement() {
   const [total, setTotal] = useState()
@@ -57,6 +57,8 @@ function UserAccountManagement() {
       if(event.target.style.background === 'white' || event.target.style.background === '')
       {
         event.target.style.background = 'lightblue'
+
+        alert(event.target.innerHTML)
       }
       else
       {

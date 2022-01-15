@@ -6,6 +6,7 @@ function Header({ setAccountInfo }) {
     let navigate = useNavigate()
 
     const [isLogin, setIsLogin] = useState(false)
+    const [showMenu, setShowMenu] = useState(false)
     const [account, setAccount] = useState({
         sdt: "",
         cccd: "",
@@ -106,9 +107,21 @@ function Header({ setAccountInfo }) {
 
                         <div className="col-md-5">
                             <div className="header-right-content">
-                                {isLogin ? <a href="/" onClick={goToAccount}>
-                                    {account.username}
-                                </a> :
+                                {isLogin ? 
+                                <div className='storeowner-header-icon-container'
+                                onClick={() => setShowMenu(!showMenu)}
+                            >
+                                <i className='fa fa-user-circle-o admin-header-icon' />
+                                {showMenu ? (
+                                    <div className='shipper-header-icon-menu'>
+                                        <a href="/" onClick={goToAccount}>
+                                            {account.username}
+                                        </a>
+                                        <a href='#'>Lịch sử mua hàng</a>
+                                        <a onClick={() => setIsLogin(!isLogin)} href='#'>Đăng xuất</a>
+                                    </div>
+                                ) : null}
+                            </div> :
                                     <ul>
                                         <li><a href="/" onClick={signupClick}>Đăng Ký</a></li>
                                         <li><a href="/" onClick={loginClick} className="popup-show">Đăng Nhập</a>
