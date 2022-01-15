@@ -36,7 +36,7 @@ function ClientManagement() {
 
   //row component
   const Row = (props) => {
-    const { key, uid, ten, sdt, cccd, loai, ngay, so_luong, dia_chi, trang_thai } = props;
+    const { uid, ten, sdt, cccd, loai, ngay, so_luong, dia_chi, trang_thai } = props;
 
     function RowClick(event) {
       if(event.target.style.background === 'white' || event.target.style.background === '')
@@ -50,7 +50,7 @@ function ClientManagement() {
     }
 
     return (
-      <tr key={key} onClick={RowClick}>
+      <tr key={uid} onClick={RowClick}>
         <td>{uid}</td>
         <td>{ten}</td>
         <td>{sdt}</td>
@@ -73,11 +73,10 @@ function ClientManagement() {
           <div className='table-interact'>
             <button>Thêm</button>
             <button>Xóa</button>
-            <label for="user-type">Loại đối tác</label>
+            <label htmlFor="user-type">Loại đối tác</label>
             <select id="user-type">
-              <option>Option A</option>
-              <option>Option B</option>
-              <option>Option C</option>
+              <option>Doanh nghiệp</option>
+              <option>Tư nhân</option>
             </select>
           </div>
           <div className='table-container'>

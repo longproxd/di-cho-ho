@@ -21,8 +21,8 @@ import React from 'react'
 
         </div>
         <a className='orderdetail-link'
-        href='http://localhost:8000/shipper-home/orderdetail'
-        >Chi tiet don hang</a>
+        href='http://localhost:8000/shipper/orderdetail'
+        >Chi tiết đơn hàng</a>
      </div>)
  }
 

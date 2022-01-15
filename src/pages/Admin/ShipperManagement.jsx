@@ -36,7 +36,7 @@ function ShipperManagement() {
 
   //row component
   const Row = (props) => {
-    const { key, uid, cccd, ten, gioi_tinh, ngay_sinh, dia_chi, sdt, khu_vuc_hoat_dong, trang_thai_tiem_chung } = props;
+    const { uid, cccd, ten, gioi_tinh, ngay_sinh, dia_chi, sdt, khu_vuc_hoat_dong, trang_thai_tiem_chung } = props;
 
     function RowClick(event) {
       if(event.target.style.background === 'white' || event.target.style.background === '')
@@ -50,7 +50,7 @@ function ShipperManagement() {
     }
 
     return (
-      <tr key={key} onClick={RowClick}>
+      <tr key={uid} onClick={RowClick}>
         <td>{uid}</td>
         <td>{cccd}</td>
         <td>{ten}</td>

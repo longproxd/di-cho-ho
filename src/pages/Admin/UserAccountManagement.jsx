@@ -43,7 +43,7 @@ function UserAccountManagement() {
           <Row key={item.id} uid={item.id} user={item.username} type='Khách mua hàng' />
         )}
         {props.data.Shipper.map(item =>
-          <Row key={item.id} uid={item.id} user={item.username} type='Shipper' />
+          <Row key={item.id} user={item.username} type='Shipper' />
         )}
       </tbody>
     )
@@ -51,7 +51,7 @@ function UserAccountManagement() {
 
   //row component
   const Row = (props) => {
-    const { key, uid, user, type } = props;
+    const { uid, user, type } = props;
 
     function RowClick(event) {
       if(event.target.style.background === 'white' || event.target.style.background === '')
@@ -65,7 +65,7 @@ function UserAccountManagement() {
     }
 
     return (
-      <tr key={key} onClick={RowClick}>
+      <tr key={uid} onClick={RowClick}>
         <td>{uid}</td>
         <td>{user}</td>
         <td>{type}</td>
@@ -82,11 +82,11 @@ function UserAccountManagement() {
         <div className='useraccount-table'>
           <div className='table-interact'>
             <button onClick={del}>Xóa</button>
-            <label for="user-type">Loại người dùng</label>
+            <label htmlFor="user-type">Loại người dùng</label>
             <select id="user-type">
-              <option>Option A</option>
-              <option>Option B</option>
-              <option>Option C</option>
+              <option>Khách mua hàng</option>
+              <option>Shipper</option>
+              <option>Chủ cửa hàng</option>
             </select>
           </div>
           <div className='table-container'>
