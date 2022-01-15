@@ -4,8 +4,15 @@ import Layout from './Layout/Layout';
 import CustomerStatistic from './CustomerStatistic';
 import CustomerManagement from './CustomerManagement';
 
+import axios from 'axios';
+
 function CusStatistic() {
   const [currentTab, setCurrentTab] = useState('manage');
+  const [idDel, setIdDel] = useState()
+
+  function del() {
+    axios.delete('http://localhost:8080/api/xoa/' + idDel)
+  }
 
   const handleSwitchTab = (tab) => {
     if (tab === 'stat') return setCurrentTab('stat');
@@ -37,12 +44,13 @@ function CusStatistic() {
           {currentTab === 'manage' ? (
             <div className={style.tabs__btns_container}>
               <button>Thêm</button>
-              <button>Xoá</button>
+              <button onClick={del}>Xoá</button>
             </div>
           ) : null}
         </div>
         <div className={style.tab_panel}>
-          {currentTab === 'stat' ? <CustomerStatistic /> : <CustomerManagement />}
+          {currentTab === 'stat' ? <CustomerStatistic />
+           : <CustomerManagement setIdDel={setIdDel} />}
         </div>
       </div>
     </Layout>

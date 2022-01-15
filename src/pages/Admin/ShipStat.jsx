@@ -4,8 +4,16 @@ import Layout from './Layout/Layout';
 import ShipperStatistic from './ShipperStatistic';
 import ShipperManagement from './ShipperManagement';
 
+import axios from 'axios';
+
 function ShipStat() {
   const [currentTab, setCurrentTab] = useState('manage');
+  const [idDel, setIdDel] = useState()
+
+  function del() {
+    console.log(idDel)
+    axios.delete('http://localhost:8080/api/shipper/xoa/' + idDel)
+  }
 
   const handleSwitchTab = (tab) => {
     if (tab === 'stat') return setCurrentTab('stat');
@@ -37,12 +45,13 @@ function ShipStat() {
           {currentTab === 'manage' ? (
             <div className={style.tabs__btns_container}>
               <button>Thêm</button>
-              <button>Xoá</button>
+              <button onClick={del}>Xoá</button>
             </div>
           ) : null}
         </div>
         <div className={style.tab_panel}>
-          {currentTab === 'stat' ? <ShipperStatistic /> : <ShipperManagement />}
+          {currentTab === 'stat' ? <ShipperStatistic /> 
+          : <ShipperManagement setIdDel={setIdDel} />}
         </div>
       </div>
     </Layout>
