@@ -14,7 +14,7 @@ function ClientManagement() {
       .get("https://localhost:8001/api/doitac")
       .then((res) => {
         console.log(res.data);
-        const doiTacTrangThai = res.data.filter(doiTac => doiTac.trang_thai == "Đã Được Phê Duyệt");
+        const doiTacTrangThai = res.data.filter(doiTac => doiTac.trang_thai === "Đã Được Phê Duyệt");
         setClients(doiTacTrangThai);
       })
       .catch((err) => {
@@ -23,7 +23,7 @@ function ClientManagement() {
   }, []);
 
   function del() {
-    axios.delete('http://localhost:8080/api/doitac/xoa/' + idDel)
+    //axios.delete('http://localhost:8080/api/doitac/xoa/' + idDel)
   }
 
   //table component
@@ -48,6 +48,8 @@ function ClientManagement() {
       if(event.target.style.background === 'white' || event.target.style.background === '')
       {
         event.target.style.background = 'lightblue'
+
+        alert(event.target.innerHTML)
       }
       else
       {
@@ -78,7 +80,7 @@ function ClientManagement() {
         <div className='useraccount-table'>
           <div className='table-interact'>
             <button>Thêm</button>
-            <button>Xóa</button>
+            <button onClick={del}>Xóa</button>
             <label htmlFor="user-type">Loại đối tác</label>
             <select id="user-type">
               <option>Doanh nghiệp</option>

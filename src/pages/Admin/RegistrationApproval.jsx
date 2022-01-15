@@ -12,7 +12,7 @@ function RegistrationApproval() {
       .get(url)
       .then((res) => {
         console.log(res.data);
-        const doiTacTrangThai = res.data.filter(doiTac => doiTac.trang_thai == "");
+        const doiTacTrangThai = res.data.filter(doiTac => doiTac.trang_thai === "");
         setDoiTac(doiTacTrangThai);
       })
       .catch((err) => {

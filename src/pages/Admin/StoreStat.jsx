@@ -4,8 +4,15 @@ import Layout from './Layout/Layout';
 import StoreStatistic from './StoreStatistic';
 import StoreManagement from './StoreManagement';
 
+import axios from 'axios';
+
 function StoreStat() {
   const [currentTab, setCurrentTab] = useState('manage');
+  const [idDel, setIdDel] = useState()
+
+  function del() {
+    axios.delete('http://localhost:8080/api/cuahang/xoa/' + idDel)
+  }
 
   const handleSwitchTab = (tab) => {
     if (tab === 'stat') return setCurrentTab('stat');
@@ -37,12 +44,13 @@ function StoreStat() {
           {currentTab === 'manage' ? 
           <div className={style.tabs__btns_container}>
             <button>Thêm</button>
-            <button>Xoá</button>
+            <button onClick={del}>Xoá</button>
           </div>
           : null}
         </div>
         <div className={style.tab_panel}>
-          {currentTab === 'stat' ? <StoreStatistic /> : <StoreManagement />}
+          {currentTab === 'stat' ? <StoreStatistic /> 
+          : <StoreManagement setIdDel={setIdDel} />}
         </div>
       </div>
     </Layout>
