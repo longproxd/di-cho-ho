@@ -42,6 +42,7 @@ import EditProduct from './pages/StoreOwner/EditProduct'
 import AddProduct from './pages/StoreOwner/AddProduct'
 import DeleteProduct from './pages/StoreOwner/DeleteProduct'
 import LichSuGiaoHang from './pages/Shipper/LichSuGiaoHang';
+import Test3 from './pages/KhachHang/Test3';
 
 export default function App() {
   const [accountInfo, setAccountInfo] = useState()
@@ -103,7 +104,7 @@ export default function App() {
         <Route path='/test3' element={
           <Fragment>
             {/* <Header /> */}
-            {/* <Test3 /> */}
+            <Test3 />
             {/* <Footer /> */}
           </Fragment>
         } />
