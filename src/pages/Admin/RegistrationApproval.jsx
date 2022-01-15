@@ -15,15 +15,16 @@ function RegistrationApproval() {
   // };
   // b1: Tao URL
 
-  const url = 'http://localhost:8080/api/doitac';
+  const url = 'https://localhost:8001/api/doitac';
   const [DoiTac, setDoiTac] = useState([]);
 
   useEffect(() => {
     axios
       .get(url)
       .then((res) => {
-        console.log(res);
-        setDoiTac(res.data);
+        console.log(res.data);
+        const doiTacTrangThai = res.data.filter(doiTac => doiTac.trang_thai == "");
+        setDoiTac(doiTacTrangThai);
       })
       .catch((err) => {
         console.log(err);
@@ -38,8 +39,8 @@ function RegistrationApproval() {
   return (
     <Layout>
       <div className='table-container stat'>
-      <button id="green">Phê duyệt</button>
-      <button id="red">Từ chối</button>
+        <button id="green">Phê duyệt</button>
+        <button id="red">Từ chối</button>
         <table id='table' className='table-uam'>
           <thead>
             <tr>
