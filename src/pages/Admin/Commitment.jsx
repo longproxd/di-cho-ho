@@ -1,8 +1,24 @@
 import Header from '../../components/Admin-Header';
 import Footer from '../../components/Admin-Footer';
 import Sidebar from '../../components/Admin-Sidebar';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function Commitment() {
+  const url = "http://localhost:8080/api/tienhoahong/1-2022";
+  const [HoaHong, setHoaHong] = useState([]);
+
+  useEffect(() => {
+    axios.get(url)
+      .then(res => {
+        console.log(res);
+        setHoaHong(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }, [])
+
   return (
     <div>
       <Header />
@@ -14,99 +30,19 @@ function Commitment() {
               <thead>
                 <tr>
                   <th> Mã cửa hàng </th>
-                  <th> Địa chỉ </th>
-                  <th> Số điện thoại </th>
                   <th> Tiền hoa hồng </th>
                   <th> Tháng </th>
                 </tr>
               </thead>
-              <tbody id='tbody'>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-                <tr>
-                  <td>Item 1</td>
-                  <td>Item 2</td>
-                  <td>Item 3</td>
-                </tr>
-              </tbody>
+              {HoaHong.map(HoaHong =>
+                <tbody id='tbody' key={HoaHong.Id}>
+                  <tr>
+                    <td>{HoaHong["TienHoaHong"].ma_cua_hang}</td>
+                    <td>{HoaHong["TienHoaHong"].tien_hoa_hong}</td>
+                    <td>{HoaHong["TienHoaHong"].thang_nam}</td>
+                  </tr>
+                </tbody>
+              )}
             </table>
           </div>
 

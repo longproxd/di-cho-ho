@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { useTable, usePagination, useRowSelect } from 'react-table'
+import { useTable, usePagination, useRowSelect, useSortBy } from 'react-table'
 import React, { useState, useEffect } from "react"
 import axios from 'axios'
 
@@ -75,6 +75,7 @@ function Table({ columns, data }) {
             columns,
             data,
         },
+        useSortBy,
         usePagination,
         useRowSelect,
         hooks => {
@@ -121,7 +122,16 @@ function Table({ columns, data }) {
                     {headerGroups.map(headerGroup => (
                         <tr {...headerGroup.getHeaderGroupProps()}>
                             {headerGroup.headers.map(column => (
-                                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                                    {column.render('Header')}
+                                    <span>
+                                        {column.isSorted
+                                            ? column.isSortedDesc
+                                                ? ' 🔽'
+                                                : ' 🔼'
+                                            : ''}
+                                    </span>
+                                </th>
                             ))}
                         </tr>
                     ))}

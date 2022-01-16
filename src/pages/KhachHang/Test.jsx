@@ -1,29 +1,67 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
+import { useNavigate } from 'react-router-dom'
 
 export default function Test() {
-    const url = 'https://localhost:8001/api/mathang';
+    const url = 'http://localhost:8080/api/hanghoa';
     const [MatHang, setMatHang] = useState([].slice(0, 50));
     const [pageNumber, setPageNumber] = useState(0);
 
-    const matHangPerPage = 10;
+    function toStore(event) {
+        event.preventDefault()
+        navigate('/store')
+    }
+
+    function addToCart(event) {
+        const productToCart = {
+            so_luong: 1,
+            ma_mat_hang: event.target.getAttribute('data-key'),
+            ma_combo: '',
+            ma_gio_hang: ''
+        }
+
+        axios.post('http://localhost:8080/api/chonhang/61c19b0209e63a5a4334aa9a', productToCart)
+    }
+
+    useEffect(() => {
+        axios.get(url)
+            .then(res => {
+                console.log(res);
+                setMatHang(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }, [])
+
+    const navigate = useNavigate();
+    function handleClick() {
+        navigate('/combo');
+    }
+
+    const matHangPerPage = 8;
     const pagesVisited = pageNumber * matHangPerPage;
     const displayMatHang = MatHang
         .slice(pagesVisited, pagesVisited + matHangPerPage)
         .map(MatHang =>
-            <div className="col-lg-3 col-sm-6 MatHang" key={MatHang.Id}>
+            <div className="col-lg-3 col-sm-6 MatHang" key={MatHang["MatHang"].mamh}>
                 <div className="sell-item max-width-360">
                     <div className="product-img">
-                        <img src={MatHang.hinh_anh} />
+                        <img src={MatHang["MatHang"].hinhanh} />
                         <div className="product-img-overlay">
-                            <a href="/cart" className="krishok-btn">THÊM VÀO GIỎ HÀNG<i className="fa fa-shopping-cart" /></a>
+                            <button onClick={addToCart} data-key={MatHang["MatHang"].mamh} className="krishok-btn">
+                                THÊM VÀO GIỎ HÀNG
+                                <i className="fa fa-shopping-cart" />
+                            </button>
                         </div>
                     </div>
-                    <p><a href="/">{MatHang.ten_mat_hang}</a></p>
-                    <h5>{MatHang.gia_ban.toLocaleString()} vnd | {MatHang.khoi_luong} kg</h5>
+                    <p>{MatHang["MatHang"].ten}</p>
+                    <button className='toStore-btn' onClick={toStore}>{MatHang["CuaHang"].tench}</button>
+                    <h5>{MatHang["MatHang"].gia.toLocaleString()} vnd | {MatHang["MatHang"].khoiluong} kg</h5>
                 </div>
-            </div>);
+            </div>
+        );
 
     useEffect(() => {
         axios.get(url)
@@ -43,22 +81,20 @@ export default function Test() {
 
     return (
         <div>
-            <section className="shopping-product ptb-80">
-                <div className="container">
-                    {displayMatHang}
-                    <ReactPaginate
-                        previousLabel={"<"}
-                        nextLabel={">"}
-                        pageCount={pageCount}
-                        onPageChange={changePage}
-                        containerClassName={"paginationBtn"}
-                        previousLinkClassName={"previousBtn"}
-                        nextLinkClassName={"nextBtn"}
-                        disabledClassName={"paginationDisabled"}
-                        activeClassName={"paginationActive"}>
-                    </ReactPaginate>
-                </div>
-            </section>
+            <div className="row product-item">
+                {displayMatHang}
+                <ReactPaginate
+                    previousLabel={"<"}
+                    nextLabel={">"}
+                    pageCount={pageCount}
+                    onPageChange={changePage}
+                    containerClassName={"paginationBtn"}
+                    previousLinkClassName={"previousBtn"}
+                    nextLinkClassName={"nextBtn"}
+                    disabledClassName={"paginationDisabled"}
+                    activeClassName={"paginationActive"}>
+                </ReactPaginate>
+            </div>
         </div>
     );
 };

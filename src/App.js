@@ -47,6 +47,7 @@ import Test3 from './pages/KhachHang/Test3';
 export default function App() {
   const [accountInfo, setAccountInfo] = useState()
   const [storeInfo, setStoreInfo] = useState()
+  const [donHangInfo, setDonHangInfo] = useState()
 
   return (
     <Router>
@@ -117,8 +118,9 @@ export default function App() {
           </Fragment>
         } />
 
-        <Route path='/shipper' element={<ShipperHome />} />
-        <Route path="/shipper/orderdetail" exact element={<OrderDetail />} />
+        <Route path='/shipper' element={<ShipperHome setDonHangInfo={setDonHangInfo} />} />
+        <Route path="/shipper/orderdetail" exact element={<OrderDetail donHangInfo={donHangInfo} />} />
+
         <Route path="/shipper/orderconfirmation" exact element={<OrderConfirmation />} />
         <Route path="/shipper/history" exact element={<LichSuGiaoHang />} />
         <Route path="/admin" exact element={<AdminHome />} />

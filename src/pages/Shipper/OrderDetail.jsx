@@ -2,11 +2,10 @@ import logo from '../../assets/img/logo.png';
 import Header from '../../components/KhachHang/Header';
 import Footer from '../../components/KhachHang/Footer';
 
-function OrderDetail() {
-
+function OrderDetail({ donHangInfo }) {
     return (
         <div>
-            <Header/>
+            <Header />
             <div id="preloader" />
             {/* header area start */}
             <header className="header-area ptb-15">
@@ -24,7 +23,7 @@ function OrderDetail() {
                     </div>
                 </div>
             </header > {/* header area end */}
-            
+
             {/*side bar start*/}
             <div className='order-detail'>
 

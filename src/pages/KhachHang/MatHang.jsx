@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import React from 'react';
 
+import Test from './Test'
+
 export default function MatHang({ setStoreInfo }) {
     const url = 'http://localhost:8080/api/hanghoa';
     const [MatHang, setMatHang] = useState([]);
@@ -10,6 +12,7 @@ export default function MatHang({ setStoreInfo }) {
     useEffect(() => {
         axios.get(url)
             .then(res => {
+                console.log(res);
                 setMatHang(res.data);
             })
             .catch(err => {
@@ -54,27 +57,7 @@ export default function MatHang({ setStoreInfo }) {
                             </div>
                         </div>
                     </div>
-
-                    <div className="row product-item">
-                        {MatHang.map(MatHang =>
-                            <div className="col-lg-3 col-sm-6 MatHang" key={MatHang["MatHang"].mamh}>
-                                <div className="sell-item max-width-360">
-                                    <div className="product-img">
-                                        <img src={MatHang["MatHang"].hinhanh} />
-                                        <div className="product-img-overlay">
-                                            <button onClick={addToCart} data-key={MatHang["MatHang"].mamh} className="krishok-btn">
-                                                THÊM VÀO GIỎ HÀNG
-                                                <i className="fa fa-shopping-cart" />
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <p>{MatHang["MatHang"].ten}</p>
-                                    <button className='toStore-btn' onClick={toStore}>{MatHang["CuaHang"].tench}</button>
-                                    <h5>{MatHang["MatHang"].gia.toLocaleString()} vnd | {MatHang["MatHang"].khoiluong} kg</h5>
-                                </div>
-                            </div>
-                        )}
-                    </div>
+                    <Test />
                 </div>
             </section>
         </div>

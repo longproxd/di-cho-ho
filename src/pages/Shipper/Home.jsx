@@ -5,7 +5,7 @@ import Header from '../../components/Shipper/Header';
 // import Footer from '../../components/Footer';
 import Map from '../../components/Shipper/Map'
 
-function ShipperHome() {
+function ShipperHome({ setDonHangInfo }) {
     const [accountarray, Setarray] = useState([])
     useEffect(() => {
         fetch('http://localhost:8080/api/shipper/lichsu/61c3d5ff0296576ff58de98f')
@@ -21,21 +21,21 @@ function ShipperHome() {
             <div className='shipper-home'>
                 {/* Page loader */}
                 <div id="preloader" />
-                
+
                 {/* header area end */}
 
                 {/*side bar start*/}
-                <div class="shipper-sidenav">
-                    <a href="#trangchushipper"><i class="fa fa-fw fa-home"></i> Trang Chủ</a>
-                    <a href="#lichsugiaohang"><i class="fa fa-fw fa-calendar-o"></i> Lịch Sử Giao Hàng</a>
-                    <a href="#taikhoanshipper"><i class="fa fa-fw fa-user"></i> Tài Khoản</a>
+                <div className="shipper-sidenav">
+                    <a href="#trangchushipper"><i className="fa fa-fw fa-home"></i> Trang Chủ</a>
+                    <a href="#lichsugiaohang"><i className="fa fa-fw fa-calendar-o"></i> Lịch Sử Giao Hàng</a>
+                    <a href="#taikhoanshipper"><i className="fa fa-fw fa-user"></i> Tài Khoản</a>
                 </div>
                 {/*side bar end*/}
 
                 <div id="col-1">
                     <h3>Đơn hàng mới</h3>
                     {accountarray.length !== 0 ? accountarray.map((item) => {
-                        return <MenuItem id={item.DonHang.madh} hinh_thuc_thanh_toan={item.DonHang.hinhthucthanhtoan}
+                        return <MenuItem id={item.DonHang.madh} key={item.DonHang.madh} hinh_thuc_thanh_toan={item.DonHang.hinhthucthanhtoan}
                             tong_tien={item.DonHang.tongtien}
                             ma_shipper='abc'
                             dia_chi={item.DonHang.diachi}
@@ -51,7 +51,7 @@ function ShipperHome() {
                 </div>
             </div>
             {/* footer area start */}
-            
+
             {/* footer area end */}
             {/* <Footer /> */}
         </div>

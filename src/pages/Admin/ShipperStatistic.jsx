@@ -8,7 +8,7 @@ function ShipperStatistic() {
             <div className={style.store_statistic__screen_1}>
                 <PieChart/>
             </div>
-            <div className={style.store_statistic__screen_2}>Screen 2</div>
+            {/* <div className={style.store_statistic__screen_2}>Screen 2</div> */}
         </div>
     );
 }

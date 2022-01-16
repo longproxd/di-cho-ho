@@ -43,7 +43,7 @@ function UserAccountManagement() {
           <Row key={item.id} uid={item.id} user={item.username} type='Khách mua hàng' />
         )}
         {props.data.Shipper.map(item =>
-          <Row key={item.id} user={item.username} type='Shipper' />
+          <Row key={item.id} uid={item.id} user={item.username} type='Shipper' />
         )}
       </tbody>
     )
@@ -54,14 +54,12 @@ function UserAccountManagement() {
     const { uid, user, type } = props;
 
     function RowClick(event) {
-      if(event.target.style.background === 'white' || event.target.style.background === '')
-      {
+      if (event.target.style.background === 'white' || event.target.style.background === '') {
         event.target.style.background = 'lightblue'
 
         alert(event.target.innerHTML)
       }
-      else
-      {
+      else {
         event.target.style.background = 'white'
       }
     }
