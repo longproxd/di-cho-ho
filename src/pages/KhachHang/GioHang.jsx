@@ -26,8 +26,8 @@ export default function GioHang({ accountInfo }) {
             .catch(error => alert(error));
     }
 
-    function getMoney(event) {
-        setProvisional([...provisional, event.target.value])
+    function getMoney(item) {
+        setProvisional([...provisional, item])
     }
 
     console.log(provisional)
@@ -52,9 +52,10 @@ export default function GioHang({ accountInfo }) {
                                         </button>
                                     </div>
                                     <div className="row cart-product-right">
-                                        <input className="singleitem-price" readOnly
-                                        value={detail.MatHang.gia}
-                                        placeholder={detail.MatHang.gia.toLocaleString() + '₫'} />
+                                        <h5 
+                                            className="singleitem-price">
+                                            {detail.MatHang.gia.toLocaleString()}₫
+                                        </h5>
                                         <div className="cart-quantity-box">
                                             <button type="button" className="btn-success">
                                                 <span>-</span>

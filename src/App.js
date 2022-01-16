@@ -47,6 +47,7 @@ import Test3 from './pages/KhachHang/Test3';
 
 export default function App() {
   const [accountInfo, setAccountInfo] = useState()
+  const [shipperAcc, setShipperAcc] = useState()
   const [storeInfo, setStoreInfo] = useState()
   const [mathang, setMatHang] = useState([]);
 
@@ -128,10 +129,10 @@ export default function App() {
           </Fragment>
         } />
 
-        <Route path='/shipper' element={<ShipperHome />} />
+        <Route path='/shipper' element={<ShipperHome shipperAcc={shipperAcc} setShipperAcc={setShipperAcc} />} />
         <Route path="/shipper/orderdetail" exact element={<OrderDetail />} />
         <Route path="/shipper/orderconfirmation" exact element={<OrderConfirmation />} />
-        <Route path="/shipper/history" exact element={<LichSuGiaoHang />} />
+        <Route path="/shipper/history" exact element={<LichSuGiaoHang shipperAcc={shipperAcc} setShipperAcc={setShipperAcc} />} />
         <Route path="/admin" exact element={<AdminHome />} />
         <Route path="/admin/statistic/customer" exact element={<CusStatistic />} />
         <Route path="/admin/statistic/shipper" exact element={<ShipStat />} />

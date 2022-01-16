@@ -2,11 +2,11 @@ import { React, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-function Header({ setAccountInfo }) {
+function Header(props) {
     const [showMenu, setShowMenu] = useState(false);
+    const { shipperAcc, setShipperAcc } = props
     let navigate = useNavigate()
 
-    const [isLogin, setIsLogin] = useState(false)
     const [account, setAccount] = useState({
         sdt: "",
         cccd: "",
@@ -66,8 +66,8 @@ function Header({ setAccountInfo }) {
                     alert("Username hoặc password không đúng")
                 }
                 if (response.status === 200) {
-                    //setAccountInfo(response.data)
-                    setIsLogin(true)
+                    setShipperAcc(response.data)
+                    localStorage.setItem('shipper', JSON.stringify(response.data))
 
                     document.getElementById("login-form-popup").style.display = "none"
                     document.getElementById("regis-popup").style.display = "none"
@@ -93,6 +93,20 @@ function Header({ setAccountInfo }) {
             })
     }
 
+    useEffect(() => {
+        const loggedInUser = localStorage.getItem("shipper")
+        if (loggedInUser) {
+            setShipperAcc(JSON.parse(loggedInUser))
+        }
+    }, [])
+
+    function logOut(e) {
+        e.preventDefault()
+
+        setShipperAcc()
+        localStorage.clear()
+    }
+
     return (
         <div>
             <header className="header-area ptb-15" style={{ background: "#458823" }}>
@@ -109,7 +123,7 @@ function Header({ setAccountInfo }) {
 
                         <div className="col-md-5">
                             <div className="header-right-content">
-                                {isLogin ?
+                                {shipperAcc ?
                                     <div
                                         className='storeowner-header-icon-container'
                                         onClick={() => setShowMenu(!showMenu)}
@@ -117,8 +131,10 @@ function Header({ setAccountInfo }) {
                                         <i className='fa fa-user-circle-o admin-header-icon' />
                                         {showMenu ? (
                                             <div className='shipper-header-icon-menu'>
-                                                <a href='#'>Lịch sử giao hàng</a>
-                                                <a onClick={() => setIsLogin(!isLogin)} href='#'>Đăng xuất</a>
+                                                <a>
+                                                    {shipperAcc.username}
+                                                </a>
+                                                <a onClick={logOut} href='#'>Đăng xuất</a>
                                             </div>
                                         ) : null}
                                     </div>
