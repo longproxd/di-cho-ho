@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import React from 'react';
 
-export default function MatHang({ setStoreInfo }) {
+export default function MatHang(props) {
     const url = 'http://localhost:8080/api/hanghoa';
-    const [MatHang, setMatHang] = useState([]);
+
+    const {accountInfo, setStoreInfo, mathang, setMatHang} = props
 
     useEffect(() => {
         axios.get(url)
@@ -17,13 +18,16 @@ export default function MatHang({ setStoreInfo }) {
             })
     }, [])
 
+    console.log(mathang)
+
     const navigate = useNavigate();
     function handleClick() {
         navigate('/combo');
     }
 
-    function toStore(event) {
+    function toStore(event, obj) {
         event.preventDefault()
+        setStoreInfo(obj)
         navigate('/store')
     }
 
@@ -35,7 +39,14 @@ export default function MatHang({ setStoreInfo }) {
             ma_gio_hang: ''
         }
 
-        axios.post('http://localhost:8080/api/chonhang/61c19b0209e63a5a4334aa9a', productToCart)
+        axios.post('http://localhost:8080/api/chonhang/' + accountInfo.id, productToCart)
+        .then(res => {
+            if(res.status === 201)
+            {
+                alert('Đã thêm vào giỏ')
+            }
+        })
+        .catch(error => console.log(error));
     }
 
     return (
@@ -56,21 +67,21 @@ export default function MatHang({ setStoreInfo }) {
                     </div>
 
                     <div className="row product-item">
-                        {MatHang.map(MatHang =>
-                            <div className="col-lg-3 col-sm-6 MatHang" key={MatHang["MatHang"].mamh}>
+                        {mathang.map(matHang =>
+                            <div className="col-lg-3 col-sm-6 MatHang" key={matHang["MatHang"].mamh}>
                                 <div className="sell-item max-width-360">
                                     <div className="product-img">
-                                        <img src={MatHang["MatHang"].hinhanh} />
+                                        <img src={matHang["MatHang"].hinhanh} />
                                         <div className="product-img-overlay">
-                                            <button onClick={addToCart} data-key={MatHang["MatHang"].mamh} className="krishok-btn">
+                                            <button onClick={addToCart} data-key={matHang["MatHang"].mamh} className="krishok-btn">
                                                 THÊM VÀO GIỎ HÀNG
                                                 <i className="fa fa-shopping-cart" />
                                             </button>
                                         </div>
                                     </div>
-                                    <p>{MatHang["MatHang"].ten}</p>
-                                    <button className='toStore-btn' onClick={toStore}>{MatHang["CuaHang"].tench}</button>
-                                    <h5>{MatHang["MatHang"].gia.toLocaleString()} vnd | {MatHang["MatHang"].khoiluong} kg</h5>
+                                    <p>{matHang["MatHang"].ten}</p>
+                                    <button className='toStore-btn' onClick={(e) => toStore(e, matHang.CuaHang)}>{matHang["CuaHang"].tench}</button>
+                                    <h5>{matHang["MatHang"].gia.toLocaleString()} vnd | {matHang["MatHang"].khoiluong} kg</h5>
                                 </div>
                             </div>
                         )}

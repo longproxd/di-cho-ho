@@ -7,6 +7,7 @@ import Footer from './components/KhachHang/Footer';
 import MatHang from './pages/KhachHang/MatHang';
 import ComboMatHang from './pages/KhachHang/ComboMatHang';
 import GioHang from './pages/KhachHang/GioHang';
+import LichSuMuaHang from './pages/KhachHang/LichSuMuaHang';
 
 import ProductDetail from './pages/KhachHang/ProductDetail';
 import Store from './pages/KhachHang/Store';
@@ -47,31 +48,33 @@ import Test3 from './pages/KhachHang/Test3';
 export default function App() {
   const [accountInfo, setAccountInfo] = useState()
   const [storeInfo, setStoreInfo] = useState()
+  const [mathang, setMatHang] = useState([]);
 
   return (
     <Router>
       <Routes>
         <Route path='/' element={
           <Fragment>
-            <Header setAccountInfo={setAccountInfo} />
-            <Banner />
-            <MatHang setStoreInfo={setStoreInfo} />
+            <Header accountInfo={accountInfo} setAccountInfo={setAccountInfo} />
+            <Banner setMatHang={setMatHang} />
+            {mathang && <MatHang accountInfo={accountInfo} setStoreInfo={setStoreInfo}
+              mathang={mathang} setMatHang={setMatHang} />}
             <Footer />
           </Fragment>
         } />
 
         <Route path='/combo' element={
           <Fragment>
-            <Header />
+            <Header accountInfo={accountInfo} setAccountInfo={setAccountInfo} />
             <Banner />
-            <ComboMatHang />
+            <ComboMatHang accountInfo={accountInfo} />
             <Footer />
           </Fragment>
         } />
 
         <Route path='/detail' element={
           <Fragment>
-            <Header />
+            <Header accountInfo={accountInfo} setAccountInfo={setAccountInfo} />
             {/* <ProductDetail /> */}
             <Footer />
           </Fragment>
@@ -79,15 +82,15 @@ export default function App() {
 
         <Route path='/store' element={
           <Fragment>
-            <Header />
-            <Store storeInfo={storeInfo} />
+            <Header accountInfo={accountInfo} setAccountInfo={setAccountInfo} />
+            {storeInfo && <Store storeInfo={storeInfo} />}
             <Footer />
           </Fragment>
         } />
 
         <Route path='/account' element={
           <Fragment>
-            <Header />
+            <Header accountInfo={accountInfo} setAccountInfo={setAccountInfo} />
             <TaiKhoan accountInfo={accountInfo} />
             <Footer />
           </Fragment>
@@ -111,8 +114,16 @@ export default function App() {
 
         <Route path='/cart' element={
           <Fragment>
-            <Header setAccountInfo={setAccountInfo} />
-            <GioHang accountInfo={accountInfo} />
+            <Header accountInfo={accountInfo} setAccountInfo={setAccountInfo} />
+            {accountInfo && <GioHang accountInfo={accountInfo} />}
+            <Footer />
+          </Fragment>
+        } />
+
+        <Route path='/history' element={
+          <Fragment>
+            <Header accountInfo={accountInfo} setAccountInfo={setAccountInfo} />
+            {accountInfo && <LichSuMuaHang accountInfo={accountInfo} />}
             <Footer />
           </Fragment>
         } />

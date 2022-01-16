@@ -2,8 +2,9 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import logo from '../../assets/img/logo.png';
 
-export default function Banner() {
+export default function Banner(props) {
     const [keyword, setKeyword] = useState()
+    const {setMatHang} = props
 
     const handleChange = (event) => {
         setKeyword(event.target.value)
@@ -13,6 +14,7 @@ export default function Banner() {
         event.preventDefault()
 
         axios.get('http://localhost:8080/api/hanghoa/' + keyword)
+        .then(res => setMatHang(res.data))
     }
 
 
@@ -32,10 +34,12 @@ export default function Banner() {
                                     <li id="li-nearlast">
                                         <form className="form-search" role="search">
                                             <input onChange={handleChange} type="text" placeholder="Tìm sản phẩm" />
-                                            <button className='find-btn' onClick={findClick}>
-                                                <i className='fa fa-search' />
-                                            </button>
                                         </form>
+                                    </li>
+                                    <li>
+                                        <button className='find-btn' onClick={findClick}>
+                                            <i className='fa fa-search' />
+                                        </button>
                                     </li>
                                 </ul>
                             </div>

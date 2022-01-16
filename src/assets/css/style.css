@@ -249,7 +249,7 @@ header.header-area .header-left-content li:last-child button {
 }
 #li-nearlast {
   border: 0;
-  width: 60%;
+  width: 50%;
 }
 header.header-area .header-left-content li i {
   margin-right: 6px;
@@ -552,6 +552,10 @@ a.slicknav_item.slicknav_row {
 /*-----------------------------------------
 ----- SHOPPING PRODUCT AREA CSS START -----
 ------------------------------------------*/
+.shopping-product .container h1 {
+  text-align: center;
+}
+
 .shopping-product-menu li {
   display: inline-block;
   cursor: pointer;
@@ -783,6 +787,18 @@ a.slicknav_item.slicknav_row {
 .owl-nav div.owl-next {
   right: -25px;
   left: auto;
+}
+
+.toStore-btn {
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.toStore-btn:hover {
+  color: green;
 }
 /*--------------------------------------
 --------- SELL AREA CSS END ---------
@@ -1979,6 +1995,10 @@ blockquote:before {
 .login-form {
   display: none;
 }
+
+.customer-header-icon-menu {
+  height: 80px !important;
+}
 /*--------------------------------------------
 ------ LOGIN AND REGISTRATION FORM CSS END ------
 ---------------------------------------------*/
@@ -2079,7 +2099,8 @@ blockquote:before {
   color: blue;
 }
 
-.shipper-header-icon-menu {
+.shipper-header-icon-menu,
+.customer-header-icon-menu {
   background-color: white;
   border: 1px solid black;
   border-radius: 10px;
@@ -2094,7 +2115,8 @@ blockquote:before {
   z-index: 2;
 }
 
-.shipper-header-icon-menu a {
+.shipper-header-icon-menu a,
+.customer-header-icon-menu a {
   color: red !important;
 }
 
@@ -2809,10 +2831,6 @@ p {
 
   cursor: pointer;
 }
-.storeowner-header-icon-container{
-  position: relative;
-  top: 10px;
-}
 .storeowner-header-icon-menu{
   background-color: white;
   border: 1px solid black;
@@ -2974,6 +2992,13 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"] {
   font-weight: 300;
 }
 
+.cart-product-left button {
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+}
+
 .cart-product-right {
   position: absolute;
   right: 380px;
@@ -3012,7 +3037,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"] {
 .checkout-container {
   position: absolute;
   right: 25px;
-  top: 55px;
+  top: 75px;
 
   border: 0.5px solid rgb(223, 223, 223);
   box-shadow:rgb(223, 223, 223) 1px;
@@ -3052,4 +3077,43 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"] {
 
   position: absolute;
   top: 0;
+}
+
+/***************************************************************CUSTOMER HISTORY*******************************************************/
+.history-table th{
+  position: sticky;
+  top:0;
+  height: 60px;
+  padding: 5px 10px 5px 10px;  
+  font-size: 20px; 
+
+  background: transparent;
+  color:black
+}
+
+.history-table td{
+  padding: 5px 10px 5px 10px;
+  height: 40px;
+  font-size: 17px;
+  background: transparent;
+
+  text-align: center;
+}
+
+.history-table th, .history-table td{
+  min-width: 100px;
+  border: 0;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+.history-table tbody tr {
+  height: 100px;
+  border: 1px solid rgb(190, 190, 190);
 }
