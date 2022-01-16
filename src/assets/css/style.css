@@ -249,7 +249,7 @@ header.header-area .header-left-content li:last-child button {
 }
 #li-nearlast {
   border: 0;
-  width: 60%;
+  width: 50%;
 }
 header.header-area .header-left-content li i {
   margin-right: 6px;
@@ -552,6 +552,10 @@ a.slicknav_item.slicknav_row {
 /*-----------------------------------------
 ----- SHOPPING PRODUCT AREA CSS START -----
 ------------------------------------------*/
+.shopping-product .container h1 {
+  text-align: center;
+}
+
 .shopping-product-menu li {
   display: inline-block;
   cursor: pointer;

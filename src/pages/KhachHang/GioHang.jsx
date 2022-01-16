@@ -4,6 +4,7 @@ import axios from "axios";
 export default function GioHang({ accountInfo }) {
     const url = `http://localhost:8080/api/giohang/${accountInfo.id}`;
     const [cartDetails, setcartDetails] = useState()
+    const [provisional, setProvisional] = useState([])
 
     useEffect(() => {
         axios.get(url)
@@ -17,14 +18,19 @@ export default function GioHang({ accountInfo }) {
 
     function removeFromCart(obj) {
         axios.delete('http://localhost:8080/api/gio/xoa/' + obj.mamh)
-        .then(res => {
-            if(res.status === 204)
-            {
-                alert('Xóa')
-            }
-        })
-        .catch(error => alert(error));
+            .then(res => {
+                if (res.status === 204) {
+                    alert('Xóa')
+                }
+            })
+            .catch(error => alert(error));
     }
+
+    function getMoney(event) {
+        setProvisional([...provisional, event.target.value])
+    }
+
+    console.log(provisional)
 
     return (
         <div>
@@ -33,7 +39,7 @@ export default function GioHang({ accountInfo }) {
                 <div className="col">
                     {cartDetails && cartDetails.map(detail =>
                         <div key={detail.ChiTiet.id}>
-                            {detail.MatHang === null ? null : 
+                            {detail.MatHang === null ? null :
                                 <div className="row cart-product">
                                     <div className="cart-product-img">
                                         <img src={detail.MatHang.hinhanh} />
@@ -46,7 +52,9 @@ export default function GioHang({ accountInfo }) {
                                         </button>
                                     </div>
                                     <div className="row cart-product-right">
-                                        <h5 className="singleitem-price">{detail.MatHang.gia.toLocaleString()}₫</h5>
+                                        <input className="singleitem-price" readOnly
+                                        value={detail.MatHang.gia}
+                                        placeholder={detail.MatHang.gia.toLocaleString() + '₫'} />
                                         <div className="cart-quantity-box">
                                             <button type="button" className="btn-success">
                                                 <span>-</span>

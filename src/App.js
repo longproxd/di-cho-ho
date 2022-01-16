@@ -48,6 +48,7 @@ import Test3 from './pages/KhachHang/Test3';
 export default function App() {
   const [accountInfo, setAccountInfo] = useState()
   const [storeInfo, setStoreInfo] = useState()
+  const [mathang, setMatHang] = useState([]);
 
   return (
     <Router>
@@ -55,8 +56,9 @@ export default function App() {
         <Route path='/' element={
           <Fragment>
             <Header accountInfo={accountInfo} setAccountInfo={setAccountInfo} />
-            <Banner />
-            <MatHang accountInfo={accountInfo} setStoreInfo={setStoreInfo} />
+            <Banner setMatHang={setMatHang} />
+            {mathang && <MatHang accountInfo={accountInfo} setStoreInfo={setStoreInfo}
+              mathang={mathang} setMatHang={setMatHang} />}
             <Footer />
           </Fragment>
         } />
@@ -81,7 +83,7 @@ export default function App() {
         <Route path='/store' element={
           <Fragment>
             <Header accountInfo={accountInfo} setAccountInfo={setAccountInfo} />
-            <Store storeInfo={storeInfo} />
+            {storeInfo && <Store storeInfo={storeInfo} />}
             <Footer />
           </Fragment>
         } />
