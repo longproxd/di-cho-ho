@@ -12,6 +12,12 @@ function StoreStat() {
 
   function del() {
     axios.delete('http://localhost:8080/api/cuahang/xoa/' + idDel)
+    .then(res => {
+      if(res.status === 204)
+      {
+        alert('Hoàn tất')
+      }
+    })
   }
 
   const handleSwitchTab = (tab) => {
