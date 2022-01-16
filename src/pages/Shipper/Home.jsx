@@ -2,11 +2,13 @@ import logo from '../../assets/img/logo.png';
 import { useState, useEffect } from 'react'
 import MenuItem from '../../components/MenuItem'
 import Header from '../../components/Shipper/Header';
-// import Footer from '../../components/Footer';
+import Sidebar from '../../components/Shipper/Sidebar';
+import Footer from '../../components/Shipper/Footer';
 import Map from '../../components/Shipper/Map'
 
-function ShipperHome({ setDonHangInfo }) {
+function ShipperHome(props) {
     const [accountarray, Setarray] = useState([])
+    const {shipperAcc, setShipperAcc, setDonHangInfo} = props
     useEffect(() => {
         fetch('http://localhost:8080/api/shipper/lichsu/61c3d5ff0296576ff58de98f')
             .then(response => {
@@ -17,7 +19,7 @@ function ShipperHome({ setDonHangInfo }) {
 
     return (
         <div>
-            <Header />
+            <Header shipperAcc={shipperAcc} setShipperAcc={setShipperAcc} />
             <div className='shipper-home'>
                 {/* Page loader */}
                 <div id="preloader" />
@@ -25,11 +27,7 @@ function ShipperHome({ setDonHangInfo }) {
                 {/* header area end */}
 
                 {/*side bar start*/}
-                <div className="shipper-sidenav">
-                    <a href="#trangchushipper"><i className="fa fa-fw fa-home"></i> Trang Chủ</a>
-                    <a href="#lichsugiaohang"><i className="fa fa-fw fa-calendar-o"></i> Lịch Sử Giao Hàng</a>
-                    <a href="#taikhoanshipper"><i className="fa fa-fw fa-user"></i> Tài Khoản</a>
-                </div>
+                <Sidebar />
                 {/*side bar end*/}
 
                 <div id="col-1">
@@ -53,7 +51,7 @@ function ShipperHome({ setDonHangInfo }) {
             {/* footer area start */}
 
             {/* footer area end */}
-            {/* <Footer /> */}
+            <Footer />
         </div>
 
     );

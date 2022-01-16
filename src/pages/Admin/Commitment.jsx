@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function Commitment() {
-  const url = "http://localhost:8080/api/tienhoahong/1-2022";
+  const url = "http://localhost:8080/api/tienhoahong";
   const [HoaHong, setHoaHong] = useState([]);
 
   useEffect(() => {

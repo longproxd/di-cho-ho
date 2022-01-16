@@ -19,7 +19,7 @@ export default function LichSuMuaHang({ accountInfo }) {
             <tbody>
                 {props.data.map(item =>
                     <Row
-                        key={item.DonHang.madh} uid={item.DonHang.madh} date='mất'
+                        key={item.DonHang.madh} uid={item.DonHang.madh} date=''
                         store={item.CuaHang.tench} total={item.DonHang.tongtien}
                         state={item.DonHang.tinhtrangdon} shipper={item.Shipper.ten} />
                 )}

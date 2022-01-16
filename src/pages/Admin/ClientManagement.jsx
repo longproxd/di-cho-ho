@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 
 function ClientManagement() {
   const [clients, setClients] = useState()
-  const [idDel, setIdDel] = useState()
+  const [rowClicked, setRowClicked] = useState();
 
   useEffect(() => {
     axios
@@ -23,7 +23,13 @@ function ClientManagement() {
   }, []);
 
   function del() {
-    //axios.delete('http://localhost:8080/api/doitac/xoa/' + idDel)
+    axios.delete('https://localhost:8001/api/doitac/' + rowClicked.uid)
+      .then((res) => {
+        if (res.status === 204) {
+          alert('Hoàn tất')
+        }
+      })
+      .catch(error => alert(error));
   }
 
   //table component
@@ -43,12 +49,12 @@ function ClientManagement() {
   //row component
   const Row = (props) => {
     const { uid, ten, sdt, cccd, loai, ngay, so_luong, dia_chi, trang_thai } = props;
+    const obj = props;
 
     function RowClick(event) {
       if (event.target.style.background === 'white' || event.target.style.background === '') {
         event.target.style.background = 'lightblue'
-
-        alert(event.target.innerHTML)
+        setRowClicked(obj)
       }
       else {
         event.target.style.background = 'white'

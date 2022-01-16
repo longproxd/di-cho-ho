@@ -17,7 +17,7 @@ function UserAccountManagement() {
   function del() {
     console.log(infoDel)
     if (infoDel.type === 'Khách mua hàng') {
-      axios.delete('http://localhost:8080/api/xoa/' + infoDel.id)
+      axios.delete('http://localhost:8080/api/xoa/' + infoDel.uid)
       .then(res => {
         if(res.status === 204)
         {
@@ -28,7 +28,7 @@ function UserAccountManagement() {
     }
 
     if (infoDel.type === 'Shipper') {
-      axios.delete('http://localhost:8080/api/shipper/del/' + infoDel.id)
+      axios.delete('http://localhost:8080/api/shipper/del/' + infoDel.uid)
       .then(res => {
         if(res.status === 204)
         {
@@ -39,7 +39,7 @@ function UserAccountManagement() {
     }
 
     if (infoDel.type === 'Chủ cửa hàng') {
-      axios.delete('http://localhost:8080/api/cuahang/xoa/' + infoDel.id)
+      axios.delete('http://localhost:8080/api/cuahang/xoa/' + infoDel.uid)
       .then(res => {
         if(res.status === 204)
         {
