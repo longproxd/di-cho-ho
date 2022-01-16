@@ -12,6 +12,12 @@ function CusStatistic() {
 
   function del() {
     axios.delete('http://localhost:8080/api/xoa/' + idDel)
+    .then(res => {
+      if(res.status === 204)
+      {
+        alert('Hoàn tất')
+      }
+    })
   }
 
   const handleSwitchTab = (tab) => {

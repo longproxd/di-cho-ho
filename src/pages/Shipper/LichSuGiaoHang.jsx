@@ -34,13 +34,10 @@ export default function LichSuGiaoHang(props) {
     //row component
     const Row = (props) => {
         const { uid, date, store, total, state, shipper } = props;
-
-        function RowClick(event) {
-
-        }
+        console.log(props)
 
         return (
-            <tr key={uid} onClick={RowClick}>
+            <tr key={uid}>
                 <td><a href='#'>{uid}</a></td>
                 <td>{date}</td>
                 <td>{store}</td>

@@ -13,6 +13,12 @@ function ShipStat() {
   function del() {
     console.log(idDel)
     axios.delete('http://localhost:8080/api/shipper/xoa/' + idDel)
+    .then(res => {
+      if(res.status === 204)
+      {
+        alert('Hoàn tất')
+      }
+    })
   }
 
   const handleSwitchTab = (tab) => {
