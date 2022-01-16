@@ -2,10 +2,10 @@ import { React, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-function Header({ setAccountInfo }) {
+function Header(props) {
     let navigate = useNavigate()
 
-    const [isLogin, setIsLogin] = useState(false)
+    const { accountInfo, setAccountInfo } = props
     const [showMenu, setShowMenu] = useState(false)
     const [account, setAccount] = useState({
         sdt: "",
@@ -65,7 +65,7 @@ function Header({ setAccountInfo }) {
                 }
                 if (response.status === 200) {
                     setAccountInfo(response.data)
-                    setIsLogin(true)
+                    localStorage.setItem('user', JSON.stringify(response.data))
 
                     document.getElementById("login-form-popup").style.display = "none"
                     document.getElementById("regis-popup").style.display = "none"
@@ -91,6 +91,21 @@ function Header({ setAccountInfo }) {
             })
     }
 
+    useEffect(() => {
+        const loggedInUser = localStorage.getItem("user")
+        if(loggedInUser)
+        {
+            setAccountInfo(JSON.parse(loggedInUser))
+        }
+    }, [])
+
+    function logOut(e) {
+        e.preventDefault()
+
+        setAccountInfo()
+        localStorage.clear()
+    }
+
     return (
         <div>
             <header className="header-area ptb-15" style={{ background: "#458823" }}>
@@ -107,18 +122,18 @@ function Header({ setAccountInfo }) {
 
                         <div className="col-md-5">
                             <div className="header-right-content">
-                                {isLogin ? 
+                                {accountInfo ? 
                                 <div className='storeowner-header-icon-container'
                                 onClick={() => setShowMenu(!showMenu)}
                             >
                                 <i className='fa fa-user-circle-o admin-header-icon' />
                                 {showMenu ? (
-                                    <div className='shipper-header-icon-menu'>
+                                    <div className='customer-header-icon-menu'>
                                         <a href="/" onClick={goToAccount}>
-                                            {account.username}
+                                            {accountInfo.username}
                                         </a>
-                                        <a href='#'>Lịch sử mua hàng</a>
-                                        <a onClick={() => setIsLogin(!isLogin)} href='#'>Đăng xuất</a>
+                                        <a href='/history'>Lịch sử mua hàng</a>
+                                        <a onClick={logOut} href='#'>Đăng xuất</a>
                                     </div>
                                 ) : null}
                             </div> :

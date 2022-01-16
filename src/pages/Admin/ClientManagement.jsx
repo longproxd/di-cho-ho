@@ -14,7 +14,7 @@ function ClientManagement() {
       .get("https://localhost:8001/api/doitac")
       .then((res) => {
         console.log(res.data);
-        const doiTacTrangThai = res.data.filter(doiTac => doiTac.trang_thai == "Đã Được Phê Duyệt");
+        const doiTacTrangThai = res.data.filter(doiTac => doiTac.trang_thai === "Đã Được Phê Duyệt");
         setClients(doiTacTrangThai);
       })
       .catch((err) => {
@@ -23,7 +23,7 @@ function ClientManagement() {
   }, []);
 
   function del() {
-    axios.delete('http://localhost:8080/api/doitac/xoa/' + idDel)
+    //axios.delete('http://localhost:8080/api/doitac/xoa/' + idDel)
   }
 
   //table component
@@ -33,8 +33,8 @@ function ClientManagement() {
       <tbody>
         {props.data.map(item =>
           <Row key={item.Id} uid={item.Id} ten={item.ten_doi_tac} sdt={item.sdt} cccd={item.cccd}
-                loai={item.loai_doi_tac} ngay={item.ngay_tham_gia} so_luong={item.so_luong_cua_hang}
-                dia_chi={item.dia_chi} trang_thai={item.trang_thai} />
+            loai={item.loai_doi_tac} ngay={item.ngay_tham_gia} so_luong={item.so_luong_cua_hang}
+            dia_chi={item.dia_chi} trang_thai={item.trang_thai} />
         )}
       </tbody>
     )
@@ -45,12 +45,12 @@ function ClientManagement() {
     const { uid, ten, sdt, cccd, loai, ngay, so_luong, dia_chi, trang_thai } = props;
 
     function RowClick(event) {
-      if(event.target.style.background === 'white' || event.target.style.background === '')
-      {
+      if (event.target.style.background === 'white' || event.target.style.background === '') {
         event.target.style.background = 'lightblue'
+
+        alert(event.target.innerHTML)
       }
-      else
-      {
+      else {
         event.target.style.background = 'white'
       }
     }
@@ -79,6 +79,8 @@ function ClientManagement() {
           <div className='table-interact'>
             {/* <button>Thêm</button> */}
             <button>Xóa</button>
+            <button>Thêm</button>
+            <button onClick={del}>Xóa</button>
             <label htmlFor="user-type">Loại đối tác</label>
             <select id="user-type">
               <option>Doanh nghiệp</option>
