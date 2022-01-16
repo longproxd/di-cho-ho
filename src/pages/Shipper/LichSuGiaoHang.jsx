@@ -12,10 +12,11 @@ export default function LichSuGiaoHang(props) {
     useEffect(() => {
         axios.get(url)
             .then(res => {
+                console.log(res.data)
                 setDonhang(res.data);
             })
             .catch(err => console.log(err))
-    }, [])
+    }, [url])
 
     //table component
     const TableBody = (props) => {
@@ -34,7 +35,6 @@ export default function LichSuGiaoHang(props) {
     //row component
     const Row = (props) => {
         const { uid, date, store, total, state, shipper } = props;
-        console.log(props)
 
         return (
             <tr key={uid}>

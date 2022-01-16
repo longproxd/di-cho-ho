@@ -10,7 +10,7 @@ function ShipperHome(props) {
     const [accountarray, Setarray] = useState([])
     const {shipperAcc, setShipperAcc, setDonHangInfo} = props
     useEffect(() => {
-        fetch('http://localhost:8080/api/shipper/lichsu/61c3d5ff0296576ff58de98f')
+        fetch('http://localhost:8080/api/donmoi')
             .then(response => {
                 return response.json();
             })

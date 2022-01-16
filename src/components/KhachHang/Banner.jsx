@@ -17,8 +17,6 @@ export default function Banner(props) {
         .then(res => setMatHang(res.data))
     }
 
-
-
     return (
         <div>
             <header className="header-area ptb-15">
