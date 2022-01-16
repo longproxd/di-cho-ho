@@ -8,7 +8,7 @@ import Map from '../../components/Shipper/Map'
 
 function ShipperHome(props) {
     const [accountarray, Setarray] = useState([])
-    const {shipperAcc, setShipperAcc} = props
+    const {shipperAcc, setShipperAcc, setDonHangInfo} = props
     useEffect(() => {
         fetch('http://localhost:8080/api/shipper/lichsu/61c3d5ff0296576ff58de98f')
             .then(response => {
@@ -23,7 +23,7 @@ function ShipperHome(props) {
             <div className='shipper-home'>
                 {/* Page loader */}
                 <div id="preloader" />
-                
+
                 {/* header area end */}
 
                 {/*side bar start*/}
@@ -33,7 +33,7 @@ function ShipperHome(props) {
                 <div id="col-1">
                     <h3>Đơn hàng mới</h3>
                     {accountarray.length !== 0 ? accountarray.map((item) => {
-                        return <MenuItem id={item.DonHang.madh} hinh_thuc_thanh_toan={item.DonHang.hinhthucthanhtoan}
+                        return <MenuItem id={item.DonHang.madh} key={item.DonHang.madh} hinh_thuc_thanh_toan={item.DonHang.hinhthucthanhtoan}
                             tong_tien={item.DonHang.tongtien}
                             ma_shipper='abc'
                             dia_chi={item.DonHang.diachi}
@@ -49,7 +49,7 @@ function ShipperHome(props) {
                 </div>
             </div>
             {/* footer area start */}
-            
+
             {/* footer area end */}
             <Footer />
         </div>

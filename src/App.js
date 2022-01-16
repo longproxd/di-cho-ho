@@ -49,6 +49,7 @@ export default function App() {
   const [accountInfo, setAccountInfo] = useState()
   const [shipperAcc, setShipperAcc] = useState()
   const [storeInfo, setStoreInfo] = useState()
+  const [donHangInfo, setDonHangInfo] = useState()
   const [mathang, setMatHang] = useState([]);
 
   return (
@@ -129,8 +130,9 @@ export default function App() {
           </Fragment>
         } />
 
-        <Route path='/shipper' element={<ShipperHome shipperAcc={shipperAcc} setShipperAcc={setShipperAcc} />} />
-        <Route path="/shipper/orderdetail" exact element={<OrderDetail />} />
+        <Route path='/shipper' element={<ShipperHome shipperAcc={shipperAcc} setShipperAcc={setShipperAcc} setDonHangInfo={setDonHangInfo} />} />
+        <Route path="/shipper/orderdetail" exact element={<OrderDetail donHangInfo={donHangInfo} />} />
+
         <Route path="/shipper/orderconfirmation" exact element={<OrderConfirmation />} />
         <Route path="/shipper/history" exact element={<LichSuGiaoHang shipperAcc={shipperAcc} setShipperAcc={setShipperAcc} />} />
         <Route path="/admin" exact element={<AdminHome />} />

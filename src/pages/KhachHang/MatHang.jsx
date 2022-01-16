@@ -3,14 +3,17 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import React from 'react';
 
+import Test from './Test'
+
 export default function MatHang(props) {
     const url = 'http://localhost:8080/api/hanghoa';
 
-    const {accountInfo, setStoreInfo, mathang, setMatHang} = props
+    const { accountInfo, setStoreInfo, mathang, setMatHang } = props
 
     useEffect(() => {
         axios.get(url)
             .then(res => {
+                console.log(res);
                 setMatHang(res.data);
             })
             .catch(err => {
@@ -40,13 +43,12 @@ export default function MatHang(props) {
         }
 
         axios.post('http://localhost:8080/api/chonhang/' + accountInfo.id, productToCart)
-        .then(res => {
-            if(res.status === 201)
-            {
-                alert('Đã thêm vào giỏ')
-            }
-        })
-        .catch(error => console.log(error));
+            .then(res => {
+                if (res.status === 201) {
+                    alert('Đã thêm vào giỏ')
+                }
+            })
+            .catch(error => console.log(error));
     }
 
     return (
@@ -65,6 +67,7 @@ export default function MatHang(props) {
                             </div>
                         </div>
                     </div>
+                    <Test />
 
                     <div className="row product-item">
                         {mathang.map(matHang =>

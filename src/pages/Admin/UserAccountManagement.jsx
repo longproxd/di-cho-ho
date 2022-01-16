@@ -73,13 +73,11 @@ function UserAccountManagement() {
     const obj = props;
 
     function RowClick(event) {
-      if(event.target.style.background === 'white' || event.target.style.background === '')
-      {
+      if (event.target.style.background === 'white' || event.target.style.background === '') {
         event.target.style.background = 'lightblue'
         setInfoDel(obj)
       }
-      else
-      {
+      else {
         event.target.style.background = 'white'
       }
     }
