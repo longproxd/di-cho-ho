@@ -7,7 +7,6 @@ import Test from './Test'
 
 export default function MatHang(props) {
     const url = 'http://localhost:8080/api/hanghoa';
-
     const { accountInfo, setStoreInfo, mathang, setMatHang } = props
 
     useEffect(() => {
@@ -67,28 +66,8 @@ export default function MatHang(props) {
                             </div>
                         </div>
                     </div>
-                    <Test />
 
-                    <div className="row product-item">
-                        {mathang.map(matHang =>
-                            <div className="col-lg-3 col-sm-6 MatHang" key={matHang["MatHang"].mamh}>
-                                <div className="sell-item max-width-360">
-                                    <div className="product-img">
-                                        <img src={matHang["MatHang"].hinhanh} />
-                                        <div className="product-img-overlay">
-                                            <button onClick={addToCart} data-key={matHang["MatHang"].mamh} className="krishok-btn">
-                                                THÊM VÀO GIỎ HÀNG
-                                                <i className="fa fa-shopping-cart" />
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <p>{matHang["MatHang"].ten}</p>
-                                    <button className='toStore-btn' onClick={(e) => toStore(e, matHang.CuaHang)}>{matHang["CuaHang"].tench}</button>
-                                    <h5>{matHang["MatHang"].gia.toLocaleString()} vnd | {matHang["MatHang"].khoiluong} kg</h5>
-                                </div>
-                            </div>
-                        )}
-                    </div>
+                    <Test />
                 </div>
             </section>
         </div>

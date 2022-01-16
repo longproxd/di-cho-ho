@@ -17,7 +17,6 @@ function AddProduct() {
         ten_mat_hang: '',
     })
 
-
     function handleChange(event) {
         const value = event.target.value
 

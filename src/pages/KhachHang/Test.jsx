@@ -8,6 +8,7 @@ export default function Test() {
     const [MatHang, setMatHang] = useState([].slice(0, 50));
     const [pageNumber, setPageNumber] = useState(0);
 
+    const navigate = useNavigate();
     function toStore(event) {
         event.preventDefault()
         navigate('/store')
@@ -34,11 +35,6 @@ export default function Test() {
                 console.log(err);
             })
     }, [])
-
-    const navigate = useNavigate();
-    function handleClick() {
-        navigate('/combo');
-    }
 
     const matHangPerPage = 8;
     const pagesVisited = pageNumber * matHangPerPage;

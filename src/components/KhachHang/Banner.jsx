@@ -4,7 +4,7 @@ import logo from '../../assets/img/logo.png';
 
 export default function Banner(props) {
     const [keyword, setKeyword] = useState()
-    const {setMatHang} = props
+    const { setMatHang } = props
 
     const handleChange = (event) => {
         setKeyword(event.target.value)
@@ -14,7 +14,7 @@ export default function Banner(props) {
         event.preventDefault()
 
         axios.get('http://localhost:8080/api/hanghoa/' + keyword)
-        .then(res => setMatHang(res.data))
+            .then(res => setMatHang(res.data))
     }
 
 
