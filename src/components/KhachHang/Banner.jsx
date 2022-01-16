@@ -17,6 +17,8 @@ export default function Banner(props) {
         .then(res => setMatHang(res.data))
     }
 
+
+
     return (
         <div>
             <header className="header-area ptb-15">
@@ -36,7 +38,7 @@ export default function Banner(props) {
                                     </li>
                                     <li>
                                         <button className='find-btn' onClick={findClick}>
-                                            <i className='fa fa-search' />
+                                            <i className='fa fa-search' style={{color: 'white'}}/>
                                         </button>
                                     </li>
                                 </ul>

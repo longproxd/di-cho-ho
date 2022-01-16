@@ -83,7 +83,6 @@ function ClientManagement() {
         <Sidebar />
         <div className='useraccount-table'>
           <div className='table-interact'>
-            <button>Thêm</button>
             <button onClick={del}>Xóa</button>
             <label htmlFor="user-type">Loại đối tác</label>
             <select id="user-type">
