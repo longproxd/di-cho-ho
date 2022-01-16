@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function RegistrationApproval() {
-
   const url = 'https://localhost:8001/api/doitac';
   const [DoiTac, setDoiTac] = useState([]);
+  const [rowClicked, setRowClicked] = useState();
 
   useEffect(() => {
     axios
@@ -20,11 +20,50 @@ function RegistrationApproval() {
       });
   }, []);
 
+  function RowClick(rowValue) {
+    setRowClicked(rowValue)
+  }
+
+  function Approve(e) {
+    e.preventDefault();
+
+    const updateRow = {
+      cccd: rowClicked.cccd,
+      dia_chi: rowClicked.dia_chi,
+      loai_doi_tac: rowClicked.loai_doi_tac,
+      ngay_tham_gia: rowClicked.ngay_tham_gia,
+      sdt: rowClicked.sdt,
+      so_luong_cua_hang: rowClicked.so_luong_cua_hang,
+      ten_doi_tac: rowClicked.ten_doi_tac,
+      trang_thai: "Đã Được Phê Duyệt"
+    }
+
+    axios.put('https://localhost:8001/api/doitac/' + rowClicked.Id, updateRow)
+      .then(res => {
+        if (res.status === 204) {
+          alert('Hoàn tất')
+        }
+      })
+      .catch(error => alert(error));
+  }
+
+  function Reject(e) {
+    e.preventDefault()
+
+    axios.delete('https://localhost:8001/api/doitac/' + rowClicked.Id)
+      .then((res) => {
+        if (res.status === 204) {
+          alert('Hoàn tất')
+        }
+      })
+      .catch(error => alert(error));
+  }
+
   return (
     <Layout>
       <div className='table-container stat'>
-        <button id="green">Phê duyệt</button>
-        <button id="red">Từ chối</button>
+        <button onClick={Approve} id="green">Phê duyệt</button>
+        <button onClick={Reject} id="red">Từ chối</button>
         <table id='table' className='table-uam'>
           <thead>
             <tr>
@@ -40,21 +79,22 @@ function RegistrationApproval() {
             </tr>
           </thead>
 
-          {DoiTac.map((DoiTac) => (
-            <tbody id='tbody'>
-              <tr>
-                <td>{DoiTac.Id}</td>
-                <td>{DoiTac.ten_doi_tac}</td>
-                <td>{DoiTac.sdt}</td>
-                <td>{DoiTac.cccd}</td>
-                <td>{DoiTac.loai_doi_tac}</td>
-                <td>{DoiTac.ngay_tham_gia}</td>
-                <td>{DoiTac.so_luong_cua_hang}</td>
-                <td>{DoiTac.dia_chi}</td>
-                <td>{DoiTac.trang_thai}</td>
+          <tbody id='tbody'>
+            {DoiTac.map((doitac) => (
+              <tr key={doitac.Id} onClick={() => RowClick(doitac)}>
+                <td>{doitac.Id}</td>
+                <td>{doitac.ten_doi_tac}</td>
+                <td>{doitac.sdt}</td>
+                <td>{doitac.cccd}</td>
+                <td>{doitac.loai_doi_tac}</td>
+                <td>{doitac.ngay_tham_gia}</td>
+                <td>{doitac.so_luong_cua_hang}</td>
+                <td>{doitac.dia_chi}</td>
+                <td>{doitac.trang_thai}</td>
               </tr>
-            </tbody>
-          ))}
+            ))}
+          </tbody>
+
         </table>
       </div>
     </Layout>

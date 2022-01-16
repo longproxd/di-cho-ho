@@ -3,9 +3,11 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import React from 'react';
 
-export default function MatHang({ setStoreInfo }) {
+export default function MatHang(props) {
     const url = 'http://localhost:8080/api/hanghoa';
     const [MatHang, setMatHang] = useState([]);
+
+    const {accountInfo, setStoreInfo} = props
 
     useEffect(() => {
         axios.get(url)
@@ -35,7 +37,14 @@ export default function MatHang({ setStoreInfo }) {
             ma_gio_hang: ''
         }
 
-        axios.post('http://localhost:8080/api/chonhang/61c19b0209e63a5a4334aa9a', productToCart)
+        axios.post('http://localhost:8080/api/chonhang/' + accountInfo.id, productToCart)
+        .then(res => {
+            if(res.status === 201)
+            {
+                alert('Đã thêm vào giỏ')
+            }
+        })
+        .catch(error => console.log(error));
     }
 
     return (

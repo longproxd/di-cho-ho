@@ -7,10 +7,7 @@ import React, { useState, useEffect } from 'react';
 
 function UserAccountManagement() {
   const [total, setTotal] = useState()
-  const [infoDel, setInfoDel] = useState({
-    id: '',
-    type: ''
-  })
+  const [infoDel, setInfoDel] = useState()
 
   useEffect(() => {
     axios.get("http://localhost:8080/api/quanlytaikhoan")
@@ -18,22 +15,43 @@ function UserAccountManagement() {
   }, [])
 
   function del() {
+    console.log(infoDel)
     if (infoDel.type === 'Khách mua hàng') {
       axios.delete('http://localhost:8080/api/xoa/' + infoDel.id)
+      .then(res => {
+        if(res.status === 204)
+        {
+          alert('Hoàn tất')
+        }
+      })
+      .catch(err => alert(err))
     }
 
     if (infoDel.type === 'Shipper') {
       axios.delete('http://localhost:8080/api/shipper/del/' + infoDel.id)
+      .then(res => {
+        if(res.status === 204)
+        {
+          alert('Hoàn tất')
+        }
+      })
+      .catch(err => alert(err))
     }
 
     if (infoDel.type === 'Chủ cửa hàng') {
       axios.delete('http://localhost:8080/api/cuahang/xoa/' + infoDel.id)
+      .then(res => {
+        if(res.status === 204)
+        {
+          alert('Hoàn tất')
+        }
+      })
+      .catch(err => alert(err))
     }
   }
 
   //table component
   const TableBody = (props) => {
-
     return (
       <tbody>
         {props.data.CuaHang.map(item =>
@@ -43,7 +61,7 @@ function UserAccountManagement() {
           <Row key={item.id} uid={item.id} user={item.username} type='Khách mua hàng' />
         )}
         {props.data.Shipper.map(item =>
-          <Row key={item.id} user={item.username} type='Shipper' />
+          <Row key={item.id} uid={item.id} user={item.username} type='Shipper' />
         )}
       </tbody>
     )
@@ -52,13 +70,13 @@ function UserAccountManagement() {
   //row component
   const Row = (props) => {
     const { uid, user, type } = props;
+    const obj = props;
 
     function RowClick(event) {
       if(event.target.style.background === 'white' || event.target.style.background === '')
       {
         event.target.style.background = 'lightblue'
-
-        alert(event.target.innerHTML)
+        setInfoDel(obj)
       }
       else
       {

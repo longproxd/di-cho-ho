@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function GioHang({ accountInfo }) {
-    const url = `http://localhost:8080/api/giohang/61c19a4809e63a5a4334aa99`;
+    const url = `http://localhost:8080/api/giohang/${accountInfo.id}`;
     const [cartDetails, setcartDetails] = useState()
 
     useEffect(() => {
@@ -13,11 +13,22 @@ export default function GioHang({ accountInfo }) {
             .catch(err => {
                 console.log(err);
             })
-    }, [])
+    }, [url])
+
+    function removeFromCart(obj) {
+        axios.delete('http://localhost:8080/api/gio/xoa/' + obj.mamh)
+        .then(res => {
+            if(res.status === 204)
+            {
+                alert('Xóa')
+            }
+        })
+        .catch(error => alert(error));
+    }
 
     return (
         <div>
-            <button className="continue-btn krishok-btn">Tiếp tục mua hàng</button>
+            <a href="/" className="continue-btn krishok-btn">Tiếp tục mua hàng</a>
             <div className="cart-container">
                 <div className="col">
                     {cartDetails && cartDetails.map(detail =>
@@ -30,6 +41,9 @@ export default function GioHang({ accountInfo }) {
                                     <div className="col cart-product-left">
                                         <h5>{detail.MatHang.ten}</h5>
                                         <h5>DVT: {detail.MatHang.khoiluong} kg</h5>
+                                        <button onClick={() => removeFromCart(detail.MatHang)}>
+                                            <i className="fa fa-trash" />
+                                        </button>
                                     </div>
                                     <div className="row cart-product-right">
                                         <h5 className="singleitem-price">{detail.MatHang.gia.toLocaleString()}₫</h5>
@@ -52,6 +66,10 @@ export default function GioHang({ accountInfo }) {
                                     <div className="col cart-product-left">
                                         <h5>{detail.ComboMatHang.tencombo}</h5>
                                         <h5>DVT: {detail.ComboMatHang.khoiluong} kg</h5>
+                                        <button data-key={detail.MatHang.mamh}
+                                            onClick={removeFromCart}>
+                                            <i className="fa fa-trash" />
+                                        </button>
                                     </div>
                                     <div className="row cart-product-right">
                                         <h5 className="singleitem-price">{detail.ComboMatHang.gia.toLocaleString()}₫</h5>
@@ -79,9 +97,9 @@ export default function GioHang({ accountInfo }) {
                         <p>Thành tiền:</p>
                     </div>
                     <div className='checkout-number-content'>
-                        <p>2000 ₫</p>
+                        <p>25.000 ₫</p>
                         <p>23.000 ₫</p>
-                        <p>2000 ₫</p>
+                        <p>48.000 ₫</p>
                     </div>
                 </div>
                 <button className="payment-btn krishok-btn">Thanh toán</button>
