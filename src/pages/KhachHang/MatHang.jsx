@@ -6,48 +6,11 @@ import React from 'react';
 import Test from './Test'
 
 export default function MatHang(props) {
-    const url = 'http://localhost:8080/api/hanghoa';
     const { accountInfo, setStoreInfo, mathang, setMatHang } = props
-
-    useEffect(() => {
-        axios.get(url)
-            .then(res => {
-                console.log(res);
-                setMatHang(res.data);
-            })
-            .catch(err => {
-                console.log(err);
-            })
-    }, [])
-
-    console.log(mathang)
 
     const navigate = useNavigate();
     function handleClick() {
         navigate('/combo');
-    }
-
-    function toStore(event, obj) {
-        event.preventDefault()
-        setStoreInfo(obj)
-        navigate('/store')
-    }
-
-    function addToCart(event) {
-        const productToCart = {
-            so_luong: 1,
-            ma_mat_hang: event.target.getAttribute('data-key'),
-            ma_combo: '',
-            ma_gio_hang: ''
-        }
-
-        axios.post('http://localhost:8080/api/chonhang/' + accountInfo.id, productToCart)
-            .then(res => {
-                if (res.status === 201) {
-                    alert('Đã thêm vào giỏ')
-                }
-            })
-            .catch(error => console.log(error));
     }
 
     return (
@@ -66,8 +29,8 @@ export default function MatHang(props) {
                             </div>
                         </div>
                     </div>
-
-                    <Test />
+                    {mathang && <Test accountInfo={accountInfo} setStoreInfo={setStoreInfo}
+                        mathang={mathang} setMatHang={setMatHang} />}
                 </div>
             </section>
         </div>

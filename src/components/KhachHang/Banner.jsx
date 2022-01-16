@@ -38,7 +38,7 @@ export default function Banner(props) {
                                     </li>
                                     <li>
                                         <button className='find-btn' onClick={findClick}>
-                                            <i className='fa fa-search' />
+                                            <i className='fa fa-search' style={{color: 'white'}}/>
                                         </button>
                                     </li>
                                 </ul>

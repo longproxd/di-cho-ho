@@ -3,14 +3,15 @@ import axios from "axios";
 import ReactPaginate from "react-paginate";
 import { useNavigate } from 'react-router-dom'
 
-export default function Test() {
+export default function Test(props) {
     const url = 'http://localhost:8080/api/hanghoa';
-    const [MatHang, setMatHang] = useState([].slice(0, 50));
+    const { accountInfo, setStoreInfo, mathang, setMatHang } = props
     const [pageNumber, setPageNumber] = useState(0);
-
     const navigate = useNavigate();
-    function toStore(event) {
+
+    function toStore(event, obj) {
         event.preventDefault()
+        setStoreInfo(obj)
         navigate('/store')
     }
 
@@ -22,7 +23,13 @@ export default function Test() {
             ma_gio_hang: ''
         }
 
-        axios.post('http://localhost:8080/api/chonhang/61c19b0209e63a5a4334aa9a', productToCart)
+        axios.post('http://localhost:8080/api/chonhang/' + accountInfo.id, productToCart)
+        .then(res => {
+            if (res.status === 201) {
+                alert('Đã thêm vào giỏ')
+            }
+        })
+        .catch(error => console.log(error));
     }
 
     useEffect(() => {
@@ -38,7 +45,7 @@ export default function Test() {
 
     const matHangPerPage = 8;
     const pagesVisited = pageNumber * matHangPerPage;
-    const displayMatHang = MatHang
+    const displayMatHang = mathang
         .slice(pagesVisited, pagesVisited + matHangPerPage)
         .map(MatHang =>
             <div className="col-lg-3 col-sm-6 MatHang" key={MatHang["MatHang"].mamh}>
@@ -70,7 +77,7 @@ export default function Test() {
             })
     }, [])
 
-    const pageCount = Math.ceil(MatHang.length / matHangPerPage);
+    const pageCount = Math.ceil(mathang.length / matHangPerPage);
     const changePage = ({ selected }) => {
         setPageNumber(selected);
     };

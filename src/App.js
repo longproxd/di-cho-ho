@@ -50,7 +50,7 @@ export default function App() {
   const [shipperAcc, setShipperAcc] = useState()
   const [storeInfo, setStoreInfo] = useState()
   const [donHangInfo, setDonHangInfo] = useState()
-  const [mathang, setMatHang] = useState([]);
+  const [mathang, setMatHang] = useState([].slice(0, 50));
 
   return (
     <Router>
