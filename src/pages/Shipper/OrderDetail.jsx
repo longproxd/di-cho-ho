@@ -1,43 +1,77 @@
-import logo from '../../assets/img/logo.png';
-import Header from '../../components/KhachHang/Header';
-import Footer from '../../components/KhachHang/Footer';
+import Header from '../../components/Shipper/Header';
+import Sidebar from '../../components/Shipper/Sidebar';
+import Footer from '../../components/Shipper/Footer';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
-function OrderDetail({ donHangInfo }) {
+function OrderDetail(props) {
+    const [chitiethang, setChitiethang] = useState()
+    const {shipperAcc, setShipperAcc, donHangInfo} = props
+    const [accept, setAccept] = useState(false)
+
+    useEffect(() => {
+        axios.get('http://localhost:8080/api/dhmh/' + (donHangInfo && donHangInfo.id))
+            .then(res => setChitiethang(res.data))
+    })
+
+    function AcceptOrder()
+    {
+        setAccept(true)
+    }
+
     return (
         <div>
-            <Header />
+            <Header shipperAcc={shipperAcc} setShipperAcc={setShipperAcc} />
             <div id="preloader" />
             {/* header area start */}
-            <header className="header-area ptb-15">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-7">
-                            <div className="header-left-content">
-                                <ul>
-                                    <li><a href="/"><img className='logo-img' src={logo} alt="logo" /></a></li>
-                                    <li><a href="#"><i className="fa fa-phone" />0123 4567 8913</a></li>
-                                    <li><a href="#"><i className="fa fa-envelope" />example@gmail.com</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header > {/* header area end */}
+            {/* header area end */}
 
             {/*side bar start*/}
             <div className='order-detail'>
-
-
-                <div class="shipper-sidenav">
-                    <a href="#trangchushipper"><i class="fa fa-fw fa-home"></i> Trang Chủ</a>
-                    <a href="#lichsugiaohang"><i class="fa fa-fw fa-calendar-o"></i> Lịch Sử Giao Hàng</a>
-                    <a href="#taikhoanshipper"><i class="fa fa-fw fa-user"></i> Tài Khoản</a>
-                </div>
+                <Sidebar />
                 {/*side bar end*/}
-
                 <div className='orderdetail-content'>
                     <h2>Chi tiết đơn hàng</h2>
-                    <button id="button-accept-order">Chấp Nhận</button>
+                    {accept ? <h3 id="tienhanh">Đang tiến hành</h3>: null}
+                    {donHangInfo && <div className='order-info'>
+                        <h4>Giao tới {donHangInfo.dia_chi}</h4>
+                        <p>{donHangInfo.ten_khach_hang} {donHangInfo.sdt}</p>
+                        <input type="text" placeholder='Ghi chú' />
+                        <h3>Đơn hàng</h3>
+                        <h3>{donHangInfo.ten_cua_hang}</h3>
+                        <p>{donHangInfo.dia_chi_ch}</p>
+                        {chitiethang && chitiethang.map(chitiet =>
+                            <div key={chitiet.ChiTietDonMatHang.id}>
+                                <div className="row cart-product detail">
+                                    <div className="cart-product-img">
+                                        <img src={chitiet.MatHang.hinhanh} />
+                                    </div>
+                                    <div className="col cart-product-left">
+                                        <h5>{chitiet.MatHang.ten}</h5>
+                                        <h5>DVT: {chitiet.MatHang.khoiluong} kg</h5>
+                                    </div>
+                                    <div className="row cart-product-right goleft">
+                                        <h5
+                                            className="singleitem-price">
+                                            {chitiet.MatHang.gia.toLocaleString()}₫
+                                        </h5>
+                                        <div className="cart-quantity-box">
+                                            <input readOnly className="quantity-box" value={chitiet.ChiTietDonMatHang.soluong} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                        <p>Phí vận chuyển: 23,000đ</p>
+                        <h3>Tổng tiền: 33,500đ</h3>
+                        <h3>Hình thức thanh toán: {donHangInfo.hinh_thuc_thanh_toan}</h3>
+                    </div>}
+                    {accept ? <div>
+                        <button id="button-accept-order">Hoàn tất</button>
+                        <button id="button-accept-order">Hủy</button>
+                        </div> 
+                    : 
+                    <button onClick={AcceptOrder} id="button-accept-order">Chấp Nhận</button>}
                 </div>
             </div>
             <Footer />
