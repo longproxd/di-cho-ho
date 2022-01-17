@@ -60,7 +60,7 @@ export default function Test(props) {
                         </div>
                     </div>
                     <p>{MatHang["MatHang"].ten}</p>
-                    <button className='toStore-btn' onClick={toStore}>{MatHang["CuaHang"].tench}</button>
+                    <button className='toStore-btn' onClick={(e) => toStore(e, MatHang.CuaHang)}>{MatHang["CuaHang"].tench}</button>
                     <h5>{MatHang["MatHang"].gia.toLocaleString()} vnd | {MatHang["MatHang"].khoiluong} kg</h5>
                 </div>
             </div>

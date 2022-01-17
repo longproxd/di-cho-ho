@@ -1,9 +1,30 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 
 
+const MenuItem = (props) => {
+    const { id, hinh_thuc_thanh_toan, tong_tien, ma_shipper, dia_chi, tinh_trang,
+        ma_khach_hang, ma_cua_hang, sdt, dia_chi_ch, setDonHangInfo } = props
 
-const MenuItem = ({ id, hinh_thuc_thanh_toan, tong_tien, ma_shipper, dia_chi, tinh_trang, ma_khach_hang, ma_cua_hang }) => {
+    const navigate = useNavigate();
 
+    function toDetails() {
+        navigate('/shipper/orderdetail')
+
+        const donhang = { 
+            id: id,
+            hinh_thuc_thanh_toan: hinh_thuc_thanh_toan,
+            tong_tien: tong_tien,
+            dia_chi: dia_chi,
+            ten_khach_hang: ma_khach_hang,
+            ten_cua_hang: ma_cua_hang,
+            sdt: sdt,
+            dia_chi_ch: dia_chi_ch
+        }
+
+        setDonHangInfo(donhang)
+
+    }
 
     return (
         <div className='menu-item'>
@@ -20,10 +41,9 @@ const MenuItem = ({ id, hinh_thuc_thanh_toan, tong_tien, ma_shipper, dia_chi, ti
                 <div className='menu-item__container--item-7 overflown--hiden'>{ma_cua_hang}</div>
 
             </div>
-            <a className='orderdetail-link'
-                href='http://localhost:8000/shipper/orderdetail'
+            <button onClick={toDetails} className='orderdetail-link'
                 style={{ color: "green" }}
-            >Chi tiết đơn hàng</a>
+            >Chi tiết đơn hàng</button>
         </div>)
 }
 

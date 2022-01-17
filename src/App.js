@@ -131,7 +131,7 @@ export default function App() {
         } />
 
         <Route path='/shipper' element={<ShipperHome shipperAcc={shipperAcc} setShipperAcc={setShipperAcc} setDonHangInfo={setDonHangInfo} />} />
-        <Route path="/shipper/orderdetail" exact element={<OrderDetail donHangInfo={donHangInfo} />} />
+        <Route path="/shipper/orderdetail" exact element={<OrderDetail shipperAcc={shipperAcc} setShipperAcc={setShipperAcc} donHangInfo={donHangInfo} />} />
 
         <Route path="/shipper/orderconfirmation" exact element={<OrderConfirmation />} />
         <Route path="/shipper/history" exact element={<LichSuGiaoHang shipperAcc={shipperAcc} setShipperAcc={setShipperAcc} />} />

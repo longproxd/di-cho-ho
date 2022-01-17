@@ -2157,12 +2157,9 @@ blockquote:before {
 }
 
 .order-info {
-  height: 80px;
   width: 620px;
-  background-color: white;
-  border: 2px solid black;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 40px;
   margin-left: 10px;
 }
 
@@ -2172,17 +2169,31 @@ blockquote:before {
   top: -20px;
 }
 
-.orderdetail-content h2 {
+.orderdetail-content h2,
+.orderdetail-content #tienhanh {
   color: red;
   position: relative;
-  left: 850px;
+  left: 350px;
   top: 30px;
+}
+
+.orderdetail-content #tienhanh {
+  color: black;
+  top: 35px;
+  left: 370px;
+}
+
+.detail {
+  width: 200px;
+}
+
+.goleft {
+  right: 200px;
 }
 
 #button-accept-order {
   position: relative;
-  left: 700px;
-  top: 400px;
+  left: 200px;
   width: 450px;
 }
 

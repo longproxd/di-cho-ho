@@ -35,12 +35,15 @@ function ShipperHome(props) {
                     {accountarray.length !== 0 ? accountarray.map((item) => {
                         return <MenuItem id={item.DonHang.madh} key={item.DonHang.madh} hinh_thuc_thanh_toan={item.DonHang.hinhthucthanhtoan}
                             tong_tien={item.DonHang.tongtien}
-                            ma_shipper='abc'
+                            ma_shipper=''
                             dia_chi={item.DonHang.diachi}
                             tinh_trang={item.DonHang.tinhtrangdon}
                             ma_khach_hang={item.KhachHang.ten}
-                            ma_cua_hang={item.CuaHang.tench} />
-                    }) : <div>No item available</div>
+                            ma_cua_hang={item.CuaHang.tench}
+                            sdt={item.KhachHang.sdt}
+                            dia_chi_ch = {item.CuaHang.diachi}
+                            setDonHangInfo={setDonHangInfo} />
+                    }) : <div>Không có đơn hàng mới</div>
                     }
                 </div>
                 <div id="col-2">
