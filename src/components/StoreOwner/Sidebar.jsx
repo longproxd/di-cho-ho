@@ -19,7 +19,7 @@ function Storeowner_Sidebar() {
     return (
         <div>
             <div className="storeowner-sidenav">
-                <a href="/admin-home"><i className="fa fa-fw fa-home"></i> Trang Chủ</a>
+                <a href="/storeowner"><i className="fa fa-fw fa-home"></i> Trang Chủ</a>
                 <button onClick={ManageButtonClicked} className="storeowner-dropdown-btn"><i className="fa fa-fw fa-folder"></i> Quản Lý Hàng Hoá<i className={iconClassName1}></i></button>
                 <div id="manage-content">
                     <a href="/storeowner/productmanagement/addproduct">Thêm Hàng Hoá</a>
