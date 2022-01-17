@@ -4,14 +4,30 @@ import { useState, useEffect } from 'react';
 export default function LichSuMuaHang({ accountInfo }) {
     const url = 'http://localhost:8080/api/khachhang/lichsu/' + accountInfo.id;
     const [donhang, setDonhang] = useState();
+    const [madonhang, setmaDonhang] = useState();
 
     useEffect(() => {
         axios.get(url)
             .then(res => {
+                console.log(res);
                 setDonhang(res.data);
             })
             .catch(err => console.log(err))
     }, [])
+
+    function handleClick(event) {
+        event.preventDefault()
+        setmaDonhang(donhang[3]["DonHang"].madh)
+        console.log(madonhang)
+
+        axios.delete('http://localhost:8080/api/donhang/xoa/' + madonhang)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
 
     //table component
     const TableBody = (props) => {
@@ -63,6 +79,7 @@ export default function LichSuMuaHang({ accountInfo }) {
                     </thead>
                     {donhang && <TableBody data={donhang} />}
                 </table>
+                <button className='HuyDonHang' onClick={handleClick}>Hủy đơn hàng</button>
             </div>
         </div>
     );
